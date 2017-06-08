@@ -1,0 +1,452 @@
+﻿/********************************************************************************/
+/* SPECIFIC LAYER STYLES
+/********************************************************************************/
+#textos_iconografia i {
+    line-height: 30px;
+    font-size: 27px;
+    cursor: default;
+    color: #0039A6;
+
+}
+
+#textos_iconografia i:hover {
+    color: #BA0F16;
+}
+
+#textos_iconografia .note_pointer_left, #textos_iconografia .note_pointer_right {
+    display: inline-table;
+    position: relative;
+    top: 17px;
+}
+
+#textos_iconografia .text_pointer_h_left, #textos_iconografia .text_pointer_h_right {
+    display: inline-table;
+    position: relative;
+}
+
+#textos_iconografia .text_pointer_v_up, #textos_iconografia .text_pointer_v_down {
+    display: inline-table;
+    position: relative;
+}
+
+#textos_iconografia .little i {
+    font-size: 14px;
+}
+
+#textos_iconografia .large i {
+    font-size: 50px;
+}
+
+#textos_iconografia .color i { font-size: 30px; }
+#textos_iconografia .color i.a { color: #0ff; }
+#textos_iconografia .color i.b { color: #f0f; }
+#textos_iconografia .color i.c { color: #00f; }
+#textos_iconografia .color i.d { color: #3de467; }
+
+#textos_iconografia .link i { font-size: 30px; }
+
+#textos_iconografia .effects i { font-size: 30px; color: #f00; margin: 0 10px; }
+#textos_iconografia .effects i.a { text-shadow: 5px 5px 10px #000; }
+#textos_iconografia .effects i.b { text-shadow: 10px 10px 3px #000; }
+#textos_iconografia .effects i.c { text-shadow: 15px 5px 5px #000;  }
+#textos_iconografia .effects i.d { text-shadow: 8px 0px 0px #000;  }
+
+#media_video .box_examples pre {
+    margin: 0;
+}
+
+#media_video ul {
+    margin: 0;
+}
+
+/********************************************************************************/
+/* Actividad CROSSWORD
+/********************************************************************************/
+#actividad_crossword .board_content { width: 245px; }
+
+#actividad_crossword .pit-activities-crossword table.layout { width: 395px; }
+
+/********************************************************************************/
+/* Solo para ejemplo de mouse over 1
+/********************************************************************************/
+#textos_mouse_over_1 .act_mouse_over_one { margin-top: 15px; }
+#textos_mouse_over_1 .act_mouse_over_one .button { width : 137px; height : 128px; }
+#textos_mouse_over_1 .act_mouse_over_one .button.b1 { background: url(../content/img_experto.png) no-repeat; }
+#textos_mouse_over_1 .act_mouse_over_one .button.b2 { background: url(../content/img_gestor.png) no-repeat; }
+#textos_mouse_over_1 .act_mouse_over_one .button.b3 { background: url(../content/img_produccion.png) no-repeat; }
+#textos_mouse_over_1 td, #textos_mouse_over_1 th { width: 50%; vertical-align: top; }
+/********************************************************************************/
+/* Solo para ejemplo de mouse over 2
+/********************************************************************************/
+#textos_mouse_over_2 th {
+    vertical-align: top;
+}
+
+#textos_mouse_over_2 .act_mouse_over {
+    background : #FFFFFF;
+    border : dashed #00A5C0 1px;
+    width : 50px;
+    height : 50px;
+    float: left;
+    margin: 10px;
+}
+
+/********************************************************************************/
+/* Solo para ejemplo de mark
+/********************************************************************************/
+#actividades_mark .pit-activities-mark {
+
+}
+
+#actividades_mark p {
+    width: 400px;
+}
+
+
+/********************************************************************************/
+/* Actividad arrastrar y soltar - apareamiento
+/********************************************************************************/
+.actividades_arrastrar1 .box_panel_activity.sources { height: 150px; }
+
+.actividades_arrastrar1 .pit-activities-droppable th {    
+    background: #0039A6;
+    border-radius: 11px;
+    padding: 5px;
+    text-align: right;
+    border: solid #0039A6 1px;
+    color: #fff
+}
+
+.actividades_arrastrar1 .pit-activities-droppable td.droppable {
+    width: 80px;
+    height: 16px;
+}
+
+.actividades_arrastrar1 .pit-activities-droppable td.conection {
+    width: 30px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.actividades_arrastrar1 .pit-activities-droppable .draggable {
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 80px;
+}
+
+.actividades_arrastrar1 .ion-chevron-right { font-size: 16px; }
+/********************************************************************************/
+/* Actividad arrastrar y soltar - diálogo
+/********************************************************************************/
+.actividades_arrastrar2h3 { margin: -5px 0 0; }
+
+.actividades_arrastrar2 .pit-activities-droppable td.sources {
+    padding-left: 20px;
+}
+
+.actividades_arrastrar2 .pit-activities-droppable .draggable {
+    width: 75px;
+    float: left;
+    margin-bottom: 5px;
+    clear: both;
+}
+
+.actividades_arrastrar2 .pit-activities-droppable .droppable {
+    width: 85px;
+    height: 25px;
+}
+
+/********************************************************************************/
+/* Actividad arrastrar y soltar - completar
+/********************************************************************************/
+.actividades_arrastrar3 h3 { margin: -11px 0; }
+
+.actividades_arrastrar3 .box_panel_activity.down { height: 50px; }
+
+.actividades_arrastrar3 .pit-activities-droppable br.clear {
+    margin-bottom: 20px;
+}
+
+.actividades_arrastrar3 .pit-activities-droppable table {
+    empty-cells: show;
+    border-spacing: 0 5px;
+    color: #fff;
+}
+
+.actividades_arrastrar3 .pit-activities-droppable th {
+    background: #0039A6;
+    border: 2px solid #0039A6;
+    border-radius: 6px 0 0 6px;
+    color: #FFFFFF;
+    padding: 5px;
+    text-align: right;
+    border-radius: 13px 0 0 13px;
+}
+
+.actividades_arrastrar3 .pit-activities-droppable td {
+    padding: 6px;
+    border: 2px solid #0039A6;
+    border-radius: 0 13px 13px 0;
+    text-align: left;
+    width: 415px;
+}
+
+.actividades_arrastrar3 .pit-activities-droppable .draggable {
+    margin: 0 5px 5px 0;
+    width: 200px;
+    text-align: left;
+    box-shadow: -2px 0 5px #888888;
+}
+
+.actividades_arrastrar3 .pit-activities-droppable .jpit_activities_jpitdroppable_dropped {
+    margin: -2px;
+    background: #fff;
+    border: none;
+    box-shadow: 0 0 0;
+    border-radius: 0 13px 13px 0;
+    padding: 5px;
+}
+
+.actividades_arrastrar3 .pit-activities-droppable .jpit_activities_jpitdroppable_dropped  i {
+    color: #F7D4E7;
+}
+
+/********************************************************************************/
+/* Actividad arrastrar y soltar - insertar
+/********************************************************************************/
+.actividades_arrastrar4 h3 { margin: -11px 0; }
+
+.actividades_arrastrar4 .pit-activities-droppable br.clear {
+    margin-bottom: 20px;
+}
+
+.actividades_arrastrar4 .pit-activities-droppable table {
+    empty-cells: show;
+    border-spacing: 0 5px;
+    font-weight: bold;
+}
+
+.actividades_arrastrar4 .pit-activities-droppable th {
+    background: #11276D;
+    border: 2px solid #11276D;
+    border-radius: 13px 0 0 13px;
+    color: #FFFFFF;
+    padding: 5px;
+    text-align: right;
+    border-right: none;
+}
+
+.actividades_arrastrar4 .pit-activities-droppable td {
+    padding: 5px;
+    border: 1px dashed #11276D;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
+    width: 200px;
+    border-left: none;
+}
+
+.actividades_arrastrar4 .pit-activities-droppable .draggable {
+    float: left;
+    margin: 0 5px 5px 0;
+}
+
+.actividades_arrastrar4 .pit-activities-droppable .wrong {
+    border-color: #D60C1B;
+    color: #D60C1B;
+}
+/********************************************************************************/
+.actividades_arrastrar5 .pit-activities-droppable .draggable { width: 180px; margin: 5px; }
+.actividades_arrastrar5 .box_panel_activity { width: 200px; float: left; margin-right: 20px; }
+.actividades_arrastrar5 .box_panel_activity.down { width: 600px; margin: 0; }
+.actividades_arrastrar5 .pit-activities-droppable { border: none; background-color: #fff; }
+.actividades_arrastrar5 .pit-activities-droppable .droppable { width: 180px; margin: 10px 0; padding: 7px 5px; }
+.actividades_arrastrar5 .box_droppable.instruction { color: #B5B3B3; }
+.actividades_arrastrar5 .instruction { margin: 10px auto; text-align: justify; }
+.actividades_arrastrar5 .pit-activities-droppable .box_end { top: 300px; }
+
+/********************************************************************************/
+/* Actividad arrastrar y soltar multiple
+/********************************************************************************/
+.actividades_arrastrargrupos table { margin: auto; }
+
+
+.actividades_arrastrargrupos th { text-align: center; font-size: 16px; color: #11276D; border-bottom: 2px solid #11276D; width: 190px; }
+.actividades_arrastrargrupos td { height: 150px; }
+
+.actividades_arrastrargrupos .sources { width: 100%; height: 65px; margin: 10px auto 0; }
+
+.actividades_arrastrargrupos .draggable { width: 28%; float: left; margin: 0 1px 5px; border-radius: 8px; }
+
+.actividades_arrastrargrupos table .draggable.disabled {
+    cursor: default;
+}
+
+.actividades_arrastrargrupos table .draggable {
+    background-color: #0039A6;
+    border: solid #008bd2 1px;
+    border-radius: 8px;
+    color:#FFFFFF;
+}
+
+.actividades_arrastrargrupos .draggable.wrong {
+    border-color: #D60C1B;
+    color: #D60C1B;
+}
+.actividades_arrastrargrupos .box_end .correct { padding: 0; }
+
+.actividades_arrastrargrupos .buttons { text-align: center; }
+
+/********************************************************************************/
+/* Actividad quiz
+/********************************************************************************/
+.pit-activities-quiz .box_end { bottom: 150px; }
+/********************************************************************************/
+/* Actividad formulario
+/********************************************************************************/
+.pit-activities-form .sheet {
+    background: url(../img/bg_papel.png) repeat-x left top;
+    width: 90%;
+    margin: auto;
+    padding-top: 35px;
+}
+
+.pit-activities-form .sheet_body {
+    background-color: #f6f5f2;
+    padding: 10px 20px;
+}
+
+.pit-activities-form input[type=text] {
+    background-color: #f6f5f2;
+    border: dashed #C9C8C7 2px;
+    width: 94%;
+    margin-bottom: 10px;
+    padding: 5px 3%;
+}
+
+.pit-activities-form textarea {
+    width: 94%;
+    height: 40px;
+    padding: 3%;
+    background-color: #f6f5f2;
+    border: dashed #C9C8C7 2px;
+}
+
+#actividades_form .horizontal-menu .chalkboard_content {
+    background-color: #fff;
+}
+
+
+/********************************************************************************/
+/* animations
+/********************************************************************************/
+
+#animation_2 .movi img {
+    visibility: visible;
+    animation-name: example_img;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+
+/********************************************************************************/
+#animation_3 .box_stressed { width: 700px; }
+#animation_3 .box_connection { width: 700px;  margin: 0 auto 10px; }
+#animation_3 .stave { background: url(../content/img17.png) no-repeat; width: 450px; height: 110px; margin: auto; position: relative; }
+#animation_3 .musical-note-name { width: 22px; height: 20px; position: absolute; font-size: 15px; color: #16a183; opacity: 0; background: #16a183; -webkit-animation-fill-mode: backwards; animation-duration: 10s; animation-fill-mode: backwards; }
+
+#animation_3 .musical-note { width: 15px; height: 12px; background: url(../content/img17_1.png) no-repeat; position: absolute; -webkit-animation-fill-mode: forwards; animation-name: musical-note; animation-duration: 10s; animation-fill-mode: forwards; }
+
+@keyframes musical-note { 0% { left: 0; top: 0; } 10% { left: 46px; top: 65px; } 20% { left: 87px; top: 54px; } 30% { left: 128px; top: 42px; } 40% { left: 164px; top: 30px; } 50% { left: 200px; top: 18px; } 60% { left: 247px; top: 60px; } 70% { left: 291px; top: 48px; } 80% { left: 337px; top: 36px; } 100% { left: 388px; top: 25px; }
+}
+
+@keyframes musical-note-mi {
+    0% { opacity: 0; } 10% { opacity: 0.4; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.mi { left: 44px; top: 90px;  animation-name: musical-note-mi; }
+
+@keyframes musical-note-sol {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0.4; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.sol { left: 82px; top: 89px;  animation-name: musical-note-sol; }
+
+@keyframes musical-note-si {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0.4; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.si { left: 129px; top: 89px;  animation-name: musical-note-si; }
+
+@keyframes musical-note-re {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0.4; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.re { left: 164px; top: 89px;  animation-name: musical-note-re; }
+
+@keyframes musical-note-fa {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0.4; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.fa { left: 201px; top: 89px;  animation-name: musical-note-fa; }
+
+@keyframes musical-note-fa-down {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0.4; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.fa-down { left: 247px; top: 90px;  animation-name: musical-note-fa-down; }
+
+@keyframes musical-note-la {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0.4; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.la { left: 291px; top: 90px;  animation-name: musical-note-la; }
+
+
+@keyframes musical-note-do {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0.4; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.do { left: 337px; top: 90px;  animation-name: musical-note-do; }
+
+@keyframes musical-note-mi-up {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0.4; }
+}
+#animation_3 .musical-note-name.mi-up { left: 386px; top: 90px; -webkit-animation-fill-mode: forwards; animation-name: musical-note-mi-up; animation-duration: 10s; animation-fill-mode: forwards; }
+
+/********************************************************************************/
+#actividades_memory .pit-activities-memory { }
+
+/********************************************************************************/
+/* Pointers with text
+/********************************************************************************/
+
+#img_modal_window_1 .box_l { background: url(../content/img-text-modal-2.png) no-repeat center top; background-size: 316px; margin-left: 30px; width: 400px; height: 400px; margin-top: 0px;}
+#img_modal_window_1 .note_1 { left: 40px; top: 3px; }
+#img_modal_window_1 .note_2 { left: 393px; top: 96px;}
+#img_modal_window_1 .note_3 { left: 393px; top: 143px;}
+#img_modal_window_1 .note_4 { left: 40px; top: 158px;}
+#img_modal_window_1 .note_5 { left: 393px; top: 178px;}
+#img_modal_window_1 .note_6 { left: 40px; top: 193px;}
+#img_modal_window_1 .note_7 { left: 393px; top: 242px;}
+#img_modal_window_1 .note_8 { left: 40px; top: 280px;}
+#img_modal_window_1 .instruction { width: 415px; margin: 5px; text-align: center;}
+
+#image_content .view { width: 240px; height: 120px; margin: 10px 30px; }
+#image_content .instruction { width: 350px; }
+
+#image_content_modal .view { width: 300px; height: 300px; margin: auto; }
+#image_content_modal .instruction { width: 450px; }
+
+/********************************************************************************/
+/* Pointers with text
+/********************************************************************************/
+
+#pointers_text .box_l { background: url(../content/pointers-text.png) no-repeat center top; margin: auto; width: 236px; height: 290px; position: relative; }
+#pointers_text .note_pointer_right, #pointers_text .note_pointer_left { position: absolute; }
+#pointers_text .note_1 { left: -55px; top: -11px; }
+#pointers_text .note_2 { left: 230px; top: 52px; }
+#pointers_text .note_3 { left: 230px; top: 88px; }
+#pointers_text .note_4 { left: -55px; top: 104px; }
+#pointers_text .note_5 { left: 230px; top: 120px; }
+#pointers_text .note_6 { left: -55px; top: 137px; }
+#pointers_text .note_7 { left: 230px; top: 165px; }
+#pointers_text .note_8 { left: -55px; top: 200px; }
+
+/********************************************************************************/
+/* Pointers with text
+/********************************************************************************/
+#pie_1 .box_center { width: 210px; margin: auto; }
+#pie_2 .box_center { width: 310px; margin: auto; }
+#pie_3 .box_center { width: 310px; margin: auto; }

@@ -1,0 +1,17 @@
+.jpit_activity_droppable_targetnode, .jpit_activity_droppable_originnode{                
+	cursor:move;
+	overflow: hidden;
+} 
+            
+.jpit_hide{
+	display:none
+}
+
+.jpit_activity_droppable_originnode{
+	border: 1px green dashed;
+}
+
+.jpit_activity_droppable_targetnode{
+	border: 1px red dotted;
+}
+

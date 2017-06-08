@@ -1,0 +1,2213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ejemplo de elementos para los cursos</title>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_quiz.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_memory.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_mark.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_wordpuzzle.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_droppable.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_viewfirst.css" rel="stylesheet" type="text/css">
+    
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--Other components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+<!--End Other components -->
+
+    
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/activity/guessing/jpit_activity_guessing.js"></script>
+    <script src="components/pit/activity/memory/jpit_activity_memory.js"></script>
+    <script src="components/pit/activity/quiz/jpit_activity_quiz.js"></script>
+    <script src="components/pit/activity/mark/jpit_activity_mark.js"></script>
+    <script src="components/pit/activity/wordpuzzle/jpit_activity_wordpuzzle.js"></script>
+    <script src="components/pit/activity/droppable/jpit_activity_droppable.js"></script>
+    <script src="components/pit/activity/crossword/jpit_activity_crossword.js"></script>
+    <script src="components/pit/activity/cloze/jpit_activity_cloze.js"></script>
+    <script src="components/pit/activity/form/jpit_activity_form.js"></script>
+    <script src="components/pit/activity/sortable/jpit_activity_sortable.js"></script>
+    <script src="components/pit/activity/check/jpit_activity_check.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+    <script src="components/pit/resources/zoom/jpit_resource_zoom.js"></script>
+    <script src="components/maphilight/jquery.maphilight.min.js"> </script>
+    <script src="js/init.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+    
+    <style>
+        body {
+            /*background: #4b718d url(img/bg_repeat.png) repeat;*/
+        }
+
+        body.loading:after {
+            content: url(img/ajax-loader.gif);
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+    
+</head>
+<body class="loading">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;">Este documento se encuentra en modo de solo lectura por lo que la información de lo que realice no se guardará. Si precisa almacenar el seguimiento, por favor cierre esta página e intente más tarde.</div>
+
+        <header maintitle="Ejemplos de controles a soportar en el curso" subtitle="Nombre de la unidad">
+            <div id="div_overlay" ></div>
+            <div id="header_left"></div>
+            <div id="header_right"></div>
+            <div id="main_menu">
+                <menu>
+                    <item title="Contextualización" data-page="context"></item>
+                    <item title="Esquema" data-page="map"></item>
+                    <item title="Contenido">
+                        <item title="1. Textos" data-label="true">
+                            <item title="1.1. Textos especiales" data-page="textos"></item>
+                            <item title="1.2. Presentación del contenido" data-page="presentation"></item>
+                        </item>
+                        <item title="2. Multimedia" data-page="media"></item>
+                        <item title="3. Formato de contenido" data-page="contenido"></item>
+                        <item title="4. Actividades" data-page="acitvidades"></item>
+                        <item title="5. Referencias" data-page="referencias"></item>
+                    </item>
+                    <item title="Actividad" data-page="activity"></item>
+                </menu>  
+                <globals>
+                    <item data-id="credits" title="Créditos"><i class="ion-android-checkbox-blank"><span>C</span></i></item>
+                    <item data-id="bibliography" title="Bibliografía"><i class="ion-ios-book"></i></item>
+                    <item data-id="results" title="Resultados"><i class="ion-thermometer w_content_controler" data-content="#results_page"></i></item>
+                    <item data-id="return" title="Regresar"><i class="ion-share"></i></item>
+                </globals>
+            </div>
+        </header>
+
+        <div id="main" class="main_content">
+            <div id="middle" style="display: none;">
+
+                <!--Contextualización -->
+                <div class="page">
+                    <div class="subpage" id="context_1">
+                    </div>
+                    
+                    <div class="subpage" id="context_0">
+                        <div class="box_l img_responsive center"><img src="img/avata-welcome.png" /></div>
+                        <div class="box_r">
+                            <h2>Contextualización</h2>
+                            <h3>Introducción</h3>
+                            <p>En este espacio encontrará ejemplos de los controles que se pueden utilizar para dar formato a los contenidos del curso y para construir rápidamente las actividades.</p>
+                            <h3>Objetivo</h3>
+                            <p></p>
+                            <h3>Duración</h3>
+                            <p>30 minutos</p>
+                            <h3>Contenido</h3>
+                            <ol class="ol_counter">
+                                <li><a href="javascript:;" class="open_page button" page="textos">Textos</a>
+                                    <ol class="ol_counter">
+                                        <li><a href="javascript:;" class="open_page button" page="textos">Textos especiales</a></li>
+                                        <li><a href="javascript:;" class="open_page button" page="presentation">Presentación del contenido</a></li>
+                                    </ol>
+                                </li>
+                                <li><a href="javascript:;" class="open_page button" page="media">Multimedia</a></li>
+                                <li><a href="javascript:;" class="open_page button" page="contenido">Formato de contenido</a></li>
+                                <li><a href="javascript:;" class="open_page button" page="acitvidades">Actividades</a></li>
+                                <li><a href="javascript:;" class="open_page button" page="referencias">Pie de fotos y demás</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Esquema-->
+                <div class="page">
+                    <div class="subpage" id="esquema">
+                        <div id="mapa_principal" class="center img_responsive">
+                            <img src="content/mapa.png" />
+                            <div class="instruction desktop">Clic en el siguiente ícono &nbsp;<span class="button ion-ios-plus-outline w_content_controler" data-content="#submap_1"></span>&nbsp; para ampliar la información</div>
+                            <div class="instruction mobile">Toque el siguiente ícono &nbsp;<span class="button ion-ios-plus-outline w_content_controler" data-content="#submap_1"></span>&nbsp; para ampliar la información</div>
+                        </div>
+                        <div id="submap_1" class="w_content" data-property-width="890px">
+                            <img src="content/mapa.png" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXTOS -->
+                <!--Textos especiales-->
+                <div class="page">
+                    <div class="subpage">
+                        <h2>1. Textos</h2>
+                        <h2>1.1. Textos especiales</h2>
+                        <h3>Conexiones / Acoplamientos</h3>
+                        <div class="box_connection">
+                            <p>Se utiliza la clase <em>box_connection</em> y es para los Párrafos de acoplamiento. Ejemplo:</p>
+                            <pre>
+&lt;div class="box_connection"&gt;
+    &lt;p&gt;
+        Acá un párrafo de conexión
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Énfasis</h3>
+                        <div class="box_stressed">
+                            <h5>Recuerde que...</h5>
+                            <p>Se utiliza la clase <em>box_stressed</em> y es para los Párrafos de énfasis. Ejemplo:</p>
+                            <pre>
+&lt;div class="box_stressed"&gt;
+    &lt;h5&gt;Título&lt;/h5&gt;
+    &lt;p&gt;
+        Acá un párrafo de énfasis
+    &lt;/p&gt;
+&lt;/div&gt;
+                            </pre>
+                        </div>
+
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Ejemplos</h3>
+                        <div class="box_examples">
+                            <h5>Ejemplo</h5>
+                            <p>Se utiliza la clase <em>box_examples</em> y es para los Párrafos de ejemplo. Ejemplo:</p>
+                            <pre>
+&lt;div class="box_examples"&gt;
+    &lt;h5&gt;Título&lt;/h5&gt;
+    &lt;p&gt;
+        Acá un párrafo de ejemplo
+    &lt;/p&gt;
+&lt;/div&gt;
+                            </pre>
+                        </div>
+
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Vínculos requeridos</h3>
+                        <div class="box_required_link">
+                            <h5>Extendiendo el saber...</h5>
+                            <p><strong>Enlace:</strong> <a href="http://www.udem.edu.co/" target="_blank">enlace</a></p>
+                            <strong>Actividad significativa</strong>
+                            <p>Se utiliza la clase <em>box_required_link</em> y es para los Párrafos de vínculos. Ejemplo:</p>
+                            <pre>
+&lt;div class="box_required_link"&gt;
+    &lt;h5&gt;Título&lt;/h5&gt;
+    &lt;p&gt;
+        Acá un párrafo de vínculo
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Nota</h3>
+                        <div class="box_note">
+                            <h5>Nota</h5>
+                            <p>Se utiliza la clase <em>box_note</em> y es para las anotaciones. Ejemplo:</p>
+                            <pre>
+&lt;div class="box_note"&gt;
+    &lt;h5&gt;Título&lt;/h5&gt;
+    &lt;p&gt;
+        Acá un párrafo de anotación
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+
+                    </div>
+                    
+                    <div class="subpage">
+                        <h2>1. Textos especiales</h2>
+                        <h3>Podcast</h3>
+                        <div class="box_podcast">
+                            <h5>Podcast</h5>
+                            <p>Se utiliza la clase <em>box_podcast</em> y es para las anotaciones. Ejemplo:</p>
+                            <pre>
+&lt;div class="box_podcast"&gt;
+    &lt;h5&gt;Título&lt;/h5&gt;
+    &lt;p&gt;
+        Acá un párrafo de anotación
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+
+                    </div>
+                    
+                    <div class="subpage">
+                        <h2>1. Textos especiales</h2>
+                        <h3>Video</h3>
+                        <div class="box_video">
+                            <h5>Video</h5>
+                            <p>Se utiliza la clase <em>box_video</em> y es para las anotaciones. Ejemplo:</p>
+                            <pre>
+&lt;div class="box_video"&gt;
+    &lt;h5&gt;Título&lt;/h5&gt;
+    &lt;p&gt;
+        Acá un párrafo de anotación
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+                        </div>
+
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Vínculos externos sobre recursos gráficos</h3>
+                        
+                        <p>Para elementos que no son "a" y deben abrir un enlace, utilizar la clase CSS <strong>open_url</strong> y colocar el atributo <em>data-url</em> para especificar la dirección. Siempre abre en ventana nueva.</p>
+                        
+                        <div class="box_examples">
+                            <h5>Ejemplo</h5>
+<pre>&lt;button class="general open_url" data-url="http://google.com"&gt;
+    Clic para ir a Google
+&lt;/button&gt;</pre>
+                            <p>
+                            Lo anterior se vería así: <button class="general open_url" data-url="http://google.com">Clic para ir a Google</button>
+                            </p>
+                        </div>                         
+                    </div>
+
+                    <div class="subpage" id="textos_modal">
+                        <h3>Abrir contenido en ventana modal</h3>
+                        
+                        <p>Para abrir contenidos en ventanas modales dentro del mismo objeto. Se agrega la clase "w_content_controler" al elemento que debe abrir la ventana (origen), por defecto con el evento clic. No tiene que ser botón o enlace, puede ser cualquier elemento. Se debe establecer la propiedad "data-content" con la ruta CSS del elemento que se convertirá en ventana (destino). El elemento que se abre como ventana debe tener la clase "w_content". Se puede utilizar la propiedad "data-property-width", tanto en el origen como en el destino, para definir el ancho de la ventana modal y "data-property-height" para definir el alto. También se puede asignar una clase al destino mediante la propiedad "data-cssclass" en el elemento destino.</p>
+                        
+                        <div class="box_examples">
+                            <h5>Ejemplo</h5>
+<pre>&lt;button class="w_content_controler general" data-content="#textos_modal_window"&gt;
+    Abrir ventana modal
+&lt;/button&gt;
+&lt;div id="textos_modal_window" class="w_content"&gt;
+    Así se ve la ventana modal
+&lt;/div&gt;
+</pre>
+                            <p>
+                            Lo anterior se vería así: <button class="w_content_controler general" data-content="#textos_modal_window">Abrir ventana modal</button>
+                            </p>
+                            <div id="textos_modal_window" class="w_content">
+                                Así se ve la ventana modal
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="textos_infografia">
+                        <h3>Infografía</h3>
+                        
+                        <p>Algunos elementos gráficos que pueden ser útiles en el montaje y que ya están definidos.</p>
+                        <p>Las listas (&lt;ul&gt;), cuando sean de datos, deben tener la clase "data_list".</p>
+                        
+                        <ul class="data_list">
+                            <li><strong>Flecha abajo: </strong><i class="ion-arrow-down-a"></i>, usar &lt;span class="ion-arrow-down-a"&gt;&lt;/span&gt;</li>
+                            <li><strong>Flecha derecha: </strong><i class="ion-arrow-right-a"></i>, usar &lt;span class="ion-arrow-right-a"&gt;&lt;/span&gt;</li>
+                            <li><strong>Flecha derecha 2: </strong><i class="ion-chevron-right"></i>, usar &lt;span class="ion-chevron-right"&gt;&lt;/span&gt;</li>
+                            <li><strong>Aprobado: </strong><i class="ion-checkmark"></i>, usar &lt;span class="ion-checkmark"&gt;&lt;/span&gt;</li>
+                            <li><strong>Rechazado: </strong><span class="ion-close"></span>, usar &lt;span class="ion-close"&gt;&lt;/span&gt;</li>
+                            <li><strong>Botón general: </strong><button class="general">Aceptar</button>, usar &lt;button class="general"&gt;Aceptar&lt;/button&gt;</li>
+                            <li><strong>Apuntador arriba-abajo: </strong><span class="icon_inline ui-icon ui-icon-arrowthick-2-n-s"></span>, usar &lt;span class="icon_inline ui-icon ui-icon-arrowthick-2-n-s"&gt;&lt;/span&gt;</li>
+                            <li><strong>Apuntador izquierda-derecha: </strong><span class="icon_inline ui-icon ui-icon-arrowthick-2-e-w"></span>, usar &lt;span class="icon_inline ui-icon ui-icon-arrowthick-2-e-w"&gt;&lt;/span&gt;</li>
+                            <li><strong>Ver más: </strong><i class="ion-ios-plus-outline"></i>, usar &lt;span class="ion-ios-plus-outline button"&gt;&lt;/span&gt;. Se adiciona la clase button si debe tener el evento "Sobre".</li>
+                            <li><strong>Apuntador izquierda: </strong><div class="note_pointer_left"></div>, usar &lt;div class="note_pointer_left"&gt;&lt;/div&gt;</li>
+                            <li><strong>Apuntador derecha: </strong><div class="note_pointer_right"></div>, usar &lt;div class="note_pointer_right"&gt;&lt;/div&gt;</li>
+                            <li>Apariencia de los <a href="#">enlaces</a></li>
+                            <li>Apariencia de las <cite>citas</cite></li>
+                        </ul>
+                    </div>
+
+                    <div class="subpage" id="textos_iconografia">
+                        <h3>Iconografía</h3>
+
+                        <p>Los íconos sirven para representar, marcar, dar ideas visuales de elementos, entre otros. Para ello se incluye una etiqueta <em>&lt;i&gt;</em> con la clase correspondiente (mouse sobre el ícono para conocer la clase). Está basado en <em>ionicons</em> por lo que se puede utilizar cualquiera de los elementos que dicha librería incluye (ver listado oficial en <a href="http://www.ionicons.com" target="_blank">www.ionicons.com</a>). A continuación algunos ejemplos:</p>
+                         <div>
+                             <i title="ion-arrow-up-a" class="ion-arrow-up-a" ></i>
+                             <i title="ion-arrow-right-a" class="ion-arrow-right-a" ></i>
+                             <i title="ion-arrow-down-a" class="ion-arrow-down-a" ></i>
+                             <i title="ion-arrow-left-a" class="ion-arrow-left-a" ></i>
+                             <i title="ion-arrow-up-b" class="ion-arrow-up-b" ></i>
+                             <i title="ion-arrow-right-b" class="ion-arrow-right-b" ></i>
+                             <i title="ion-arrow-down-b" class="ion-arrow-down-b" ></i>
+                             <i title="ion-arrow-left-b" class="ion-arrow-left-b" ></i>
+                             <i title="ion-arrow-up-c" class="ion-arrow-up-c" ></i>
+                             <i title="ion-arrow-right-c" class="ion-arrow-right-c" ></i>
+                             <i title="ion-arrow-down-c" class="ion-arrow-down-c" ></i>
+                             <i title="ion-arrow-left-c" class="ion-arrow-left-c" ></i>
+                             <i title="ion-arrow-return-right" class="ion-arrow-return-right" ></i>
+                             <i title="ion-arrow-return-left" class="ion-arrow-return-left" ></i>
+                             <i title="ion-arrow-swap" class="ion-arrow-swap" ></i>
+                             <i title="ion-arrow-shrink" class="ion-arrow-shrink" ></i>
+                             <i title="ion-arrow-expand" class="ion-arrow-expand" ></i>
+                             <i title="ion-arrow-move" class="ion-arrow-move" ></i>
+                             <i title="ion-arrow-resize" class="ion-arrow-resize" ></i>
+                             <i title="ion-chevron-up" class="ion-chevron-up" ></i>
+                             <i title="ion-chevron-right" class="ion-chevron-right" ></i>
+                             <i title="ion-chevron-down" class="ion-chevron-down" ></i>
+                             <i title="ion-chevron-left" class="ion-chevron-left" ></i>
+                             <i title="ion-navicon-round" class="ion-navicon-round" ></i>
+                             <i title="ion-navicon" class="ion-navicon" ></i>
+                             <i title="ion-drag" class="ion-drag" ></i>
+                             <i title="ion-log-in" class="ion-log-in" ></i>
+                             <i title="ion-log-out" class="ion-log-out" ></i>
+                             <i title="ion-checkmark-round" class="ion-checkmark-round" ></i>
+                             <i title="ion-checkmark" class="ion-checkmark" ></i>
+                             <i title="ion-checkmark-circled" class="ion-checkmark-circled" ></i>
+                             <i title="ion-close-round" class="ion-close-round" ></i>
+                             <i title="ion-close" class="ion-close" ></i>
+                             <i title="ion-close-circled" class="ion-close-circled" ></i>
+                             <i title="ion-plus-round" class="ion-plus-round" ></i>
+                             <i title="ion-plus" class="ion-plus" ></i>
+                             <i title="ion-plus-circled" class="ion-plus-circled" ></i>
+                             <i title="ion-minus-round" class="ion-minus-round" ></i>
+                             <i title="ion-minus" class="ion-minus" ></i>
+                             <i title="ion-minus-circled" class="ion-minus-circled" ></i>
+                             <i title="ion-information" class="ion-information" ></i>
+                             <i title="ion-information-circled active" class="ion-information-circled active" ></i>
+                             <i title="ion-help" class="ion-help" ></i>
+                             <i title="ion-help-circled" class="ion-help-circled" ></i>
+                             <i title="ion-backspace-outline" class="ion-backspace-outline" ></i>
+                             <i title="ion-backspace" class="ion-backspace" ></i>
+                             <i title="ion-help-buoy" class="ion-help-buoy" ></i>
+                             <i title="ion-asterisk" class="ion-asterisk" ></i>
+                             <i title="ion-alert" class="ion-alert" ></i>
+                             <i title="ion-alert-circled" class="ion-alert-circled" ></i>
+                             <i title="ion-refresh" class="ion-refresh" ></i>
+                             <i title="ion-loop" class="ion-loop" ></i>
+                             <i title="ion-shuffle" class="ion-shuffle" ></i>
+                             <i title="ion-home" class="ion-home" ></i>
+                             <i title="ion-search" class="ion-search" ></i>
+                             <i title="ion-flag" class="ion-flag" ></i>
+                             <i title="ion-star" class="ion-star" ></i>
+                             <i title="ion-heart" class="ion-heart" ></i>
+                             <i title="ion-heart-broken" class="ion-heart-broken" ></i>
+                             <i title="ion-gear-a" class="ion-gear-a" ></i>
+                             <i title="ion-gear-b" class="ion-gear-b" ></i>
+                             <i title="ion-toggle-filled" class="ion-toggle-filled" ></i>
+                             <i title="ion-toggle" class="ion-toggle" ></i>
+                             <i title="ion-settings" class="ion-settings" ></i>
+                             <i title="ion-wrench" class="ion-wrench" ></i>
+                             <i title="ion-hammer" class="ion-hammer" ></i>
+                             <i title="ion-edit" class="ion-edit" ></i>
+                             <i title="ion-trash-a" class="ion-trash-a" ></i>
+                             <i title="ion-trash-b" class="ion-trash-b" ></i>
+                             <i title="ion-document" class="ion-document" ></i>
+                             <i title="ion-document-text" class="ion-document-text" ></i>
+                             <i title="ion-clipboard" class="ion-clipboard" ></i>
+                             <i title="ion-scissors" class="ion-scissors" ></i>
+                             <i title="ion-funnel" class="ion-funnel" ></i>
+                             <i title="ion-bookmark" class="ion-bookmark" ></i>
+                             <i title="ion-email" class="ion-email" ></i>
+                             <i title="ion-email-unread" class="ion-email-unread" ></i>
+                             <i title="ion-folder" class="ion-folder" ></i>
+                             <i title="ion-filing" class="ion-filing" ></i>
+                             <i title="ion-archive" class="ion-archive" ></i>
+                             <i title="ion-reply" class="ion-reply" ></i>
+                             <i title="ion-reply-all" class="ion-reply-all" ></i>
+                             <i title="ion-forward" class="ion-forward" ></i>
+                             <i title="ion-share" class="ion-share" ></i>
+                             <i title="ion-paper-airplane" class="ion-paper-airplane" ></i>
+                             <i title="ion-link" class="ion-link" ></i>
+                             <i title="ion-paperclip" class="ion-paperclip" ></i>
+                             <i title="ion-compose" class="ion-compose" ></i>
+                             <i title="ion-briefcase" class="ion-briefcase" ></i>
+                             <i title="ion-medkit" class="ion-medkit" ></i>
+                             <i title="ion-at" class="ion-at" ></i>
+                             <i title="ion-pound" class="ion-pound" ></i>
+                             <i title="ion-quote" class="ion-quote" ></i>
+                             <i title="ion-cloud" class="ion-cloud" ></i>
+                             <i title="ion-upload" class="ion-upload" ></i>
+                             <i title="ion-more" class="ion-more" ></i>
+                             <i title="ion-grid" class="ion-grid" ></i>
+                             <i title="ion-calendar" class="ion-calendar" ></i>
+                             <i title="ion-clock" class="ion-clock" ></i>
+                             <i title="ion-compass" class="ion-compass" ></i>
+                             <i title="ion-pinpoint" class="ion-pinpoint" ></i>
+                             <i title="ion-pin" class="ion-pin" ></i>
+                             <i title="ion-navigate" class="ion-navigate" ></i>
+                             <i title="ion-location" class="ion-location" ></i>
+                             <i title="ion-map" class="ion-map" ></i>
+                             <i title="ion-lock-combination" class="ion-lock-combination" ></i>
+                             <i title="ion-locked" class="ion-locked" ></i>
+                             <i title="ion-unlocked" class="ion-unlocked" ></i>
+                             <i title="ion-key" class="ion-key" ></i>
+                             <i title="ion-arrow-graph-up-right" class="ion-arrow-graph-up-right" ></i>
+                             <i title="ion-arrow-graph-down-right" class="ion-arrow-graph-down-right" ></i>
+                             <i title="ion-arrow-graph-up-left" class="ion-arrow-graph-up-left" ></i>
+                             <i title="ion-arrow-graph-down-left" class="ion-arrow-graph-down-left" ></i>
+                             <i title="ion-stats-bars" class="ion-stats-bars" ></i>
+                             <i title="ion-connection-bars" class="ion-connection-bars" ></i>
+                             <i title="ion-pie-graph" class="ion-pie-graph" ></i>
+                             <i title="ion-chatbubble" class="ion-chatbubble" ></i>
+                             <i title="ion-chatbubble-working" class="ion-chatbubble-working" ></i>
+                             <i title="ion-chatbubbles" class="ion-chatbubbles" ></i>
+                             <i title="ion-chatbox" class="ion-chatbox" ></i>
+                             <i title="ion-chatbox-working" class="ion-chatbox-working" ></i>
+                             <i title="ion-chatboxes" class="ion-chatboxes" ></i>
+                             <i title="ion-person" class="ion-person" ></i>
+                             <i title="ion-person-add" class="ion-person-add" ></i>
+                             <i title="ion-person-stalker" class="ion-person-stalker" ></i>
+                             <i title="ion-woman" class="ion-woman" ></i>
+                             <i title="ion-man" class="ion-man" ></i>
+                             <i title="ion-female" class="ion-female" ></i>
+                             <i title="ion-male" class="ion-male" ></i>
+                             <i title="ion-transgender" class="ion-transgender" ></i>
+                             <i title="ion-fork" class="ion-fork" ></i>
+                             <i title="ion-knife" class="ion-knife" ></i>
+                             <i title="ion-spoon" class="ion-spoon" ></i>
+                             <i title="ion-soup-can-outline" class="ion-soup-can-outline" ></i>
+                             <i title="ion-soup-can" class="ion-soup-can" ></i>
+                             <i title="ion-beer" class="ion-beer" ></i>
+                             <i title="ion-wineglass" class="ion-wineglass" ></i>
+                             <i title="ion-coffee" class="ion-coffee" ></i>
+                             <i title="ion-icecream" class="ion-icecream" ></i>
+                             <i title="ion-pizza" class="ion-pizza" ></i>
+                             <i title="ion-power" class="ion-power" ></i>
+                             <i title="ion-mouse" class="ion-mouse" ></i>
+                             <i title="ion-battery-full" class="ion-battery-full" ></i>
+                             <i title="ion-battery-half" class="ion-battery-half" ></i>
+                             <i title="ion-battery-low" class="ion-battery-low" ></i>
+                             <i title="ion-battery-empty" class="ion-battery-empty" ></i>
+                             <i title="ion-battery-charging" class="ion-battery-charging" ></i>
+                             <i title="ion-wifi" class="ion-wifi" ></i>
+                             <i title="ion-bluetooth" class="ion-bluetooth" ></i>
+                             <i title="ion-calculator" class="ion-calculator" ></i>
+                             <i title="ion-camera" class="ion-camera" ></i>
+                             <i title="ion-eye" class="ion-eye" ></i>
+                             <i title="ion-eye-disabled" class="ion-eye-disabled" ></i>
+                             <i title="ion-flash" class="ion-flash" ></i>
+                             <i title="ion-flash-off" class="ion-flash-off" ></i>
+                             <i title="ion-qr-scanner" class="ion-qr-scanner" ></i>
+                             <i title="ion-image" class="ion-image" ></i>
+                             <i title="ion-images" class="ion-images" ></i>
+                             <i title="ion-wand" class="ion-wand" ></i>
+                             <i title="ion-contrast" class="ion-contrast" ></i>
+                             <i title="ion-aperture" class="ion-aperture" ></i>
+                             <i title="ion-crop" class="ion-crop" ></i>
+                             <i title="ion-easel" class="ion-easel" ></i>
+                             <i title="ion-paintbrush" class="ion-paintbrush" ></i>
+                             <i title="ion-paintbucket" class="ion-paintbucket" ></i>
+                             <i title="ion-monitor" class="ion-monitor" ></i>
+                             <i title="ion-laptop" class="ion-laptop" ></i>
+                             <i title="ion-ipad" class="ion-ipad" ></i>
+                             <i title="ion-iphone" class="ion-iphone" ></i>
+                             <i title="ion-ipod" class="ion-ipod" ></i>
+                             <i title="ion-printer" class="ion-printer" ></i>
+                             <i title="ion-usb" class="ion-usb" ></i>
+                             <i title="ion-outlet" class="ion-outlet" ></i>
+                             <i title="ion-bug" class="ion-bug" ></i>
+                             <i title="ion-code" class="ion-code" ></i>
+                             <i title="ion-code-working" class="ion-code-working" ></i>
+                             <i title="ion-code-download" class="ion-code-download" ></i>
+                             <i title="ion-fork-repo" class="ion-fork-repo" ></i>
+                             <i title="ion-network" class="ion-network" ></i>
+                             <i title="ion-pull-request" class="ion-pull-request" ></i>
+                             <i title="ion-merge" class="ion-merge" ></i>
+                             <i title="ion-xbox" class="ion-xbox" ></i>
+                             <i title="ion-playstation" class="ion-playstation" ></i>
+                             <i title="ion-steam" class="ion-steam" ></i>
+                             <i title="ion-closed-captioning" class="ion-closed-captioning" ></i>
+                             <i title="ion-videocamera" class="ion-videocamera" ></i>
+                             <i title="ion-film-marker" class="ion-film-marker" ></i>
+                             <i title="ion-disc" class="ion-disc" ></i>
+                             <i title="ion-headphone" class="ion-headphone" ></i>
+                             <i title="ion-music-note" class="ion-music-note" ></i>
+                             <i title="ion-radio-waves" class="ion-radio-waves" ></i>
+                             <i title="ion-speakerphone" class="ion-speakerphone" ></i>
+                             <i title="ion-mic-a" class="ion-mic-a" ></i>
+                             <i title="ion-mic-b" class="ion-mic-b" ></i>
+                             <i title="ion-mic-c" class="ion-mic-c" ></i>
+                             <i title="ion-volume-high" class="ion-volume-high" ></i>
+                             <i title="ion-volume-medium" class="ion-volume-medium" ></i>
+                             <i title="ion-volume-low" class="ion-volume-low" ></i>
+                             <i title="ion-volume-mute" class="ion-volume-mute" ></i>
+                             <i title="ion-levels" class="ion-levels" ></i>
+                             <i title="ion-play" class="ion-play" ></i>
+                             <i title="ion-pause" class="ion-pause" ></i>
+                             <i title="ion-stop" class="ion-stop" ></i>
+                             <i title="ion-record" class="ion-record" ></i>
+                             <i title="ion-skip-forward" class="ion-skip-forward" ></i>
+                             <i title="ion-skip-backward" class="ion-skip-backward" ></i>
+                             <i title="ion-eject" class="ion-eject" ></i>
+                             <i title="ion-bag" class="ion-bag" ></i>
+                             <i title="ion-card" class="ion-card" ></i>
+                             <i title="ion-cash" class="ion-cash" ></i>
+                             <i title="ion-pricetag" class="ion-pricetag" ></i>
+                             <i title="ion-pricetags" class="ion-pricetags" ></i>
+                             <i title="ion-thumbsup" class="ion-thumbsup" ></i>
+                             <i title="ion-thumbsdown" class="ion-thumbsdown" ></i>
+                             <i title="ion-happy-outline" class="ion-happy-outline" ></i>
+                             <i title="ion-happy" class="ion-happy" ></i>
+                             <i title="ion-sad-outline" class="ion-sad-outline" ></i>
+                             <i title="ion-sad" class="ion-sad" ></i>
+                             <i title="ion-bowtie" class="ion-bowtie" ></i>
+                             <i title="ion-tshirt-outline" class="ion-tshirt-outline" ></i>
+                             <i title="ion-tshirt" class="ion-tshirt" ></i>
+                             <i title="ion-trophy" class="ion-trophy" ></i>
+                             <i title="ion-podium" class="ion-podium" ></i>
+                             <i title="ion-ribbon-a" class="ion-ribbon-a" ></i>
+                             <i title="ion-ribbon-b" class="ion-ribbon-b" ></i>
+                             <i title="ion-university" class="ion-university" ></i>
+                             <i title="ion-magnet" class="ion-magnet" ></i>
+                             <i title="ion-beaker" class="ion-beaker" ></i>
+                             <i title="ion-erlenmeyer-flask" class="ion-erlenmeyer-flask" ></i>
+                             <i title="ion-egg" class="ion-egg" ></i>
+                             <i title="ion-earth" class="ion-earth" ></i>
+                             <i title="ion-planet" class="ion-planet" ></i>
+                             <i title="ion-lightbulb" class="ion-lightbulb" ></i>
+                             <i title="ion-cube" class="ion-cube" ></i>
+                             <i title="ion-leaf" class="ion-leaf" ></i>
+                             <i title="ion-waterdrop" class="ion-waterdrop" ></i>
+                             <i title="ion-flame" class="ion-flame" ></i>
+                             <i title="ion-fireball" class="ion-fireball" ></i>
+                             <i title="ion-bonfire" class="ion-bonfire" ></i>
+                             <i title="ion-umbrella" class="ion-umbrella" ></i>
+                             <i title="ion-nuclear" class="ion-nuclear" ></i>
+                             <i title="ion-no-smoking" class="ion-no-smoking" ></i>
+                             <i title="ion-thermometer" class="ion-thermometer" ></i>
+                             <i title="ion-speedometer" class="ion-speedometer" ></i>
+                             <i title="ion-model-s" class="ion-model-s" ></i>
+                             <i title="ion-plane" class="ion-plane" ></i>
+                             <i title="ion-jet" class="ion-jet" ></i>
+                             <i title="ion-load-a" class="ion-load-a" ></i>
+                             <i title="ion-load-b" class="ion-load-b" ></i>
+                             <i title="ion-load-c" class="ion-load-c" ></i>
+                             <i title="ion-load-d" class="ion-load-d" ></i>
+                         </div>
+
+                        <p>Dado que los iconos se basan en fuentes se puede hacer algunas alteraciones de tamaño, color, efectos, entre otros.</p>
+                        <h4>Ejemplos:</h4>
+                        <ul class="data_list">
+                            <li class="little">Más pequeño: 
+                                 <i class="ion-arrow-down-a" ></i>
+                                 <i class="ion-checkmark-circled" ></i>
+                                 <i class="ion-happy-outline" ></i>
+                                 <i class="ion-erlenmeyer-flask" ></i>
+                             </li>
+                            <li class="large">Más grande: 
+                                 <i class="ion-arrow-down-a" ></i>
+                                 <i class="ion-checkmark-circled" ></i>
+                                 <i class="ion-happy-outline" ></i>
+                                 <i class="ion-erlenmeyer-flask" ></i>
+                            </li>
+                            <li class="color">Otros colores: 
+                                 <i class="ion-arrow-down-a a" ></i>
+                                 <i class="ion-checkmark-circled b" ></i>
+                                 <i class="ion-happy-outline c" ></i>
+                                 <i class="ion-erlenmeyer-flask d" ></i>
+                            </li>
+                            <li class="link">Como enlaces:
+                                 <a href="#"><i class="ion-arrow-down-a" ></i></a>
+                                 <a href="#"><i class="ion-checkmark-circled" ></i></a>
+                                 <a href="#"><i class="ion-happy-outline" ></i></a>
+                                 <a href="#"><i class="ion-erlenmeyer-flask" ></i></a>
+                            </li>
+                            <li class="effects">Sombra: 
+                                 <i class="ion-arrow-down-a a" ></i>
+                                 <i class="ion-checkmark-circled b" ></i>
+                                 <i class="ion-happy-outline c" ></i>
+                                 <i class="ion-erlenmeyer-flask d" ></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Presentación del contenido -->
+                <div class="page">
+
+                    <h2>1.2. Presentación del contenido</h2>
+                    <div class="subpage" id="reading_0">
+                        <h3>Diálogos</h3>
+
+                        <p>Para diálogos utilizar una tabla con la clase CSS <em>dialogue</em>. Cada línea del diálogo debe ir en una estructura de fila y la fila (tr) de uno de los personajes debe tener la clase <em>odd</em>, como lo siguiente: </p>
+<pre>
+&lt;tr class="odd"&gt;
+    &lt;th&gt;Persona 1:&lt;/th&gt;
+    &lt;td&gt;Lo que dice&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;th&gt;Persona 2:&lt;/th&gt;
+    &lt;td&gt;Lo que dice la otra persona&lt;/td&gt;
+&lt;/tr&gt;
+</pre>
+                        <p>
+                            <strong>Ejemplo:</strong>
+                        </p>
+
+                        <table class="dialogue">
+                            <tr class="odd">
+                                <th>Sales person:</th><td>Hello, may I help you?</td>
+                            </tr>
+                            <tr>
+                                <th>Customer:</th><td>Hi there, I am looking for a night dress</td>
+                            </tr>
+                            <tr class="odd">
+                                <th>Sales person:</th><td>You should be a small, have a look of this shiny black dress</td>
+                            </tr>
+                            <tr>
+                                <th>Customer:</th><td>Oh my god, It is so beautiful, can you please show me to the fitting room?</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Tooltip - Nota al pie</h3>
+
+                        <p>Para las notas al pie, utilizar la clase Tooltip<sup class="tooltip" title="Un mensaje emergente">[1]</sup>.</p>
+                        <strong>Ejemplo:</strong>
+<pre>
+&lt;sup class="tooltip" title="Un mensaje emergente"&gt;[1]&lt;/sup&gt;
+</pre>
+
+                    </div>
+
+                    <div class="subpage" id="citas">
+                        <h3>Citas</h3>
+                        <p>Textos que se citan al pie de la letra. Se utiliza la etiqueta <em>blockquote</em>. La información de la referencia se escribe utilizando la etiqueta <em>label</em>.</p>
+                        <blockquote>
+                            "[...] si un poeta muerto al otro lado del mundo podía describir mis sentimientos con tal precisión, debía aceptar con humildad que mi amor no era excepcional, nada había inventado, todo el mundo se enamora igual. [...]"
+                            <label>Retrato en sepia. Isabel Allende. Impreso en Colombia. Edición de bolsillo, marzo, 2006. Pag 251. ISBN 958-639-298-8</label>
+                        </blockquote>
+                    </div>
+
+                    <div class="subpage" id="textos_mouse_over_1">
+                        <h3>Mouse "sobre" - Contenido siempre visible</h3>
+                        <p>Para desplegar contenido pasando el mouse por un elemento, se utiliza la clase "act_mouse_over_one" en un contenedor con elementos que adicionan la propiedad "data-ref", la cual debe contener la ruta CSS del elemento que se muestra al pasar el mouse. Se mantiene visible el último elemento mostrado.</p>
+                        <p>Importante: No se controla la visualización inicial por lo que se deben ocultar los elementos explícitamente y mantener visible solamente el inicial. Además, marcar el elemento de control del elemento visible con la clase "current".</p>
+                        
+                        <table>
+                            <tr>
+                                <th>
+                                    <div class="instruction mobile">Toque cada uno de los elementos del gráfico para ampliar la información</div>
+                                    <div class="act_mouse_over_one">
+                                        <div class="button b1 current" data-ref="#textos_mouse_over_1 .p1"></div>
+                                        <div class="button b2" data-ref="#textos_mouse_over_1 .p2"></div>
+                                        <div class="button b3" data-ref="#textos_mouse_over_1 .p3"></div>
+                                    </div>
+                                    <br class="clear" />
+                                    <div class="instruction desktop">Pase el mouse por cada uno de los elementos del gráfico para ampliar la información</div>
+                                </th>
+                                <td>
+                                    <div class="element p1"><h5>Experto temático: </h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper tincidunt sem, et placerat nunc venenatis sed. Fusce id leo a mi fringilla rhoncus quis in felis. In quis diam et ante sollicitudin venenatis vel id arcu. Donec aliquam dictum scelerisque. In sodales enim et nisl sagittis tempor. Cras ac volutpat nisi. Fusce at metus volutpat, sollicitudin lorem eu, tincidunt sapien. Cras nibh nulla, ornare eu nibh pharetra, faucibus pellentesque neque.</p></div>
+                                    <div class="element p2" style="display: none"><h5>Gestor pedagógico: </h5><p>Integer sed arcu felis. Morbi pulvinar scelerisque augue ac elementum. Quisque lacinia pellentesque tristique. Praesent cursus dolor a massa aliquam dignissim. Nullam sit amet pulvinar purus. Donec ac fringilla massa. Vivamus nec enim lacus.</p></div>
+                                    <div class="element p3" style="display: none"><h5>Producción: </h5><p>Phasellus pretium risus in dignissim eleifend. Mauris pulvinar non augue ac rhoncus. Phasellus faucibus, nisl vitae imperdiet imperdiet, felis nunc lobortis ante, in imperdiet lorem justo id nisl. Proin ut velit nulla. Nulla efficitur dapibus pharetra. Quisque eu leo risus. Aliquam erat volutpat. Ut fringilla risus diam, ac feugiat risus iaculis ac.</p></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <div class="subpage" id="textos_mouse_over_2">
+                        <h3>Mouse "sobre" - Contenido que se oculta </h3>
+                        <p>Para desplegar contenido pasando el mouse por un elemento, se utiliza la clase "act_mouse_over" en un elemento que debe tener la propiedad "data-ref", la cual debe contener la ruta CSS del elemento que se muestra al pasar el mouse. Al quitar el mouse el elemento se vuelve a ocultar.</p>
+                        <p>Importante: No se controla la visualización inicial por lo que se deben ocultar el elemento explícitamente al inicio.</p>
+                        
+                        <table>
+                            <tr>
+                                <th>
+                                    <div class="act_mouse_over in" data-ref="#textos_mouse_over_2 td p">1</div>
+                                </th>
+                                <td>
+                                    <p style="display: none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper tincidunt sem, et placerat nunc venenatis sed. Fusce id leo a mi fringilla rhoncus quis in felis. In quis diam et ante sollicitudin venenatis vel id arcu. Donec aliquam dictum scelerisque. In sodales enim et nisl sagittis tempor. Cras ac volutpat nisi. Fusce at metus volutpat, sollicitudin lorem eu, tincidunt sapien. Cras nibh nulla, ornare eu nibh pharetra, faucibus pellentesque neque. Vivamus id augue tortor. Donec gravida dolor at ullamcorper venenatis. Ut consequat sapien libero, eget pretium magna ultrices ac.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="subpage" id="textos_mouse_over_2">
+                        <h3>Texto en columnas</h3>
+                        <div class="row">
+                            <div class="col-2">
+                                <p><strong>Permite separar el texto en dos columnas cuando el ancho del dispositivo es muy grande y se acomoda a una sola columna si no lo es.</strong></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper tincidunt sem, et placerat nunc venenatis sed. Fusce id leo a mi fringilla rhoncus quis in felis. In quis diam et ante sollicitudin venenatis vel id arcu. Donec aliquam dictum scelerisque. In sodales enim et nisl sagittis tempor. Cras ac volutpat nisi. Fusce at metus volutpat, sollicitudin lorem eu, tincidunt sapien. Cras nibh nulla, ornare eu nibh pharetra, faucibus pellentesque neque. Vivamus id augue tortor. Donec gravida dolor at ullamcorper venenatis. Ut consequat sapien libero, eget pretium magna ultrices ac.</p>
+                            </div>
+                            <div class="col-2">
+                                <p>Pellentesque sed ipsum quis neque dictum porttitor. Nunc ac purus vitae enim volutpat dictum.</p>
+                                <p>Nam congue diam mauris, quis viverra orci mattis varius. Praesent convallis tempus odio, non malesuada mi. Duis pulvinar vel lacus vitae euismod. Aliquam vehicula est et sapien mattis condimentum. Vivamus a sollicitudin metus. Quisque ut elit et enim dignissim auctor.</p>
+                                <p>Pellentesque sed ipsum quis neque dictum porttitor. Nunc ac purus vitae enim volutpat dictum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Multimedia-->
+                <div class="page">
+                    
+                    <div class="subpage">
+                        <h2> 2. Multimedia</h2>
+                        <h3>Audios</h3>
+                        
+                        <p>Para audios utilizar el siguiente botón:
+                        <button class="iconsound button ion-volume-high" data-sound="13/sonido1_slide_13"></button> El atributo data-sound contiene la ruta compuesta por el nombre del archivo y si está dentro de una carpeta, el nombre de la carpeta.
+                        </p>
+                        
+                        <div class="box_examples">
+                            <h5>Ejemplo</h5>
+                            <pre>
+&lt;button class="iconsound button" 
+    data-sound="13/sonido1_slide_13">
+&lt;/button&gt;
+                            </pre>
+                            <p>
+                                Donde <em>13</em> es la carpeta y <em>sonido1_slide_13</em> es el nombre del archivo sin la extensión. Todos los sonidos deben ir en <em>content/sounds</em>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Animaciones</h3>
+                        
+                        <p>Las imágenes que sean animadas deben ser .gif y llevan la clase CSS <em>animation</em>. Ejemplo:</p>
+                        <img src="content/animacion1.gif" class="animation" />
+                        
+                        <p>Las imágenes que sean animadas pero que deban iniciar al presionar un botón, deben ser .gif pero tener otra imagen o elemento (controlador) para definir el inicio. El controlador debe llevar la clase CSS <em>play-animation</em> y una propiedad <em>data-animation</em> con la ruta de la animación. Ejemplo:</p>
+                        <img src="content/prev_animacion2.png" class="play-animation" data-animation="content/animacion2.gif" />
+                    </div>
+                    
+                    <div class="subpage" id="animation_1">
+                        <h3>Programación de animaciones</h3>
+                        
+                        <p>Para animar html, incluido, pero no limitado a, imágenes</p>
+                        
+                        <div class="movi">
+                            <div class="movi_1" data-movi-type="show">
+                                <div class="movi_2" data-movi-type="move" data-movi-base="example_move" style="position: absolute;">
+                                    <img src="content/prev_animacion2.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="animation_3">
+                        <h3>Programación de animaciones con múltiples elementos</h3>
+                        <div class="stave css-animation button">
+                            <div class="musical-note"></div>
+                            <div class="musical-note-name mi">mi</div>
+                            <div class="musical-note-name sol">sol</div>
+                            <div class="musical-note-name si">si</div>
+                            <div class="musical-note-name re">re</div>
+                            <div class="musical-note-name fa">fa</div>
+                            <div class="musical-note-name fa-down">fa</div>
+                            <div class="musical-note-name la">la</div>
+                            <div class="musical-note-name do">do</div>
+                            <div class="musical-note-name mi-up">mi</div>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre la imagen para reiniciar la animación</div>
+                        <div class="instruction mobile">Toque la imagen para reiniciar la animación</div>
+                    </div>
+                    
+                    <div class="subpage" id="zoom_1">
+                        <h3>Zoom en imágenes</h3>
+                        
+                        <p>Para permitir hacer zoom en imágenes, por ejemplo, en mapas conceptuales. Agregar a la imagen la clase <em>pit-resources-zoom</em>. Se puede manipular el alcance del zoom con el atributo <em>data-magnification</em> (un entero) y el tamaño de la "lupa" con el atributo <em>data-magnifier-size</em>.</p>
+                        
+                        <img src="content/pagina.jpg" class="pit-resources-zoom" style="width: 200px;" data-magnification="3" data-magnifier-size="200" />
+                    </div>
+
+                    <div class="subpage" id="after-before">
+                        <h3>Antes y después</h3>
+
+                        <p>Para comparar dos imágenes o hacer un antes y después.</p>
+                        <p class="about">Basado en <a href="http://zurb.com/playground/twentytwenty" target="_blank">http://zurb.com/playground/twentytwenty</a>.</p>
+
+                        <div class="after-before">
+                            <img src="content/pagina_2.jpg" />
+                            <img src="content/pagina.jpg" />
+                        </div>
+
+                        <p>También se puede ver vertical, agregando la propiedad <em>data-orientation="vertical"</em> y se puede definir cuanto de la imagen "Antes" se ve al iniciar, por defecto se muestra el 50% (0.5) pero se puede cambiar definiendo la propiedad <em>data-offset="0.2"</em> con un valor entre 0 y 1. Finalmente, para definir los textos que van en ambos lados ("Antes" y "Después"), debe modificarse las clases CSS asociadas: <em>.twentytwenty-before-label:before { content: "Con filtro"; }</em> y  <em>.twentytwenty-after-label:before { content: "Mejorada"; }</em> así:</p>
+                        <div id="afterbefore2" class="after-before" data-orientation="vertical" data-offset="0.2">
+                            <img src="content/pagina_2.jpg" />
+                            <img src="content/pagina.jpg" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--Formato de contenido-->
+                <div class="page">
+                    <div class="subpage" id="content_vertical">
+                        <h2> 3. Formato de contenido</h2>
+                        <h3> Pestañas verticales</h3>
+
+                        <div class="chalkboard vertical-menu">
+                            <dl>
+                                <dt>
+                                    Consideraciones
+                                </dt>
+                                <dd>
+                                    <h5>Consideraciones</h5>
+                                    <p>Se le debe dar manualmente el alto utilizando CSS</p>
+                                    <p>Se utiliza cuando hay una serie de opciones que se van a colocar en una misma página pero el usuario ve una por una acorde a un menú de texto al lado izquierdo del contenido.</p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    Ejemplo
+                                </dt>
+                                <dd>
+                                    <h5>El código del actual ejemplo es:</h5>
+<pre>
+&lt;div class="chalkboard vertical-menu"&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;Consideraciones&lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;h5&gt;Consideraciones&lt;/h5&gt;
+            &lt;p&gt;Se le debe dar manualmente el alto en caso de que 
+            sea inferior al de las pestañas&lt;/p&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;Ejemplo&lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;h5&gt;El código del actual ejemplo es:&lt;/h5&gt;
+            ...
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+</pre>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    CSS
+                                </dt>
+                                <dd>
+                                    <h5>Para cambiar el ancho del actual ejemplo se utiliza el siguiente código CSS</h5>
+<pre>
+#id_subpagina .vertical-menu .chalkboard_vertical_content {
+    height: 330px;
+}
+</pre>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre cada pestaña para más información.</div>
+                        <div class="instruction mobile">Toque sobre cada pestaña para más información.</div>
+                    </div>
+
+                    <div class="subpage" id="content_horizontal">
+                        <h3> Pestañas horizontales</h3>
+
+                        <div class="chalkboard horizontal-menu">
+                            <dl>
+                                <dt>
+                                    Consideraciones
+                                </dt>
+                                <dd>
+                                    <h5>Consideraciones</h5>
+                                    
+                                    <p>Se le debe dar manualmente el alto utilizando CSS</p>
+                                    <p>Se utiliza cuando hay una serie de opciones que se van a colocar en una misma página pero el usuario ve una por una acorde a un menú de texto al lado inferior del contenido.</p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    Código del ejemplo
+                                </dt>
+                                <dd>
+<pre>
+&lt;div class="chalkboard horizontal-menu"&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;Consideraciones&lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;h5&gt;Consideraciones&lt;/h5&gt;
+            &lt;p&gt;Se le debe...&lt;/p&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;Ejemplo&lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;h5&gt;El código del actual ejemplo es:&lt;/h5&gt;
+            ...
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+</pre>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    CSS
+                                </dt>
+                                <dd>
+                                    Para cambiar el ancho del actual ejemplo se utiliza el siguiente código CSS
+<pre>
+#id_subpagina .horizontal-menu .chalkboard_content {
+    height: 300px;
+}
+</pre>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre cada pestaña para más información.</div>
+                        <div class="instruction mobile">Toque sobre cada pestaña para más información.</div>
+                    </div>
+
+                    <div class="subpage" id="content_vertical_both">
+                        <h3>Pestañas verticales a ambos lados</h3>
+
+                        <div class="chalkboard vertical-menu-both-sides">
+                            <left>
+                                <dl>
+                                    <dt>
+                                        Consideraciones
+                                    </dt>
+                                    <dd>
+                                        <h5>Consideraciones</h5>
+                                        <p>Utilizar la clase CSS <em>vertical-menu-both-sides</em></p>
+                                        <p>Se le debe dar manualmente el alto utilizando CSS</p>
+                                        <p>Se utiliza cuando hay una serie de opciones que se van a colocar en una misma página pero el usuario ve una por una acorde a un menú de texto al lado izquierdo del contenido.</p>
+                                    </dd>
+                                </dl>
+                            </left>
+                            <right>
+                                <dl>
+                                    <dt>
+                                        Ejemplo
+                                    </dt>
+                                    <dd>
+<pre>
+&lt;div class="chalkboard vertical-menu-both-sides"&gt;
+    &lt;left&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Consideraciones&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;h5&gt;Consideraciones&lt;/h5&gt;
+                &lt;p&gt;...&lt;/p&gt;
+            &lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/left&gt;
+    &lt;right&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;Ejemplo&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;h5&gt;El código del actual ejemplo es:&lt;/h5&gt;
+                ...
+            &lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/right&gt;
+&lt;/div&gt;
+</pre>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        CSS
+                                    </dt>
+                                    <dd>
+                                        <p>Para cambiar el ancho y el alto se utiliza el siguiente código CSS</p>
+<pre>
+#id_subpage .vertical-menu-both-sides .chalkboard_content {
+    width: 490px;
+    height: 300px;
+}
+</pre>
+                                        <p>Para cambiar las márgenes a los lados de las pestañas (más o menos cerca al contenido) se utiliza el siguiente código CSS</p>
+<pre>
+#id_subpage .vertical-menu-both-sides .chalkboard_items_right {
+    margin-left: 10px;
+}
+
+#id_subpage .vertical-menu-both-sides .chalkboard_items_left {
+    margin-right: 10px;
+}
+</pre>
+                                    </dd>
+                                </dl>
+                            </right>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre cada pestaña para más información.</div>
+                        <div class="instruction mobile">Toque sobre cada pestaña para más información.</div>
+                    </div>
+
+                    <div class="subpage" id="content_pagination">
+                        <h3>Paginación secuencial</h3>
+
+                        <div class="ctrl_pagination" data-layer-height="230px">
+                            <li>
+                                <p>Utilizado para dividir el contenido en páginas. Simplemente se adiciona la clase <strong>ctrl_pagination</strong> a un
+                                <em>&lt;div&gt;</em> contenedor y se agregan las páginas, cada una en un <em>&lt;li&gt;</em>.</p>
+                                <p>
+                                    Para controlar el alto de las páginas, de manera que se mantenga uniforme, utilizar el atributo <strong>data-layer-height</strong>, con el valor de alto del contenido.
+                                </p>
+                            </li>
+                            <li>
+                                <h5>Ejemplo:</h5>
+<pre>
+&lt;div class="ctrl_pagination" data-layer-height="180px" &gt;
+    &lt;li&gt;
+        Contenido primera página
+    &lt;/li&gt;
+    &lt;li&gt;
+        Segunda página
+    &lt;/li&gt;
+&lt;/div&gt;
+</pre>
+                            </li>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre las flechas para más información.</div>
+                        <div class="instruction mobile">Deslice la barra para más información.</div>
+                    </div>
+
+                    <div class="subpage" id="content_pagination_2">
+                        <h3>Paginación por numeral</h3>
+
+                        <div class="ctrl_pagination" data-numeric-pagination="true" data-layer-height="180px">
+                            <li>
+                                <p>Utilizado para dividir el contenido en páginas y navegar entre las páginas mediante la numeración de las mismas. Simplemente se adiciona la clase <strong>ctrl_pagination</strong> a un <em>&lt;div&gt;</em> contenedor, se le adiciona la propiedad <strong>data-numeric-pagination</strong> establecida a <strong>true</strong> y se agregan las páginas, cada una en un <em>&lt;li&gt;</em>.</p>
+
+                                <p>
+                                    Para controlar el alto de las páginas, de manera que se mantenga uniforme, utilizar el atributo <strong>data-layer-height</strong>, con el valor de alto del contenido.
+                                </p>
+                            </li>
+                            <li>
+                                <h5>Ejemplo:</h5>
+<pre>
+&lt;div class="ctrl_pagination" data-layer-height="180px" <strong style="color: #ff0000">data-numeric-pagination="true"</strong> &gt;
+    &lt;li&gt;
+        Contenido primera página
+    &lt;/li&gt;
+    &lt;li&gt;
+        Segunda página
+    &lt;/li&gt;
+&lt;/div&gt;
+</pre>
+                            </li>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre los números para más información.</div>
+                        <div class="instruction mobile">Toque los números para más información.</div>
+                    </div>
+
+                    <div class="subpage" id="content_pagination_3">
+                        <h3>Paginación por letras</h3>
+
+                        <div class="ctrl_pagination" data-numeric-pagination="true" data-layer-height="200px" data-type="a">
+                            <li>
+                                <p>Identico a "Paginación por numeral" pero en lugar de números se utilicen letras, se debe especificar el atributo <strong>data-type</strong> con el valor <strong>a</strong> o <strong>A</strong>, este último si se desea que se presente en mayúsculas.
+                                </p>
+                            </li>
+                            <li>
+                                <h5>Ejemplo:</h5>
+<pre>
+&lt;div class="ctrl_pagination" data-layer-height="180px" data-numeric-pagination="true" <strong style="color: #ff0000">data-type="a"</strong> &gt;
+    &lt;li&gt;
+        Contenido primera página
+    &lt;/li&gt;
+    &lt;li&gt;
+        Segunda página
+    &lt;/li&gt;
+&lt;/div&gt;
+</pre>
+                            </li>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre las letras para más información.</div>
+                        <div class="instruction mobile">Toque las letras para más información.</div>
+                    </div>
+
+                    <div class="subpage">
+                        <h3>Tabla de datos</h3>
+
+                        <table class="datatable">
+                           <thead>
+                                <tr>
+                                    <th>Etiqueta</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tabla</td>
+                                    <td>Contenedor principal</td>
+                                    <td>&lt;table class="datatable"&gt;...&lt;/table&gt;</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td>Encabezado</td>
+                                    <td>Sección que contiene los títulos</td>
+                                    <td>&lt;thead&gt;...&lt;/thead&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Título</td>
+                                    <td>Cada uno de los títulos</td>
+                                    <td>&lt;th&gt;Texto del título&lt;/th&gt;</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td>Cuerpo del contenido</td>
+                                    <td>Agrupador del contenido general</td>
+                                    <td>&lt;tbody&gt;...&lt;/tbody&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Filas impares</td>
+                                    <td>Cada una de las filas impares llevan la clase <em>odd</em>. Se cuenta inclusive el título.</td>
+                                    <td>&lt;tr class="odd"&gt;...&lt;/tr&gt;</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td>Contenido</td>
+                                    <td>Cada uno de los campos de contenidos.</td>
+                                    <td>&lt;td&gt;...&lt;/td&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Pie</td>
+                                    <td>Contenedor de celdas que totalizan o presentan información a manera de pie de la tabla.</td>
+                                    <td>&lt;tfoot&gt;...&lt;/tfoot&gt;</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>...</td>
+                                    <td>###</td>
+                                </tr>
+                            </tbody>
+                         </table>
+                    </div>
+
+                    <div class="subpage" id="content_accordion">
+                        <h3>Acordeón</h3>
+                        <p>Para agrupar información por secciones desplegando el contenido de cada sección al dar clic en el título.</p>
+
+                        <div class="accordion">
+                            <h3>Uso</h3>
+                            <div>Se debe utilizar la clase "accordion" en un elemento que contenga la estructura siguiente:
+                                <ul>
+                                    <li>Un h3 para definir el título</li>
+                                    <li>Seguido del h3 debe haber un div que contenga el cuerpo del elemento</li>
+                                </ul>
+                            </div>
+                            <h3>Código</h3>
+                            <div>
+<pre>&lt;div class="accordion"&gt;
+    &lt;h3&gt;Título 1&lt;/h3&gt;
+    &lt;div&gt;Contenido del elemento 1&lt;/div&gt;
+    &lt;h3&gt;Título 2&lt;/h3&gt;
+    &lt;div&gt;Contenido del segundo elemento&lt;/div&gt;
+&lt;/div&gt;</pre>
+                            </div>
+                            <h3>Uso</h3>
+                            <div>Se debe utilizar la clase "accordion" en un elemento que contenga la estructura siguiente:
+                                <ul>
+                                    <li>Un h3 para definir el título</li>
+                                    <li>Seguido del h3 debe haber un div que contenga el cuerpo del elemento</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="instruction desktop">Haga clic sobre los conceptos para más información.</div>
+                        <div class="instruction mobile">Toque sobre los conceptos para más información.</div>
+                    </div>
+
+                    <div class="subpage" id="image_content">
+
+                        <h3>Imagenes con contenido de texto</h3>
+                        <p>Este formato es útil para desplegar contenido que implícitamente es opcional para los estudiantes pero que puede ser complementario, como un material de apoyo. Cabe aclarar que el contenido de texto que acompaña a la imagen hace alusión a esta misma.</p>
+
+                        <div class="instruction desktop">Pase el mouse sobre cada imagen para más información</div>
+                        <div class="instruction mobile">Toque sobre cada imagen para más información</div>
+                        <div class="box_l">
+                            <div class="view-first" data-width="150" data-height="150"> 
+                                 <img src="content/primavera.png" />
+                                 <div class="view-content">
+                                     <h2>Primavera</h2>  
+                                     <p>
+                                        <strong>Inicio: </strong>20-21 marzo<br />
+                                        <strong>H. norte: </strong>Primavera<br />
+                                        <strong>H. sur: </strong>Otoño<br />
+                                        <strong>Inclinación: </strong>0°<br />
+                                     </p>
+                                 </div>  
+                            </div>
+                            <div class="view-first" data-width="150" data-height="150"> 
+                                 <img src="content/verano.png" />
+                                 <div class="view-content">
+                                     <h2>Verano</h2>
+                                     <p>
+                                        <strong>Inicio: </strong>21-22 Junio<br />
+                                        <strong>H. norte: </strong>Verano<br />
+                                        <strong>H. sur: </strong>Invierno<br />
+                                        <strong>Inclinación: </strong>23,5º Norte<br />
+                                     </p>
+                                 </div>  
+                            </div>
+                            <div class="view-first" data-width="150" data-height="150"> 
+                                 <img src="content/otono.png" />
+                                 <div class="view-content">
+                                     <h2>Otoño</h2>  
+                                     <p>
+                                        <strong>Inicio: </strong>23-24 Septiembre<br />
+                                        <strong>H. norte: </strong>Otoño<br />
+                                        <strong>H. sur: </strong>Primavera<br />
+                                        <strong>Inclinación: </strong>0°<br />
+                                     </p>
+                                 </div>  
+                            </div>
+                            <div class="view-first" data-width="150" data-height="150">
+                                 <img src="content/invierno.png" />
+                                 <div class="view-content">
+                                     <h2>Invierno</h2>  
+                                     <p>
+                                        <strong>Inicio: </strong>21-22 Diciembre<br />
+                                        <strong>H. norte: </strong>Invierno<br />
+                                        <strong>H. sur: </strong>Verano<br />
+                                        <strong>Inclinación: </strong>23,5º Sur<br />
+                                     </p>
+                                 </div>  
+                            </div>
+                        </div>
+                        <br class="clear" />
+                    </div>
+
+                    <div class="subpage" id="image_expand">
+                        <h3>Imagen para ampliar</h3>
+                        <div class="box_img" >
+                            <div class="instruction img desktop">Haga clic sobre la imagen para ampliar</div>
+                            <div class="instruction img mobile">Toque sobre la imagen para ampliar</div>
+                            <i class="ion-arrow-expand button w_content_controler" data-content="#img_modal_window_2"></i>
+                            <img class="w_content_controler button" data-content="#img_modal_window_2" src="content/img19_1.png"/>
+                            <div id="img_modal_window_2" class="w_content" data-property-width="900" >
+                                <img src="content/img19_2.png" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="pointers_text">
+                        <h3>Apuntadores informativos</h3>
+                        <div class="instruction mobile">Toque cada uno de los números para obtener más información</div>
+                        <div class="box_l">
+                            <div class="note_pointer_right note_1"><div class="tooltip" title="<strong>1.</strong> Yema terminal o líder.">1</div></div>
+                            <div class="note_pointer_left note_2"><div class="tooltip" title="<strong>2.</strong> Ramas laterales, permanentes o estructurales.">2</div></div>
+                            <div class="note_pointer_left note_3"><div class="tooltip" title="<strong>3.</strong> Ramas laterales temporales.">3</div></div>
+                            <div class="note_pointer_right note_4"><div class="tooltip" title="<strong>4.</strong> Rebrotes.">4</div></div>
+                            <div class="note_pointer_left note_5"><div class="tooltip" title="<strong>5.</strong> Bifurcación en V estrecha.">5</div></div>
+                            <div class="note_pointer_right note_6"><div class="tooltip" title="<strong>6.</strong> Bifurcación en U amplia.">6</div></div>
+                            <div class="note_pointer_left note_7"><div class="tooltip" title="<strong>7.</strong> Tocón.">7</div></div>
+                            <div class="note_pointer_right note_8"><div class="tooltip" title="<strong>8.</strong> Chupones.">8</div></div>
+                        </div>
+                        <div class="instruction desktop">Pase el mouse por cada uno de los números para obtener más información</div>
+                        <div class="about"><strong>Imagen 1.</strong> Terminología utilizada en la actividad de poda de árboles.<br /><strong>Fuente:</strong> ing. Forestal M.Sc León Morales.</div>
+                    </div>
+                </div>
+                
+                <!--Actividades-->
+                <div class="page">
+                    <div class="subpage" id="cuestionario">
+                        <h2>4. Actividades</h2>
+                        <h3>Actividad de tipo cuestionario dentro del contenido</h3>
+
+                        <p>Tipos de pregunta disponibles:</p>
+                        <ul>
+                            <li><em>Etiqueta (label)</em>: No es calificable, se utiliza para mostrar un texto estático.</li>
+                            <li><em>Selección única (simplechoice)</em>: Para seleccionar una opción correcta de una lista de posibles valores.</li>
+                            <li><em>Selección múltiple (multichoice)</em>: Para seleccionar varias opciones, todas las correctas, en una lista de posibles valores.</li>
+                            <li><em>Selección múltiple en conjunto (multisetchoice)</em>: Para seleccionar las correctas de una lista de posibles valores. Permite definir varios conjuntos correctos, excluyentes entre si.</li>
+                            <li><em>Cloze (complete)</em>: Presenta varias opciones entre un contenido, con controles para seleccionar los valores correctos.</li>
+                            <li><em>Definición (defineterm)</em>: Para permitir entradas de texto que tienen que coincidir completamente con las respuestas correctas, según el término a definir.</li>
+                        </ul>
+                        <p>Con el atributo <em>data-intro</em> definido a "false" se omite la pantalla de presentación y se muestran inmediatamente las preguntas. Es útil sobre todo cuando hay una sola pregunta.</p>
+                        <div class="pit-activities-quiz" data-act-title="Cuestionario" data-act-id="quiz-activity" data-intro="false">
+                            <presentation><p>Algunas preguntas sobre el uso de la actividad "quiz"</p></presentation>
+                            <question type="simplechoice">
+                                <description><p>Los tipos de preguntas que hay son: simplechoice y complete</p></description>
+                                <ul>
+                                    <li data-response="true">Falso</li>
+                                    <li>Verdadero</li>
+                                </ul>
+                            </question>
+                            <question type="label">
+                                <description><p>El tipo de pregunta "label" no se califica.</p></description>
+                                <text>Sirve, por ejemplo, para presentar texto introductorio de otras preguntas. Tener en cuenta que si se utiliza este tipo de preguntas es probable que no sea bueno dejar que las preguntas se muestren en orden aleatorio. Para desactivar el modo de orden de preguntas aleatorio adicionar al cuestionario el atributo <em>data-shuffle="false"</em>.</text>
+                            </question>
+                            <question type="complete">
+                                <description>
+                                    <p>Sobre las diferencias entre los tipos de cuestionario.</p>
+                                </description>
+                                <p class="item">
+                                    Los cuestionario que son "Learning activity" tienen el atributo 
+                                    <select class="answers">
+                                        <option data-response="true">data-feedback-dialog='true'</option>
+                                        <option>no_es</option>
+                                    </select> mientras que los demás llevan la clase CSS 
+                                    <select class="answers">
+                                        <option>no_es</option>
+                                        <option data-response="true">simple_activity</option>
+                                    </select>
+                                </p>
+                            </question>
+                            <question type="multichoice">
+                                <description><p>Los siguientes tipos de preguntas son calificables</p></description>
+                                <ul>
+                                    <li data-response="true">simplechoice</li>
+                                    <li data-response="true">complete</li>
+                                    <li>label</li>
+                                </ul>
+                            </question>
+                            <question type="defineterm">
+                                <description><p>Escriba la abreviación de los siguientes términos (no es sensible a mayúsculas o minúsculas)</p></description>
+                                <ul>
+                                    <li data-response="OVA">Objetos virtuales de aprendizaje</li>
+                                    <li data-response="REDA">Recursos educativos digitales de aprendizaje</li>
+                                </ul>
+                            </question>
+                            <question type="multisetchoice">
+                                <description><p>Seleccione solamente los pares o los impares</p></description>
+                                <ul>
+                                    <li data-response="1">1</li>
+                                    <li data-response="2">2</li>
+                                    <li data-response="2">6</li>
+                                    <li data-response="1">3</li>
+                                    <li data-response="1">9</li>
+                                </ul>
+                            </question>
+                            <br class="clear" />
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividad_wordpuzzle">
+                        <h3>Sopa de letras</h3>
+                        Ver código para el ejemplo.
+                        <div class="pit-activities-wordpuzzle" data-act-desktop="true" data-act-title="Sopa de letras" data-act-id="sopa-letras">
+                            <letters>
+                                <row>D,M,I,D,D,A,Y,J,J,Q,Y,J,G,V,F,F,F,T,F,A</row>
+                                <row>T,V,X,Q,A,A,J,R,P,E,F,Q,Z,D,T,D,F,W,Z,F</row>
+                                <row>H,B,B,O,T,V,N,T,C,E,I,Z,B,U,K,W,C,E,K,T</row>
+                                <row>G,E,C,R,O,D,V,D,A,B,D,X,I,F,W,E,S,L,E,E</row>
+                                <row>I,V,D,U,N,T,U,V,X,I,E,Z,M,B,J,C,M,V,L,R</row>
+                                <row>N,E,C,O,L,U,N,C,H,T,I,M,E,R,K,T,Y,E,V,S</row>
+                                <row>D,N,Y,H,Z,B,Y,K,N,O,L,X,K,S,R,I,Q,G,G,N</row>
+                                <row>I,I,A,T,Q,X,E,U,I,H,S,A,I,N,D,M,J,S,E,I</row>
+                                <row>M,N,D,D,R,U,M,O,R,N,I,N,G,S,T,E,U,E,R,G</row>
+                                <row>E,G,D,P,V,S,S,B,F,T,P,M,G,T,H,Z,M,T,O,H</row>
+                                <row>D,N,I,U,X,Y,W,S,H,Z,Y,E,P,H,E,X,V,U,F,T</row>
+                                <row>I,Y,M,Z,L,F,T,G,V,K,V,L,Z,P,W,R,K,N,E,U</row>
+                                <row>B,E,F,O,R,E,O,I,C,L,O,C,K,I,E,J,M,I,B,N</row>
+                            </letters>
+                            <div class="words">
+                                <h5>Palabras a buscar</h5>
+                                <ul>
+                                    <li data-term="time">Time</li>
+                                    <li data-term="morning">Morning</li>
+                                    <li data-term="clock">Clock</li>
+                                    <li data-term="midnight">Midnight</li>
+                                    <li data-term="night">Night</li>
+                                </ul>
+                                <ul>
+                                    <li data-term="midday">Midday</li>
+                                    <li data-term="twelve">Twelve</li>
+                                    <li data-term="lunchtime">Lunchtime</li>
+                                    <li data-term="before">Before</li>
+                                    <li data-term="after">After</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subpage"  id="actividad_crossword">
+                        <h3>Crucigrama</h3>
+                        Ver código para el ejemplo.
+                        <div class="pit-activities-crossword" data-act-title="Crucigrama" data-act-id="crossword">
+                            <horizontal>
+                                <li data-row="2" data-col="0" data-term="aaaa">4 veces la a</li>
+                                <li data-row="2" data-col="7" data-term="mama">La madre</li>
+                                <li data-row="4" data-col="3" data-term="sabado">Antes del domingo</li>
+                                <li data-row="6" data-col="1" data-term="cinco">5</li>
+                                <li data-row="9" data-col="1" data-term="jota jota">jj</li>
+                            </horizontal>
+                            <vertical>
+                                <li data-row="0" data-col="4" data-term="caes">Vas para el suelo</li>
+                                <li data-row="0" data-col="9" data-term="lado">Queda a un costado</li>
+                                <li data-row="5" data-col="5" data-term="coma">,</li>
+                            </vertical>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_arrastrar1">
+                        <h3>Arrastrar y soltar - modo apareamiento</h3>
+                        <p>Ver código para el ejemplo. Los estilos son muy importantes, en <em>custom.css</em> se encuentran en la sección "Actividad arrastrar y soltar - apareamiento"</p>
+                        <p>
+                            Si la actividad tiene más elementos para arrastrar que destinos, entonces debe llevar la propiedad <em>data-verify-type="target"</em>.
+                        </p>
+
+                        <div class="pit-activities-droppable simple_activity" data-verify-type="target" data-act-title="Arrastrar y soltar - modo apareamiento" data-act-id="drop-apareamiento">
+                            <div class="box_panel_activity sources">
+                                <p><strong>Palabras a arrastrar:</strong></p>
+                                <div>
+                                    <div data-group="3" class="item_1">Bold</div>
+                                    <div data-group="2" class="item_2" >Fit</div>
+                                    <div data-group="4" class="item_3" >Obese</div>
+                                    <div data-group="1" class="item_4" >Plump</div>
+                                    <div data-group="5" class="item_5" >Tall</div>
+                                </div>
+                            </div>
+
+                            <div class="box_panel_activity">
+                            <p>Complete los espacios en blanco con las palabras de la parte superior.</p>
+                                <table>
+                                    <tr>
+                                        <th>Some people have flamboyant and strong appearances.</th>
+                                        <td class="conection"><i class="ion-chevron-right"></i></td>
+                                        <td data-target-group="1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Unfortunately, this tends to be the consequence of our lifestyles nowadays.</th>
+                                        <td class="conection"><i class="ion-chevron-right"></i></td>
+                                        <td data-target-group="2"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Some people are naturally rounded even though they eat healthy small portions.</th>
+                                        <td class="conection"><i class="ion-chevron-right"></i></td>
+                                        <td data-target-group="3"></td>
+                                    </tr>
+                                </table>
+                             </div>
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_arrastrar2">
+                        <h3>Arrastrar y soltar - modo diálogo</h3>
+                        <div class="pit-activities-droppable" data-verify-type="target" data-act-title="Arrastrar y soltar - modo diálogo" data-act-id="drop-dialog">
+                            <div class="box_panel_activity">
+                                <p>Ver código para el ejemplo. Los estilos son muy importantes, en <em>custom.css</em> se encuentran en la sección "Actividad arrastrar y soltar - diálogo"</p>
+                            </div>
+                            <div class="box_panel_activity">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                            <td><span class="instruction">Arrastre la plabra a la oración corecta</span></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p> I usually <button data-target-group="1">&nbsp;</button> to the supermarket on the weekends.</p>
+                                                <p>You <button data-target-group="2">&nbsp;</button> your money at the video game store.</p>
+                                                <p>Tommy <button data-target-group="3">&nbsp;</button> at a shopping center as a security guard.</p>
+                                                <p>Joseph always <button data-target-group="4">&nbsp;</button> his clothes at the discount store.</p>
+                                                <p>Sally never <button data-target-group="5">&nbsp;</button> with her credit card.</p>
+                                            </td>
+                                            <td class="sources">
+                                                <div data-group="3">Work</div>
+                                                <div data-group="5">Pay</div>
+                                                <div data-group="2">Spend</div>
+                                                <div data-group="1">Go</div>
+                                                <div data-group="4">Buy</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_arrastrar3">
+                        <h3>Arrastrar y soltar - modo completar</h3>
+                        <p>Ver código para el ejemplo. Los estilos son muy importantes, en <em>custom.css</em> se encuentran en la sección "Actividad arrastrar y soltar - completar"</p>
+                        
+                        <div class="pit-activities-droppable" data-act-title="Arrastrar y soltar - modo completar" data-act-id="drop-complete">
+                            <div class="box_panel_activity">
+                                <p>Por favor arrastre el fragmento para completar la oración.</p>
+                                <table>
+                                    <tr>
+                                        <th>I like to start early </th>
+                                        <td data-target-group="1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>My boss travels</th>
+                                        <td data-target-group="2"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Classes at the university start</th>
+                                        <td data-target-group="3"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Most of my friends have birthdays</th>
+                                        <td data-target-group="4"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>I need to be in bed</th>
+                                        <td data-target-group="5"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="box_panel_activity down">
+                                <strong>Fragmentos para arrastrar:<br /><br /></strong>
+                                <div>
+                                    <div data-group="3" class="item_1">at 6:00 am during weekdays.</div>
+                                    <div data-group="5" class="item_2">at midnight or I will turn into a pumpkin.</div>
+                                    <div data-group="2" class="item_3">during the week and comes to the office on Saturdays.</div>
+                                    <div data-group="4" class="item_4">in April or June.</div>
+                                    <div data-group="1" class="item_5">on Mondays because it’s the first day of the week.</div>
+                                     <br class="clear" />
+                                </div>
+                            </div>
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_arrastrar4">
+                        <h3>Arrastrar y soltar - insertando contenido</h3>
+                        <p>Los estilos son muy importantes, en <em>custom.css</em> se encuentran en la sección "Actividad arrastrar y soltar - insertar". A diferencia de los otros de arrastrar y soltar, este esquema agrega el contenido del <em>origen</em> en el <em>destino</em> por lo que no se puede quitar de allí una vez arrastrado. Para esto es necesario agregar el atributo <strong>data-droppable-content-inner</strong> establecido a <strong>true</strong>. También se puede establecer la propiedad <strong>data-droppable-content-helper</strong> con un valor para colocar en el <em>origen</em> una vez que se haya reiniciado la actividad, en el ejemplo es "...".</p>
+                        
+                        <div class="pit-activities-droppable" data-droppable-content-inner="true" data-droppable-content-helper="..."  data-act-title="Arrastrar y soltar - insertando contenido" data-act-id="drop-insert">
+                            <div class="box_panel_activity">
+                                Por favor arrastre el fragmento para completar la oración.
+                                <table>
+                                    <tr>
+                                        <th>Más vale tarde</th>
+                                        <td data-target-group="1">...</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Más vale pajaro en mano</th>
+                                        <td data-target-group="2">...</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Cuando el río suena</th>
+                                        <td data-target-group="3">...</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Al que a buen árbol se arrima</th>
+                                        <td data-target-group="4">...</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="box_panel_activity down">
+                                <strong>Fragmentos para arrastrar:<br /><br /></strong>
+                                <div>
+                                    <div data-group="4" class="item_1">buena sombra le cobija</div>
+                                    <div data-group="1" class="item_2">que nunca</div>
+                                    <div data-group="3" class="item_3">piedras lleva</div>
+                                    <div data-group="2" class="item_4">que cien volando</div>
+                                </div>
+                                <br class="clear" />
+                            </div>
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_arrastrar5">
+                        <h3>Arrastrar y soltar - Múltiples opciones</h3>
+                        <p>En este tipo de actividad, hay varias opciones que son correctas y pueden coincidir en cualquier recuadro destino, por lo que es múltiple opción. Poner el atributo data-multiple-options="true" para ser aceptada como tal.</p>
+                        <div class="pit-activities-droppable" data-verify-type="target" data-multiple-options="true" data-act-title="Arrastrar y soltar - actividad de aprendizaje 4 - parte 2"  data-act-id="dr0p-aa4-02">
+                            <div class="box_panel">
+                                <div class="box_panel_activity">
+                                    <div class="box_droppable instruction" data-target-group="2">Arrastre aquí...</div>
+                                    <div class="box_droppable instruction" data-target-group="2">Arrastre aquí...</div>
+                                    <div class="box_droppable instruction" data-target-group="2">Arrastre aquí...</div>
+                                </div>
+                                <div class="box_panel_activity down">
+                                    <div data-group="2" >Guitarra Nylon</div>
+                                    <div data-group="2" >Guitarra Eléctrica</div>
+                                    <div data-group="3" >Flauta traversa</div>
+                                    <div data-group="2" >Bajo</div>
+                                    <div data-group="3" >Tuba</div>
+                                    <div data-group="2" >Violín</div>
+                                    <div data-group="2" >Viola</div>
+                                    <div data-group="3" >Arpa</div>
+                                    <div data-group="2" >Violoncello</div>
+                                    <div data-group="2" >Contrabajo</div>
+                                    <div data-group="2" >Percusiones</div>
+                                </div>
+                            </div>
+                            <br class="clear" />
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_arrastrargrupos">
+                        <h3>Arrastrar y soltar por grupos / Clasificar</h3>
+                        <p>Permite arrastrar múltiples elementos a un mismo contenedor, para clasificar todos los elementos por grupos.</p>
+                        <p>Los estilos son muy importantes, en <em>custom.css</em> se encuentran en la sección "Actividad arrastrar y soltar por grupos".</p>
+                        <div class="pit-activities-multidroppable" data-act-title="Arrastrar y soltar múltiple" data-act-id="act_mdrag">
+                            <table class="box_targets">
+                                <tbody>
+                                    <tr>
+                                        <th>Lugares</th>
+                                        <th>Animales</th>
+                                        <th>Mujeres</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-target-group="1" class="target"></td>
+                                        <td data-target-group="2" class="target"></td>
+                                        <td data-target-group="3" class="target"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="sources">
+                                <div data-group="3">Yesenia</div>
+                                <div data-group="3">Marina</div>
+                                <div data-group="3">Jennifer</div>
+                                <div data-group="2">Ornitorrinco</div>
+                                <div data-group="1">Medellín</div>
+                                <div data-group="3">Cristina</div>
+                                <div data-group="1">La Unión</div>
+                                <div data-group="2">Elefante</div>
+                                <div data-group="3">Sandra</div>
+                                <div data-group="3">Carolina</div>
+                            </div>
+                            <br class="clear" />
+                            <div class="buttons">
+                                <button class="general verify">Verificar</button>
+                                <button class="general continue" style="display: none;">Continuar intentando</button>
+                            </div>
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_cloze">
+                        <h3>Cloze</h3>
+                        <p>Aplica para cualquier HTML y opera sobre las listas (tag select). Ver código para el ejemplo. Importante incluir el control con la clase CSS box_end.</p>
+                        
+                        <div class="pit-activities-cloze" data-act-title="Cloze" data-act-id="cloze">
+                            <table class="dialogue">
+                                <tr class="odd">
+                                    <th>Q:</th><td><select><option data-response="true">Can</option><option>Can't</option></select> you cook?</td>
+                                </tr>
+                                <tr>
+                                    <th>A:</th><td>Yes, I <select><option data-response="true">Can</option><option>Can't</option></select>. I make delicious dinners.</td>
+                                </tr>
+                                <tr class="odd">
+                                    <th>Q:</th><td><select><option data-response="true">Can</option><option>Can't</option></select> you drink milk?</td>
+                                </tr>
+                                <tr>
+                                    <th>A:</th><td>I <select><option>can</option><option data-response="true">can't</option></select>. I my stomach gets upset.</td>
+                                </tr>
+                                <tr class="odd">
+                                    <th>Q:</th><td><select><option data-response="true">Can</option><option>Can't</option></select> you speak Italian?</td>
+                                </tr>
+                                <tr>
+                                    <th>A:</th><td>I <select><option>can</option><option data-response="true">can't</option></select>. I <select><option data-response="true">can</option><option>can't</option></select> only speak English and Spanish fluently.</td>
+                                </tr>
+                            </table>
+
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_sortable">
+                        <h3>Ordenar</h3>
+                        <p>Aplica para cualquier HTML y opera sobre los &lt;li&gt; que estén contenidos dentro de un &lt;ul&gt; con clase CSS "sortable". Los &lt;li&gt; deben tener un atributo <em>data-position</em> con el indice que indica la posición adecuada, la cual <strong>empieza desde cero</strong>.</p>
+                        <p>Si se requiere que el ordenamiento sea horizontal es preciso agregar al &lt;ul&gt; contenedor la clase <em>sortable-horizontal</em>. Se pueden tener varias listas horizontales o combinar horizontales con verticales, pero se debe mantener coherencia en el indice desde cero en la primera lista hasta la cantidad total de elementos ordenados en la última lista.</p>
+                        <p>Ver código para el ejemplo. Importante incluir el control con la clase CSS <em>box_end</em>.</p>
+                        <p><strong>Ejemplo:</strong></p>
+                        <div class="pit-activities-sortable" data-act-title="Ordenar" data-act-id="sortable">
+                            <ul class="sortable sortable-horizontal">
+                                <li data-position="1">Segundo</li>
+                                <li data-position="0">Primero</li>
+                                <li data-position="2">Tercero</li>
+                            </ul>
+                            <br class="clear" />
+                            <ul class="sortable">
+                                <li data-position="5">Sexto</li>
+                                <li data-position="3">Cuarto</li>
+                                <li data-position="4">Quinto</li>
+                            </ul>
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_check">
+                        <h3>Clasificar</h3>
+                        <p>Permite realizar una actividad donde se clasifican contenidos entre dos posibles valores, es como un Falso/verdadero. Toda la estructura se personaliza para dar el contexto deseado.</p>
+
+                        <div id="act_check_words" class="pit-activities-check" data-act-title="Clasificar" data-act-id="check-activity">
+                            <words>
+                                <li data-val="true">Medellín</li>
+                                <li data-val="true">Cartagena</li>
+                                <li>Turín</li>
+                                <li data-val="true">Santa Marta</li>
+                                <li>Hong Kong</li>
+                                <li>Quito</li>
+                                <li data-val="true">Villavicencio</li>
+                                <li>Lima</li>
+                                <li data-val="true">Pasto</li>
+                                <li data-val="true">Armenia</li>
+                            </words>
+                            <div class="board">
+                                <div class="check_left">
+                                    <div class="play">
+                                        <div class="word_content box_panel_activity">&nbsp;</div>
+                                        <div class="botones_actividad">
+                                            <i class="correct ion-checkmark-circled button"></i><i class="incorrect ion-close-circled button"></i>
+                                        </div>
+                                    </div>
+                                    <div class="box_conclution box_panel_activity" style="display: none;">
+                                        <h2>¡Ha finalizado!</h2>
+                                        <p>
+                                            <span class="subtitle2">Aciertos:</span>
+                                            <span class="correct_words"></span>
+                                        </p>
+                                        <p>
+                                            <span class="subtitle2">Desaciertos:</span>
+                                            <span class="wrong_words"></span>
+                                        </p>
+                                        <p>Si usted ha obtenido más desaciertos que aciertos, le recomendamos que estudie nuevamente los contenidos.</p>
+                                        <div class="box_reintentar">
+                                            <button class="button general reload">Reintentar</button>
+                                            <p>
+                                                Haga clic en el botón Reintentar para responder a las palabras no acertadas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="check_right">
+                                    <div class="box_result">
+                                        <div class="marco hits">
+                                            <div class="value">0</div>
+                                            <div class="text">Aciertos</div>
+                                        </div>
+                                        <div class="marco miss">
+                                            <div class="value">0</div>
+                                            <div class="text">Errores</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br class="clear" />
+                        </div>
+
+                    </div>
+
+                    <div class="subpage" id="actividades_mark">
+                        <h3>Marcar</h3>
+                        <p>Sirve para señalar zonas dentro de una imagen, definiendo cuales son correctas y cuales no. Se utiliza la clase "pit-activities-mark" y se deben definir "áreas" definiendo cuales son correctas mediante la propiedad "correct", las posiciones en "x" y en "y" y el tamaño de ancho (w) y alto (h).</p>
+                        <div class="pit-activities-mark" data-act-title="Marcar" data-act-id="mark-activity">
+                            <img src="content/pagina.jpg" style="height: 340px;" />
+                            <area shape="rect" correct="true" x="0" y="0" w="160" h="125" />
+                            <area shape="rect" correct="false" x="170" y="0" w="160" h="125" />
+                            <area shape="rect" correct="false" x="0" y="130" w="160" h="200" />
+                            <area shape="rect" correct="true" x="170" y="130" w="160" h="200" />
+                            <feedback>
+                                <correct>
+                                    Los elementos que ha marcado en la imagen son los correctos ¡Felicitaciones!
+                                </correct>
+                                <wrong>
+                                    No se marcaron todas las áreas correctas
+                                </wrong>
+                            </feedback>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="actividades_form">
+                        <h3>Formulario</h3>
+                        
+                        <div class="horizontal-menu">
+                            <dl>
+                                <dt>
+                                    Ejemplo
+                                </dt>
+                                <dd>
+                                    <div class="pit-activities-form" data-save="true" data-print="true" data-require-all="true" data-act-title="Formulario" data-act-id="form">
+                                        <div class="sheet">
+                                            <div class="sheet_body">
+                                                <input type="text" title="Nombre" data-content-helper="Escribe en este espacio el título..." />
+                                                <textarea name="opinion" data-content-helper="Escribe en este espacio tu opinión..."></textarea>
+                                                <div class="instruction desktop" style="padding-top: 5px;">Haga clic en el recuadro para escribir su mensaje</div>
+                                                <div class="instruction mobile" style="padding-top: 5px;">Toque en el recuadro para escribir su mensaje</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    Consideraciones
+                                </dt>
+                                <dd>
+                                    <p>Sirve para recibi información del usuario en campos de formulario e imprimirlos o guardarlos (solo para paquetes en modo SCORM). Los campos de formulario pueden tener el atributo <strong>"name"</strong> que corresponde al nombre con que se almacenará el campo (si el campo no tiene este atributo no se almacena) y <strong>"title"</strong> que será la etiqueta utilizada como subtítulo al momento de imprimir. Esta actividad no es calificable. </p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    Operaciones
+                                </dt>
+                                <dd>
+                                    <p>Para determinar las operaciones disponibles se debe incluir las propiedades: <strong>data-print</strong> y <strong>data-save</strong>. Si todos los campos son obligatorios debe definirse la propiedad <strong>data-require-all</strong>.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                
+                    <div class="subpage" id="actividades_guessing">
+                        <h2>4. Actividades</h2>
+                        <h3>Coincidir</h3>
+                        <div class="pit-activities-guessing" data-limit-corrects="5" data-limit-wrongs="5" data-act-id="guessing" data-act-title="Coincidir" data-act-desktop="true" >
+                            <div class="board-objects-to-guess">
+                                <div class="do-natural iconsound button option-in-guessing" data-sound="13/13-1">
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="do-chromatic iconsound button option-in-guessing" data-sound="13/13-2" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="re-natural iconsound button option-in-guessing" data-sound="13/13-3" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="re-chromatic iconsound button option-in-guessing" data-sound="13/13-4" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="mi-natural iconsound button option-in-guessing" data-sound="13/13-5" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="fa-natural iconsound button option-in-guessing" data-sound="13/13-6" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="fa-chromatic iconsound button option-in-guessing" data-sound="13/13-7" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="sol-natural iconsound button option-in-guessing" data-sound="13/13-8" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="sol-chromatic iconsound button option-in-guessing" data-sound="13/13-9" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="la-natural iconsound button option-in-guessing" data-sound="13/13-10" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="la-chromatic iconsound button option-in-guessing" data-sound="13/13-11" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="si-natural iconsound button option-in-guessing" data-sound="13/13-12" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="do-up-natural iconsound button option-in-guessing" data-sound="13/13-13" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="do-up-chromatic iconsound button option-in-guessing" data-sound="13/13-14" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="re-up-natural iconsound button option-in-guessing" data-sound="13/13-15" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="re-up-chromatic iconsound button option-in-guessing" data-sound="13/13-16" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="mi-up-natural iconsound button option-in-guessing" data-sound="13/13-17" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="fa-up-natural iconsound button option-in-guessing" data-sound="13/13-18" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="fa-up-chromatic iconsound button option-in-guessing" data-sound="13/13-19" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="sol-up-natural iconsound button option-in-guessing" data-sound="13/13-20" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="sol-up-chromatic iconsound button option-in-guessing" data-sound="13/13-21" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="la-up-natural iconsound button option-in-guessing" data-sound="13/13-22" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="la-up-chromatic iconsound button option-in-guessing" data-sound="13/13-23" >
+                                    <div class="button subpart-1"></div>
+                                </div>
+                                <div class="si-up-natural iconsound button option-in-guessing" data-sound="13/13-24" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                                <div class="do-up-natural-2 iconsound button option-in-guessing" data-sound="13/13-25" >
+                                    <div class="button subpart-1"></div>
+                                    <div class="button subpart-2"></div>
+                                </div>
+                            </div>
+                            <div class="box_end"></div>
+                        </div>
+                        <div class="instruction sound desktop">Haga clic sobre la bocina para escuchar el sonido.<br />(Recomendación: usar audífonos)</div>
+                        <div class="instruction sound mobile">Toque la bocina para escuchar el sonido.<br />(Recomendación: usar audífonos)</div>
+                    </div>
+                    
+                    <div class="subpage" id="actividades_memory">
+                        <h2>4. Actividades</h2>
+                        <h3>Concéntrese</h3>
+                        <div class="pit-activities-memory" data-act-id="memory" data-act-title="Concéntrese" data-cover-back="img/cover-back.png">
+                            <ol>
+                                <li data-group-match="3" data-first="true" data-cover-forward="content/img6.png"></li>
+                                <li data-group-match="1" data-first="true" data-cover-forward="content/img5.png" data-content="#memory_window_2"></li>
+                                <li data-group-match="2" data-first="true" data-cover-forward="content/img8.png" data-content="#memory_window_3"></li>
+                                <li data-group-match="4" data-first="true" data-cover-forward="content/img7.png" data-content="#memory_window_4"></li>
+                                <li data-group-match="8" data-first="true" data-cover-forward="content/img4.png" data-content="#memory_window_8"></li>
+                                <li data-group-match="5" data-first="true" data-cover-forward="content/img1.png" data-content="#memory_window_5"></li>
+                                <li data-group-match="6" data-first="true" data-cover-forward="content/img2.png" data-content="#memory_window_6"></li>
+                                <li data-group-match="7" data-first="true" data-cover-forward="content/img3.png" data-content="#memory_window_7"></li>
+                                <li data-group-match="4" data-first="false" data-cover-forward="content/img7.png" data-content="#memory_window_4"></li>
+                                <li data-group-match="5" data-first="false" data-cover-forward="content/img1.png" data-content="#memory_window_5"></li>
+                                <li data-group-match="3" data-first="false" data-cover-forward="content/img6.png"></li>
+                                <li data-group-match="6" data-first="false" data-cover-forward="content/img2.png" data-content="#memory_window_6"></li>
+                                <li data-group-match="2" data-first="false" data-cover-forward="content/img8.png" data-content="#memory_window_3"></li>
+                                <li data-group-match="7" data-first="false" data-cover-forward="content/img3.png" data-content="#memory_window_7"></li>
+                                <li data-group-match="1" data-first="false" data-cover-forward="content/img5.png" data-content="#memory_window_2"></li>
+                                <li data-group-match="8" data-first="false" data-cover-forward="content/img4.png" data-content="#memory_window_8"></li>
+                            </ol>
+                            <div id="memory_window_2" class="w_content" style="display: none;"><p>2. !Muy bien!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque enim eu mauris mattis convallis. Curabitur a lectus a turpis laoreet mattis in eu quam. Sed eu turpis quis dolor cursus rhoncus. Praesent lacinia viverra nisl quis aliquam. Nam quis dignissim lacus, et bibendum risus. Fusce suscipit non erat vehicula auctor. Vestibulum enim tortor, venenatis vel nisl sed, varius ultrices lorem. Proin eu fermentum lectus. Suspendisse convallis est a commodo ullamcorper.</p></div>
+                            <div id="memory_window_3" class="w_content" style="display: none;"><p>3. !Muy bien!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque enim eu mauris mattis convallis. Curabitur a lectus a turpis laoreet mattis in eu quam. Sed eu turpis quis dolor cursus rhoncus. Praesent lacinia viverra nisl quis aliquam. Nam quis dignissim lacus, et bibendum risus. Fusce suscipit non erat vehicula auctor. Vestibulum enim tortor, venenatis vel nisl sed, varius ultrices lorem. Proin eu fermentum lectus. Suspendisse convallis est a commodo ullamcorper.</p></div>
+                            <div id="memory_window_4" class="w_content" style="display: none;"><p>4. !Muy bien!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque enim eu mauris mattis convallis. Curabitur a lectus a turpis laoreet mattis in eu quam. Sed eu turpis quis dolor cursus rhoncus. Praesent lacinia viverra nisl quis aliquam. Nam quis dignissim lacus, et bibendum risus. Fusce suscipit non erat vehicula auctor. Vestibulum enim tortor, venenatis vel nisl sed, varius ultrices lorem. Proin eu fermentum lectus. Suspendisse convallis est a commodo ullamcorper.</p></div>
+                            <div id="memory_window_5" class="w_content" style="display: none;"><p>5. !Muy bien!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque enim eu mauris mattis convallis. Curabitur a lectus a turpis laoreet mattis in eu quam. Sed eu turpis quis dolor cursus rhoncus. Praesent lacinia viverra nisl quis aliquam. Nam quis dignissim lacus, et bibendum risus. Fusce suscipit non erat vehicula auctor. Vestibulum enim tortor, venenatis vel nisl sed, varius ultrices lorem. Proin eu fermentum lectus. Suspendisse convallis est a commodo ullamcorper.</p></div>
+                            <div id="memory_window_6" class="w_content" style="display: none;"><p>6. !Muy bien!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque enim eu mauris mattis convallis. Curabitur a lectus a turpis laoreet mattis in eu quam. Sed eu turpis quis dolor cursus rhoncus. Praesent lacinia viverra nisl quis aliquam. Nam quis dignissim lacus, et bibendum risus. Fusce suscipit non erat vehicula auctor. Vestibulum enim tortor, venenatis vel nisl sed, varius ultrices lorem. Proin eu fermentum lectus. Suspendisse convallis est a commodo ullamcorper.</p></div>
+                            <div id="memory_window_7" class="w_content" style="display: none;"><p>7. !Muy bien!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque enim eu mauris mattis convallis. Curabitur a lectus a turpis laoreet mattis in eu quam. Sed eu turpis quis dolor cursus rhoncus. Praesent lacinia viverra nisl quis aliquam. Nam quis dignissim lacus, et bibendum risus. Fusce suscipit non erat vehicula auctor. Vestibulum enim tortor, venenatis vel nisl sed, varius ultrices lorem. Proin eu fermentum lectus. Suspendisse convallis est a commodo ullamcorper.</p></div>
+                            <div id="memory_window_8" class="w_content" style="display: none;"><p>8. !Muy bien!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque enim eu mauris mattis convallis. Curabitur a lectus a turpis laoreet mattis in eu quam. Sed eu turpis quis dolor cursus rhoncus. Praesent lacinia viverra nisl quis aliquam. Nam quis dignissim lacus, et bibendum risus. Fusce suscipit non erat vehicula auctor. Vestibulum enim tortor, venenatis vel nisl sed, varius ultrices lorem. Proin eu fermentum lectus. Suspendisse convallis est a commodo ullamcorper.</p></div>
+                            <br class="clear" />
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Pie de fotos-->
+                <div class="page">
+                    <div class="subpage" id="pie_1">
+                        <h2>5. Referencias</h2>
+                        <h3>5.1. Autoría de diseñador del proyecto</h3>
+                        <p>Si la imagen es de autoría del diseñador (Vectores o ilustraciones) o hay una fotografía de autoría de uno de los integrantes del equipo de trabajo, se cita de la siguiente manera:</p>
+                        <blockquote><em><strong>Imagen #.</strong> Nombre de la imagen, (año).</em></blockquote>
+                        <p>En el pie de imagen no se pone el autor, puesto que ya aparecerá en los créditos del OVA. Para fotografía, diagrama, gráfico o tabla se cita igual.</p>
+                        <div class="img_center">
+                            <img src="content/img10.png" />
+                            <div class="about"><strong>Imagen 1. </strong>Marca, (2016).</div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="pie_2">
+                        <h3>5.2. Autoría proveniente de la Web</h3>
+                        <p>Si la imagen, fotografía, diagrama, gráfico o tabla proviene de la web se cita así:</p>
+                        <blockquote><em><strong>Imagen #.</strong> Autor, (año). Descripción de la imagen (Si la hay). <strong>Recuperado de:</strong> Nombre (enlace) del sitio de donde fue sacado y fecha de consulta.</em></blockquote>
+                        <p>En caso de no tener autor se coloca descripción de la imagen, diagrama, fotografía, gráfico o tabla:</p>
+                        <blockquote><em><strong>Imagen #. </strong>Descripción de la imagen, (año). <strong>Recuperado de:</strong> Nombre (enlace) del sitio de donde fue sacado y fecha de consulta.</em></blockquote>
+                        <blockquote><em><strong>Imagen #. </strong>Descripción de la imagen, (s.f) <strong>Recuperado de:</strong> Nombre (enlace) del sitio de donde fue sacado y fecha de consulta.</em></blockquote>
+                         <p><strong>Importante: </strong>se deberá hacer el hipervinculo al enlace que provee la descarga de la imagen desde Internet. En caso de no tener fecha, colocar (s.f)</p>
+                        <div class="img_center">
+                            <img src="content/mujer.png" />
+                            <div class="about"><strong>Imagen 1.</strong> HASHIGUCHI Mujer enpolvandose, (1921). <strong><br />Recuperado de:</strong> <a href="https://commons.wikimedia.org/wiki/File:HASHIGUCHI_Mujer_enpolvandose.jpg" target="_blank">Hashiguchi Goyo</a> el 26 de abril de 2016.</div>
+                        </div>
+                    </div>
+
+                    <div class="subpage" id="pie_3">
+                        <h3>5.3. Autoría de libro</h3>
+                        <p>Si la imagen, diagrama, gráfico o fotografía tiene derechos de licencia, se hace la cita del autor de la siguiente manera: </p>
+                        <blockquote><em><strong>Diagrama #.</strong> Autor, (año). Descripción de la imagen (si la hay).</em></blockquote>
+                        <blockquote><em><strong>Diagrama #.</strong> Autor, (año).</em></blockquote>
+                        <p><strong>Importante: </strong>se deberá colocar al final Diseño adaptado en caso de que sea modificada un poco la imagen en cuanto a color y forma. En caso de no tener fecha, colocar (s.f)</p>
+                        
+                        <div class="img_center">
+                            <img src="content/img18.png" />
+                            <div class="about"><strong>Diagrama 1.</strong> Schiffman, L. & Kanuk, L. (2010). Modelo del proceso de motivación. Diseño adaptado.</div> 
+                        </div>
+                    </div>
+                    
+                    <div class="subpage" id="pie_4">
+                        <h3>5.4. Tabla</h3>
+                        <p>Estos son los casos que se pueden presentar para citar tablas:
+                        </p>
+                        <h4>Autoría del proyecto</h4>
+                        <blockquote><em><strong>Tabla #.</strong> Descripción de la tabla, (año).</em></blockquote>
+                        <h4>Autoría de libro</h4>
+                        <blockquote><em><strong>Tabla #. </strong>Autor, (año). Descripción de la tabla.</em></blockquote>
+                        <h4>Autoría proveniente de la Web</h4>
+                        <blockquote><em><strong>Tabla #.</strong> Autor, (año). Descripción de la tabla (Si la hay). <strong>Recuperado de:</strong> Nombre (enlace) del sitio de donde fue sacado y fecha de consulta.</em></blockquote>
+                        <table class="datatable">
+                           <thead>
+                                <tr>
+                                    <th>Sistemas de información</th>
+                                    <th>Investigación de mercados</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Opera de forma continua</td>
+                                    <td>Opera de forma intermitente</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td>Tiene orientación hacia el futuro</td>
+                                    <td>Tiene orientación hacia el pasado</td>
+                                </tr>
+                                <tr>
+                                    <td>Busca información interna y externa</td>
+                                    <td>Busca información externa</td>
+
+                                </tr>
+                                <tr class="odd">
+                                    <td>Trata de evitar que se presenten problemas</td>
+                                    <td>Se ocupa de resolver problemas que ya se han presentado</td>     
+                                </tr>
+                                <tr>
+                                    <td>Exige una operación computarizada</td>
+                                    <td>No se fundamenta en este sistema</td>
+                                </tr>
+                                <tr class="odd">
+                                    <td>Incluye, además de la inv. de mercados, otros subsistemas</td>
+                                    <td>Es una fuente de entrada de los sistemas de información</td>
+                                </tr>
+                                
+                            </tbody>
+                         </table>
+                    </div>
+                    <div class="about"><strong>Tabla 1.</strong> Sistemas de información vs Investigación, (2016).</div> 
+                </div>
+
+                <!--Learning activity-->
+                <div class="page">
+                    <div class="subpage" id="learning_activity">
+                        <h2>Actividad de aprendizaje</h2>
+                        <p>
+                            Puede ser cualquier actividad.
+                        </p>
+                        <p>
+                            Para darle una identificación propia para la revisión, se deben agregar dos atributos a la actividad:
+                        </p>
+                        <ul class="data_list">
+                            <li><p><strong>data-act-id:</strong> Un identificador corto y único de la actividad, sin espacios ni caracteres especiales. Es el que se muestra en el rastreo del SCORM. También es utilizado para ordenar las actividades al momento de listarlas en la ventana de <em>Resultados</em> por lo que es útil colocar un número antes del identificador para indicar en que posición se debería mostrar el resultado de la actividad, por ejemplo: <em>1_quiz</em> se listaría antes de <em>2_apareamiento</em> sin importar el título que tengan.</p></li>
+                            <li><p><strong>data-act-title:</strong> El nombre que aparecerá en la ventana de <em>Resultados</em></p></li>
+                        </ul>
+                        <p>Ver ejemplo en actividad <em>quiz</em>.</p>
+                    </div>
+                </div>
+
+                <!--Bibliography-->
+                <div class="page">
+                    <div class="subpage" id="bibliography_page">
+                        <h2>Referencias bibliográficas</h2>
+                        <ul class="data_list">
+                            <li>Dane, (2014) Departamento Administrativo Nacional de Estadística, consultado en diciembre de 2014. Recuperado de: <a href="http://www.dane.gov.co/index.php/estratificacion-socioeconomica/metodologia" target="_blank">http://www.dane.gov.co/index.php/estratificacion-socioeconomica/metodologia</a></li>
+                            <li>CRA, (2014) Comisión de Regulación de Agua Potable y Saneamiento Básico, consultado en diciembre de 2014. Recuperado de: <a href="http://www.cra.gov.co/es/atencion-a-la-ciudadania/preguntas-frecuentes/17332-preguntas-frecuentes" target="_blank">http://www.cra.gov.co/es/atencion-a-la-ciudadania/preguntas-frecuentes/17332-preguntas-frecuentes</a></li>
+                            <li>Superservicios, (2014) Superintendencia de Servicios Públicos Domiciliarios, consultado en  diciembre de 2014. Recuperado de: <a href="http://www.superservicios.gov.co/content/search?SearchText=usuario+residencial" target="_blank">http://www.superservicios.gov.co/content/search?SearchText=usuario+residencial</a></li>
+                            <li>Corantioquia, (2014) Corporación autónoma Regional del Centro de Antioquia, consultado en diciembre de 2014. Recuperado de: <a href="http://www.corantioquia.gov.co/" target="_blank">http://www.corantioquia.gov.co/</a></li>
+                            <li>Alcaldía de Bogotá, (2014). Alcaldía Mayor de Bogotá, consultado en diciembre de 2014. Recuperado de: <a href="http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=8586" target="_blank"> http://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=8586</a></li>
+                            <li>Contaduría, (2014) Contaduría General de la Nación, consultado en diciembre de 2014. Recuperado de: <a href="http://www.contaduria.gov.co/wps/portal/internetes/home/internet/atencion-usuario/preguntas" target="_blank">http://www.contaduria.gov.co/wps/portal/internetes/home/internet/atencion-usuario/preguntas</a></li>
+                            <li>PGN, (2014) Procuraduría General de la Nación, consultado en diciembre de 2014. Recuperado de: <a href="http://www.procuraduria.gov.co/portal/" target="_blank">http://www.procuraduria.gov.co/portal/</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!--Créditos-->
+                <div class="page">
+                    <div class="subpage" id="credits_page">
+                        <h2>Créditos</h2>
+                        <p>El Objeto Virtual de Aprendizaje <strong>Ejemplo de elementos para los cursos</strong> es propiedad de la Universidad de Medellín, el contenido, diseño gráfico y demás material didáctico, están protegidos por las leyes que rigen la propiedad intelectual.</p>
+                        <p>Para utilizar todo o parte de este material debe contar con autorización expresa.</p>
+                        <p><strong>Derechos reservados ®</strong></p>
+                        <div>
+                            <h3>Elaboración de contenidos</h3>
+                            <p>Área de Seguridad y Salud en el Trabajo</p>
+                            <p><strong>Coordinadora</strong></p>
+                            <p>Paula Andrea López Gaviria </p>
+                        </div>
+                        <div>
+                            <h3>Gestor pedagógico virtual</h3>
+                            <p>Carolina Llanos Tobón</p>
+                        </div>
+                        <div>
+                            <h3>Gestor de recursos educativos digitales</h3>
+                            <p>Carolina Llanos Tobón</p>
+                        </div>
+                         <div>
+                            <h3>Gestor digital y multimedia</h3>
+                            <p>Santiago Hernández Restrepo</p>
+                        </div>
+                        <div>
+                            <h3>Gestor de contenidos virtuales</h3>
+                            <p>Ana Liliana Vera Gómez</p>
+                            <p>Jennifer Ospina Ramírez</p>
+                            <p>Leidy Cristina Madrigal Arrieta</p>
+                        </div>
+                        <div>
+                            <h3>Gestor de calidad virtual</h3>
+                            <p>Jennifer Ospina Ramírez</p>
+                        </div>
+                         <div>
+                            <h3>Mediador de Educación Virtual</h3>
+                            <p>Luz Marina Ramírez Suárez</p>
+                        </div>
+                        <div>
+                            <h3>Mediador de TIC</h3>
+                            <p>María Yesenia Gallego Mejía</p>
+                        </div>
+                        <div>
+                            <h3>Líder de Educación Virtual y TIC</h3>
+                            <p>Sandra Isabel Arango Vásquez</p>
+                        </div>
+                        <div>
+                            <h3>Asesoría técnica y pedagógica</h3>
+                            <p class="logos">
+                                <img src="img/logo_udem.png" alt="UdeM" />
+                                <img src="img/logo_evirtual.png" alt="E-Virtual" />
+                            </p>
+                        </div>
+                        <div>
+                            <p class="pie">1ª versión: diciembre de 2016<br /></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="not_print">
+            <div id="measuring_results">
+                Avance
+                <div id="measuring_results_level"><div></div></div>
+                <div id="measuring_results_value"><span>0</span><br />%</div>
+            </div>
+            <div id="nav" class="regular_content">
+                <div class="button btn_left">
+                </div>
+                <ul class="button">
+                </ul>
+                <div class="button btn_right">
+                </div>
+            </div>
+            <div id="page_number"></div>
+        </footer>
+
+        <div class="copyright not_print"></div>
+    </div>
+
+    <div id="results_page" class="w_content" data-property-width="900" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+        <h3>Actividades de aprendizaje</h3>
+        <div id="results_page_activities"><ul class="data_list"></ul></div>
+    </div>
+
+    <div id="full_content" class="not_print" style="display:none;">
+        <div class="back_label">
+            <button class="backward_button button"></button>
+        </div>
+        <div id="dialog_content">
+        </div>
+    </div>
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+    <div id="close_all" class="button ion-close-circled"></div>
+</body>
+</html>

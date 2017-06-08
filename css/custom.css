@@ -1,0 +1,699 @@
+/********************************************************************************/
+/* SPECIFIC LAYER STYLES
+/********************************************************************************/
+#textos_infografia li, #textos_infografia li, #textos_infografia li {
+    line-height: 30px;
+}
+
+#textos_infografia h3 {
+    margin: 8px 0;
+}
+
+#textos_infografia .note_pointer_left, #textos_infografia .note_pointer_right {
+    display: inline-table;
+    position: relative;
+}
+
+#textos_infografia .text_pointer_h_left, #textos_infografia .text_pointer_h_right {
+    display: inline-table;
+    position: relative;
+}
+
+#textos_infografia .text_pointer_v_up, #textos_infografia .text_pointer_v_down {
+    display: inline-table;
+    position: relative;
+}
+
+#textos_iconografia i {
+    font-size: 27px;
+    cursor: default;
+    color: #0039A6;
+}
+
+#textos_iconografia .little i {
+    font-size: 14px;
+}
+
+#textos_iconografia .large i {
+    font-size: 50px;
+}
+
+#textos_iconografia i:hover {
+    color: #ffacc5;
+}
+
+#textos_iconografia .color i { font-size: 30px; }
+#textos_iconografia .color i.a { color: #0ff; }
+#textos_iconografia .color i.b { color: #f0f; }
+#textos_iconografia .color i.c { color: #00f; }
+#textos_iconografia .color i.d { color: #3de467; }
+
+#textos_iconografia .link i { font-size: 30px; }
+
+#textos_iconografia .effects i { font-size: 30px; color: #f00; margin: 0 10px; }
+#textos_iconografia .effects i.a { text-shadow: 5px 5px 10px #000; }
+#textos_iconografia .effects i.b { text-shadow: 10px 10px 3px #000; }
+#textos_iconografia .effects i.c { text-shadow: 15px 5px 5px #000;  }
+#textos_iconografia .effects i.d { text-shadow: 8px 0px 0px #000;  }
+
+#media_video .box_examples {
+    width: 700px;
+}
+
+#media_video .box_body_highlighted {
+    width: 700px;
+}
+
+#media_video .box_examples pre {
+    margin: 0;
+}
+
+#media_video ul {
+    margin: 0;
+}
+
+#animation_1 .movi {
+    height: 80px;
+}
+
+main_vertical .vertical-menu .chalkboard_content {
+    height: 330px;
+}
+
+main_horizontal .horizontal-menu .chalkboard_content {
+    height: 300px;
+}
+
+main_vertical_both .vertical-menu-both-sides {
+    margin: 5px 0 0 5px;
+}
+
+main_vertical_both .vertical-menu-both-sides .chalkboard_content {
+    width: 490px;
+    height: 300px;
+}
+
+main_vertical_both .vertical-menu-both-sides .chalkboard_items_right {
+    margin-left: 10px;
+}
+
+main_vertical_both .vertical-menu-both-sides .chalkboard_items_left {
+    margin-right: 10px;
+}
+
+main_vertical_both pre {
+    margin: 0;
+}
+
+/********************************************************************************/
+#animation_3 .box_stressed { width: 700px; }
+#animation_3 .box_connection { width: 700px;  margin: 0 auto 10px; }
+#animation_3 .stave { background: url(../content/img17.png) no-repeat; width: 450px; height: 110px; margin: auto; position: relative; }
+#animation_3 .musical-note-name { width: 22px; height: 20px; position: absolute; font-size: 15px; color: #16a183; opacity: 0; background: #16a183; -webkit-animation-fill-mode: backwards; animation-duration: 10s; animation-fill-mode: backwards; }
+
+#animation_3 .musical-note { width: 15px; height: 12px; background: url(../content/img17_1.png) no-repeat; position: absolute; -webkit-animation-fill-mode: forwards; animation-name: musical-note; animation-duration: 10s; animation-fill-mode: forwards; }
+
+@keyframes musical-note { 0% { left: 0; top: 0; } 10% { left: 46px; top: 65px; } 20% { left: 87px; top: 54px; } 30% { left: 128px; top: 42px; } 40% { left: 164px; top: 30px; } 50% { left: 200px; top: 18px; } 60% { left: 247px; top: 60px; } 70% { left: 291px; top: 48px; } 80% { left: 337px; top: 36px; } 100% { left: 388px; top: 25px; }
+}
+
+@keyframes musical-note-mi {
+    0% { opacity: 0; } 10% { opacity: 0.4; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.mi { left: 44px; top: 90px;  animation-name: musical-note-mi; }
+
+@keyframes musical-note-sol {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0.4; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.sol { left: 82px; top: 89px;  animation-name: musical-note-sol; }
+
+@keyframes musical-note-si {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0.4; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.si { left: 129px; top: 89px;  animation-name: musical-note-si; }
+
+@keyframes musical-note-re {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0.4; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.re { left: 164px; top: 89px;  animation-name: musical-note-re; }
+
+@keyframes musical-note-fa {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0.4; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.fa { left: 201px; top: 89px;  animation-name: musical-note-fa; }
+
+@keyframes musical-note-fa-down {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0.4; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.fa-down { left: 247px; top: 90px;  animation-name: musical-note-fa-down; }
+
+@keyframes musical-note-la {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0.4; } 80% { opacity: 0; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.la { left: 291px; top: 90px;  animation-name: musical-note-la; }
+
+
+@keyframes musical-note-do {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0.4; } 100% { opacity: 0; }
+}
+#animation_3 .musical-note-name.do { left: 337px; top: 90px;  animation-name: musical-note-do; }
+
+@keyframes musical-note-mi-up {
+    0% { opacity: 0; } 10% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 0; } 80% { opacity: 0; } 100% { opacity: 0.4; }
+}
+#animation_3 .musical-note-name.mi-up { left: 386px; top: 90px; -webkit-animation-fill-mode: forwards; animation-name: musical-note-mi-up; animation-duration: 10s; animation-fill-mode: forwards; }
+
+/********************************************************************************/
+/* SPECIAL CONTENT "Map"
+/********************************************************************************/
+#mapa_principal { width: 850px; }
+
+#mapa_principal .icon_more {
+    position: relative;
+    width: 0;
+    height: 10px;
+}
+
+/********************************************************************************/
+/* Actividad quiz
+/********************************************************************************/
+#cuestionario .end { top: 305px; }
+
+/********************************************************************************/
+/* Actividad CROSSWORD
+/********************************************************************************/
+#actividad_crossword .board_content { width: 245px; }
+
+/********************************************************************************/
+/* Actividad arrastrar y soltar - apareamiento
+/********************************************************************************/
+
+#actividades_arrastrar1 .pit-activities-droppable .box_panel_activity.sources {
+    height: 70px;
+}
+
+#actividades_arrastrar1 .pit-activities-droppable br.clear {
+    margin-bottom: 20px;
+}
+
+#actividades_arrastrar1 .pit-activities-droppable table {
+    empty-cells: show;
+}
+
+#actividades_arrastrar1 .pit-activities-droppable td.droppable {
+    width: 80px;
+    height: 16px;
+}
+
+#actividades_arrastrar1 .pit-activities-droppable td.conection {
+    width: 30px;
+    border: none;
+    padding: 5px 10px;
+}
+
+#actividades_arrastrar1 .pit-activities-droppable .draggable {
+    float: left;
+    margin: 0 5px 5px 0;
+    position: absolute;
+    width: 80px;
+}
+
+#actividades_arrastrar1 .item_1 {
+     left: 50px;
+}
+
+#actividades_arrastrar1 .item_2 {
+     left: 150px;
+}
+
+#actividades_arrastrar1 .item_3 {
+     left: 250px;
+}
+
+#actividades_arrastrar1 .item_4 {
+     left: 350px;
+}
+
+#actividades_arrastrar1 .item_5 {
+     left: 450px;
+}
+
+#actividades_arrastrar1 .ion-chevron-right { font-size: 16px; }
+/********************************************************************************/
+/* Actividad arrastrar y soltar - diálogo
+/********************************************************************************/
+#actividades_arrastrar2 h3 { margin: -5px 0 0; }
+
+#actividades_arrastrar2 .pit-activities-droppable td.sources {
+    padding-left: 100px;
+}
+
+#actividades_arrastrar2 .pit-activities-droppable .draggable {
+    width: 75px;
+    float: left;
+    margin-bottom: 5px;
+    clear: both;
+}
+
+#actividades_arrastrar2 .pit-activities-droppable .droppable {
+    width: 85px;
+    height: 25px;
+}
+
+/********************************************************************************/
+/* Actividad arrastrar y soltar - completar
+/********************************************************************************/
+#actividades_arrastrar3 h3 { margin: -11px 0; }
+
+#actividades_arrastrar3 .box_panel_activity.down { height: 50px; }
+
+#actividades_arrastrar3 .pit-activities-droppable br.clear {
+    margin-bottom: 20px;
+}
+
+#actividades_arrastrar3 .pit-activities-droppable table {
+    empty-cells: show;
+    border-spacing: 0 5px;
+    color: #fff;
+}
+
+#actividades_arrastrar3 .pit-activities-droppable th {
+    background: #11276d;
+    border: 2px solid #11276d;
+    border-radius: 6px 0 0 6px;
+    color: #FFFFFF;
+    padding: 5px;
+    text-align: right;
+    border-radius: 13px 0 0 13px;
+}
+
+#actividades_arrastrar3 .pit-activities-droppable td {
+    padding: 6px;
+    border: 2px solid #11276d;
+    border-radius: 0 13px 13px 0;
+    text-align: left;
+    width: 415px;
+}
+
+#actividades_arrastrar3 .pit-activities-droppable .draggable {
+    margin: 0 5px 5px 0;
+    position: absolute;
+    width: 415px;
+    text-align: left;
+    box-shadow: -2px 0 5px #888888;
+    border: 0;
+    padding: 5px;
+}
+
+#actividades_arrastrar3 .pit-activities-droppable .jpit_activities_jpitdroppable_dropped {
+    margin: -2px;
+    background: #FFFFFF;
+    border: 2px solid #11276d;
+    box-shadow: 0 0 0;
+    border-radius: 0 13px 13px 0;
+    padding: 5px;
+}
+
+#actividades_arrastrar3 .pit-activities-droppable .jpit_activities_jpitdroppable_dropped  i {
+    color: #0039A6;
+}
+
+#actividades_arrastrar3 .pit-activities-droppable .item_1.draggable  { left: 40px; }
+#actividades_arrastrar3 .pit-activities-droppable .item_2.draggable { left: 100px; }
+#actividades_arrastrar3 .pit-activities-droppable .item_3.draggable { left: 180px; }
+#actividades_arrastrar3 .pit-activities-droppable .item_4.draggable { left: 340px; }
+#actividades_arrastrar3 .pit-activities-droppable .item_5.draggable { left: 420px; }
+/********************************************************************************/
+/* Actividad arrastrar y soltar - insertar
+/********************************************************************************/
+#actividades_arrastrar4 h3 { margin: -11px 0; }
+
+#actividades_arrastrar4 .box_panel_activity.down { height: 50px; }
+
+#actividades_arrastrar4 .pit-activities-droppable br.clear {
+    margin-bottom: 20px;
+}
+
+#actividades_arrastrar4 .pit-activities-droppable table {
+    empty-cells: show;
+    border-spacing: 0 5px;
+    font-weight: bold;
+}
+
+#actividades_arrastrar4 .pit-activities-droppable th {
+    background: #11276d;
+    border: 2px solid #11276d;
+    border-radius: 13px 0 0 13px;
+    color: #FFFFFF;
+    padding: 5px;
+    text-align: right;
+    border-right: none;
+}
+
+#actividades_arrastrar4 .pit-activities-droppable td {
+    padding: 5px;
+    border: 1px dashed #11276d;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
+    width: 200px;
+    border-left: none;
+}
+
+#actividades_arrastrar4 .pit-activities-droppable .draggable {
+    float: left;
+    margin: 0 5px 5px 0;
+    position: absolute;
+}
+
+#actividades_arrastrar4 .pit-activities-droppable .wrong {
+    border-color: #D60C1B;
+    color: #D60C1B;
+}
+
+#actividades_arrastrar4 .pit-activities-droppable .item_1.draggable  { left: 40px; }
+#actividades_arrastrar4 .pit-activities-droppable .item_2.draggable { left: 240px; }
+#actividades_arrastrar4 .pit-activities-droppable .item_3.draggable { left: 340px; }
+#actividades_arrastrar4 .pit-activities-droppable .item_4.draggable { left: 480px; }
+/********************************************************************************/
+#actividades_arrastrar5 .pit-activities-droppable .draggable { width: 180px; float: left; margin: 3px; }
+#actividades_arrastrar5 .box_panel_activity { width: 200px; float: left; margin-right: 20px; }
+#actividades_arrastrar5 .box_panel_activity.down { width: 600px; margin: 0; }
+#actividades_arrastrar5 .pit-activities-droppable { border: none; background-color: #fff; }
+#actividades_arrastrar5 .pit-activities-droppable .droppable { width: 180px; margin: 10px 0; padding: 5px; }
+#actividades_arrastrar5 .box_droppable.instruction { color: #B5B3B3; }
+#actividades_arrastrar5 .instruction { width: 860px; margin: 10px auto; text-align: justify; }
+#actividades_arrastrar5 .pit-activities-droppable .box_end { top: 300px; }
+/********************************************************************************/
+/* Actividad arrastrar y soltar multiple
+/********************************************************************************/
+#actividades_arrastrargrupos table { margin: auto; }
+
+
+#actividades_arrastrargrupos th { text-align: center; font-size: 16px; color: #11276d; border-bottom: 2px solid #11276d; width: 190px; }
+#actividades_arrastrargrupos td { height: 150px; }
+
+#actividades_arrastrargrupos .pit-activities-multidroppable .sources { width: 100%; height: 65px; margin: 10px auto 0; }
+
+#actividades_arrastrargrupos .pit-activities-multidroppable .draggable {
+    width: 165px;
+    float: left;
+    margin: 0 1px 5px;
+    border-radius: 8px;
+}
+
+#actividades_arrastrargrupos table .draggable.disabled {
+    cursor: default;
+}
+
+#actividades_arrastrargrupos table .draggable {
+    background-color: #FFFFFF;
+    border: solid #0039A6 1px;
+    border-radius: 8px;
+    color:#445B26;
+}
+
+#actividades_arrastrargrupos .pit-activities-multidroppable .draggable.wrong {
+    border-color: #D60C1B;
+    color: #D60C1B;
+}
+
+#actividades_arrastrargrupos .pit-activities-multidroppable .box_end { bottom: 26px; left: 133px;}
+#actividades_arrastrargrupos .box_end .correct { padding: 0; }
+
+#actividades_arrastrargrupos .pit-activities-multidroppable .buttons { text-align: center; }
+
+/********************************************************************************/
+/* Actividad cloze. Algunas personalizaciones propias del ejemplo
+/********************************************************************************/
+
+#actividades_cloze .pit-activities-cloze .verify_container {
+    padding-left: 290px
+}
+
+#actividades_cloze .pit-activities-cloze .dialogue td {
+    padding-left: 30px;
+}
+
+#actividades_sortable h3 { margin: -11px 0; }
+
+
+#actividades_check .pit-activities-check .check_left .word_content {
+    height: 50px;
+}
+
+
+/********************************************************************************/
+/* Solo para ejemplo de mouse over 1
+/********************************************************************************/
+#textos_mouse_over_1 .act_mouse_over_one { position: relative; margin-top: 15px; height: 230px;}
+#textos_mouse_over_1 .act_mouse_over_one .button { width : 137px; height : 128px; position: absolute; }
+#textos_mouse_over_1 .act_mouse_over_one .button.b1 { background: url(../content/img_experto.png) no-repeat; top: -25px; left: 100px; }
+#textos_mouse_over_1 .act_mouse_over_one .button.b2 { background: url(../content/img_gestor.png) no-repeat; top: 65px; }
+#textos_mouse_over_1 .act_mouse_over_one .button.b3 { background: url(../content/img_produccion.png) no-repeat; top: 65px; left: 200px; }
+#textos_mouse_over_1 td, #textos_mouse_over_1 th { width: 50%; vertical-align: top; }
+
+/********************************************************************************/
+/* Solo para ejemplo de mouse over 2
+/********************************************************************************/
+#textos_mouse_over_2 th {
+    vertical-align: top;
+}
+
+#textos_mouse_over_2 .act_mouse_over {
+    background : #FFFFFF;
+    border : dashed #0039A6 1px;
+    width : 50px;
+    height : 50px;
+    float: left;
+    margin: 10px;
+}
+
+/********************************************************************************/
+/* Solo para ejemplo de mark
+/********************************************************************************/
+#actividades_mark .pit-activities-mark {
+    right: 50px;
+    top: 20px;
+
+}
+
+#actividades_mark p {
+    width: 400px;
+}
+
+/********************************************************************************/
+/* Actividad formulario
+/********************************************************************************/
+.pit-activities-form .sheet {
+	background: url(../img/bg_papel.png) repeat-x left top;
+    width: 410px;
+    margin: auto;
+    padding-top: 35px;
+}
+
+.pit-activities-form .sheet_body {
+    background-color: #f6f5f2;
+    padding: 10px 20px;
+}
+
+.pit-activities-form input[type=text] {
+    background-color: #f6f5f2;
+    border: dashed #C9C8C7 2px;
+    width: 94%;
+    margin-bottom: 10px;
+    padding: 5px 3%;
+}
+
+.pit-activities-form textarea {
+    width: 94%;
+    height: 40px;
+    padding: 3%;
+    background-color: #f6f5f2;
+    border: dashed #C9C8C7 2px;
+}
+
+#actividades_form .horizontal-menu .chalkboard_content {
+    background-color: #fff;
+}
+
+/********************************************************************************/
+/* Actividad guessing
+/********************************************************************************/
+#actividades_guessing .pit-activities-guessing { width: 99%; height: 330px; margin: auto; position: relative; background: #fff; border: solid #B6BDBA 1px; box-shadow: 0px 0px 10px #888682; }
+#actividades_guessing .object-to-guess { margin: auto; }
+#actividades_guessing .object-guessed{ width: 100px; height: 50px; display: inline-flex; cursor: pointer; }
+#actividades_guessing .board-objects-to-guess { background: url(../content/img22.png) no-repeat; width: 810px; height: 200px; position: relative; margin: 20px auto; }
+#actividades_guessing .board-objects-to-guess div.iconsound { background-image: none; width: 0; height: 0; margin: 0; }
+#actividades_guessing div[class*="natural"] *, #actividades_guessing div[class*="chromatic"] * { position: absolute; }
+#actividades_guessing div[class*="natural"]:hover *, #actividades_guessing div[class*="chromatic"]:hover * { background-color: #e1f4f6; opacity: 0.4; }
+#actividades_guessing div[class*="subpart-2"] { width: 45px; height: 75px; top: 115px; }
+#actividades_guessing div[class*="chromatic"] .subpart-1 { width: 26px; height: 112px; top: 1px; }
+#actividades_guessing div[class*="natural"] .subpart-1 { width: 34px; height: 112px; top: 2px; }
+ 
+#actividades_guessing .keypressed *, #actividades_guessing .keypressed { background-color: #aebfb9 !important; opacity: 0.6 !important; border: 1px solid #aebfb9; }
+ 
+#actividades_guessing .do-natural .subpart-1 { left: 2px; }
+#actividades_guessing .do-natural .subpart-2 { left: 2px; }
+ 
+#actividades_guessing .do-chromatic .subpart-1 { left: 37px; }
+ 
+#actividades_guessing .re-natural .subpart-1 { width: 25px !important; left: 64px; }
+#actividades_guessing .re-natural .subpart-2 { left: 54px; }
+ 
+#actividades_guessing .re-chromatic .subpart-1 { left: 90px; }
+ 
+#actividades_guessing .mi-natural .subpart-1 { left: 117px; }
+#actividades_guessing .mi-natural .subpart-2 { left: 107px; }
+ 
+#actividades_guessing .fa-natural .subpart-1 { left: 160px; }
+#actividades_guessing .fa-natural .subpart-2 { left: 160px; }
+ 
+#actividades_guessing .fa-chromatic .subpart-1 { left: 195px; }
+ 
+#actividades_guessing .sol-natural .subpart-1 { left: 222px; width: 25px !important; }
+#actividades_guessing .sol-natural .subpart-2 { left: 212px; }
+ 
+#actividades_guessing .sol-chromatic .subpart-1 { left: 248px; }
+ 
+#actividades_guessing .la-natural .subpart-1 { width: 25px !important; left: 275px; }
+#actividades_guessing .la-natural .subpart-2 { left: 265px; }
+ 
+#actividades_guessing .la-chromatic .subpart-1 { left: 300px; }
+ 
+#actividades_guessing .si-natural .subpart-1 { left: 327px; }
+#actividades_guessing .si-natural .subpart-2 { left: 317px; }
+ 
+#actividades_guessing .do-up-natural .subpart-1 { right: 403px; }
+#actividades_guessing .do-up-natural .subpart-2 { right: 392px; }
+ 
+#actividades_guessing .do-up-chromatic .subpart-1 { right: 376px; }
+ 
+#actividades_guessing .re-up-natural .subpart-1 { right: 350px; width: 25px !important; }
+#actividades_guessing .re-up-natural .subpart-2 { right: 340px; }
+ 
+#actividades_guessing .re-up-chromatic .subpart-1 { right: 323px; }
+ 
+#actividades_guessing .mi-up-natural .subpart-1 { right: 288px; }
+#actividades_guessing .mi-up-natural .subpart-2 { right: 287px; }
+ 
+#actividades_guessing .fa-up-natural .subpart-1 { right: 245px; }
+#actividades_guessing .fa-up-natural .subpart-2 { right: 236px; }
+ 
+#actividades_guessing .fa-up-chromatic .subpart-1 { right: 218px; }
+ 
+#actividades_guessing .sol-up-natural .subpart-1 { right: 192px; width: 25px !important; }
+#actividades_guessing .sol-up-natural .subpart-2 { right: 182px; }
+ 
+#actividades_guessing .sol-up-chromatic .subpart-1 { right: 165px; }
+ 
+#actividades_guessing .la-up-natural .subpart-1 { right: 139px; width: 25px !important; }
+#actividades_guessing .la-up-natural .subpart-2 { right: 130px; }
+ 
+#actividades_guessing .la-up-chromatic .subpart-1 { right: 113px; }
+ 
+#actividades_guessing .si-up-natural .subpart-1 { right: 79px; }
+#actividades_guessing .si-up-natural .subpart-2 { right: 79px; }
+ 
+#actividades_guessing .do-up-natural-2 .subpart-1 { right: 37px; }
+#actividades_guessing .do-up-natural-2 .subpart-2 { right: 26px; }
+
+#actividades_guessing .overlay{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background-color: rgba(239, 239, 239, 0.5); opacity: 0.9; }
+#actividades_guessing .matched  * { background-color: #4BAD21 !important; opacity: 0.6 !important; border: 1px solid #4BAD21; }
+#actividades_guessing .dont-matched  * { background-color: #FF0000 !important; opacity: 0.6 !important; border: 1px solid #FF0000; }
+#actividades_guessing .guessing-results { margin: 0; width: 240px; height: 75px; position: absolute; bottom: 5px; right: 4px; border-radius: 6px; text-align: center; }
+#actividades_guessing .guessing-result-corrects { width: 75px; float: left; margin: 0 10px; padding: 0 10px; height: 45px; }
+#actividades_guessing .guessing-result-corrects p { color: #4BAD21; }
+#actividades_guessing .guessing-result-wrongs p { color: #FF0000; }
+#actividades_guessing .guessing-results p { font-size: 30px; text-align: center; margin: 0; }
+#actividades_guessing .guessing-result-wrongs { width: 75px; float: left; margin: 0 10px; padding: 0 10px; height: 45px; }
+#actividades_guessing .instruction { width: 860px; margin: -5px auto 10px; text-align: justify; }
+#actividades_guessing .instruction.sound { margin-top: 10px; margin-bottom: 20px; text-align: center; }
+#actividades_guessing .pit-activities-guessing .box_end  { bottom: -90px; left: 0; right: 0; position: absolute; }
+/********************************************************************************/
+#actividades_memory .pit-activities-memory { width: 560px; height: 365px; margin: -10px auto 0; }
+#actividades_memory .pit-activities-memory .box_end { top: 40px; left: 0; right: 0; position: absolute; }
+/********************************************************************************/
+/* animaciones
+/********************************************************************************/
+
+#animation_2 .movi {
+    width: 50px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes example_img {
+    0% {
+        display: visible;
+    }
+    25% {
+        display: hidden;
+    }
+    50% {
+        display: visible;
+    }
+    75% {
+        display: hidden;
+    }
+    100% {
+        display: visible;
+    }
+}
+
+#animation_2 .instruction {
+    margin: 10px 0;
+}
+
+/********************************************************************************/
+/* Imágenes con texto
+/********************************************************************************/
+
+#img_modal_window_1 .box_l { background: url(../content/img-text-modal-2.png) no-repeat center top; background-size: 316px; margin-left: 30px; width: 400px; height: 400px; margin-top: 0px;}
+#img_modal_window_1 .note_1 { left: 40px; top: 3px; }
+#img_modal_window_1 .note_2 { left: 393px; top: 96px;}
+#img_modal_window_1 .note_3 { left: 393px; top: 143px;}
+#img_modal_window_1 .note_4 { left: 40px; top: 158px;}
+#img_modal_window_1 .note_5 { left: 393px; top: 178px;}
+#img_modal_window_1 .note_6 { left: 40px; top: 193px;}
+#img_modal_window_1 .note_7 { left: 393px; top: 242px;}
+#img_modal_window_1 .note_8 { left: 40px; top: 280px;}
+#img_modal_window_1 .instruction { width: 415px; margin: 5px; text-align: center;}
+
+.view-first { margin: 5px 20px; float: left; }
+.instruction { width: 350px; }
+.box_l { width: 860px; margin: auto; }
+
+#image_content_modal .view { margin: auto; }
+#image_content_modal .instruction { width: 350px; margin-top: -5px; }
+
+/********************************************************************************/
+/* Imágenes para ampliar
+/********************************************************************************/
+
+#image_expand .box_img { width: 400px; }
+
+/********************************************************************************/
+/* Pointers with text
+/********************************************************************************/
+
+#pointers_text .box_l { background: url(../content/pointers-text.png) no-repeat center top; margin: auto; width: 236px; height: 290px; position: relative; }
+#pointers_text .note_1 { left: -55px; top: -11px; }
+#pointers_text .note_2 { left: 230px; top: 52px; }
+#pointers_text .note_3 { left: 230px; top: 88px; }
+#pointers_text .note_4 { left: -55px; top: 104px; }
+#pointers_text .note_5 { left: 230px; top: 120px; }
+#pointers_text .note_6 { left: -55px; top: 137px; }
+#pointers_text .note_7 { left: 230px; top: 165px; }
+#pointers_text .note_8 { left: -55px; top: 200px; }
+#pointers_text .instruction { width: 435px; margin: auto; text-align: center;}
+
+/********************************************************************************/
+/* Pointers with text
+/********************************************************************************/
+#pie_1 .box_center { width: 210px; margin: auto; }
+#pie_2 .box_center { width: 310px; margin: auto; }
+#pie_3 .box_center { width: 310px; margin: auto; }
+#pie_4 .box_r { width: 310px; margin: -10px auto 0; float: right; margin-left: 10px; }
