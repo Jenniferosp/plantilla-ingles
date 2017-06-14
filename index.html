@@ -14,7 +14,8 @@
     <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
     <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
     <link href="components/pit/css/jpit_viewfirst.css" rel="stylesheet" type="text/css">
-    
+    <script src="https://use.fontawesome.com/71654c0d82.js"></script>
+
     <script src="components/jquery/jquery.min.js"></script>
     <script src="components/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
@@ -25,7 +26,7 @@
     <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
 <!--End Other components -->
 
-    
+
     <script src="components/pit/jpit_api.js"></script>
     <script src="components/pit/utilities/jpit_utilities.js"></script>
     <script src="components/pit/activity/jpit_activity.js"></script>
@@ -50,7 +51,7 @@
     <script src="js/stories.js"></script>
     <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
     <script src="components/scorm/scorm_api.js"> </script>
-    
+
     <style>
         body {
             /*background: #4b718d url(img/bg_repeat.png) repeat;*/
@@ -64,49 +65,63 @@
             display: none;
         }
     </style>
-    
+
 </head>
 <body class="loading">
     <div id="body" class="not_print">
         <div id="not_scorm_msg" style="display: none;">Este documento se encuentra en modo de solo lectura por lo que la información de lo que realice no se guardará. Si precisa almacenar el seguimiento, por favor cierre esta página e intente más tarde.</div>
 
-        <header maintitle="Ejemplos de controles a soportar en el curso" subtitle="Nombre de la unidad">
+        <!-- <header maintitle="Ejemplos de controles a soportar en el curso" subtitle="Nombre de la unidad"> -->
+        <header>
+            <div id="up_bar"></div>
+            <div id="down_bar"></div>
             <div id="div_overlay" ></div>
             <div id="header_left"></div>
             <div id="header_right"></div>
-            <div id="main_menu">
-                <menu>
-                    <item title="Contextualización" data-page="context"></item>
-                    <item title="Esquema" data-page="map"></item>
-                    <item title="Contenido">
-                        <item title="1. Textos" data-label="true">
-                            <item title="1.1. Textos especiales" data-page="textos"></item>
-                            <item title="1.2. Presentación del contenido" data-page="presentation"></item>
-                        </item>
-                        <item title="2. Multimedia" data-page="media"></item>
-                        <item title="3. Formato de contenido" data-page="contenido"></item>
-                        <item title="4. Actividades" data-page="acitvidades"></item>
-                        <item title="5. Referencias" data-page="referencias"></item>
-                    </item>
-                    <item title="Actividad" data-page="activity"></item>
-                </menu>  
-                <globals>
-                    <item data-id="credits" title="Créditos"><i class="ion-android-checkbox-blank"><span>C</span></i></item>
-                    <item data-id="bibliography" title="Bibliografía"><i class="ion-ios-book"></i></item>
-                    <item data-id="results" title="Resultados"><i class="ion-thermometer w_content_controler" data-content="#results_page"></i></item>
-                    <item data-id="return" title="Regresar"><i class="ion-share"></i></item>
-                </globals>
-            </div>
+
         </header>
+        <div class="main-logo">
+          <div class="main-context-title">
+            <div class="arrow-left"></div>
+            <p>Ejemplos de controles a soportar en el curso</p>
+          </div>
+          <div class="main-context-subtitle">
+            <p>Nombre de la unidad</p>
+          </div>
+        </div>
 
         <div id="main" class="main_content">
+          <div id="main_menu">
+              <menu>
+                  <item title="Context" data-page="context"></item>
+                  <item title="Layout" data-page="map"></item>
+                  <item title="Contents">
+                      <item title="1. Textos" data-label="true">
+                          <item title="1.1. Textos especiales" data-page="textos"></item>
+                          <item title="1.2. Presentación del contenido" data-page="presentation"></item>
+                      </item>
+                      <item title="2. Multimedia" data-page="media"></item>
+                      <item title="3. Formato de contenido" data-page="contenido"></item>
+                      <item title="4. Actividades" data-page="acitvidades"></item>
+                      <item title="5. Referencias" data-page="referencias"></item>
+                  </item>
+                  <!-- <item title="Actividad" data-page="activity"></item> -->
+              </menu>
+              <globals>
+                  <item data-id="credits" title="Créditos"><i class="fa fa-asterisk fa-fw" aria-hidden="true"></i></item>
+                  <item data-id="bibliography" title="Bibliografía"><i class="fa fa-book fa-fw" aria-hidden="true"></i></item>
+                  <item data-id="results" title="Resultados"><i data-content="#results_page" class="fa fa-list-alt fa-fw" aria-hidden="true"></i></item>
+                  <item data-id="return" title="Regresar"><i ></i></item>
+              </globals>
+          </div>
+
             <div id="middle" style="display: none;">
 
                 <!--Contextualización -->
                 <div class="page">
                     <div class="subpage" id="context_1">
                     </div>
-                    
+
                     <div class="subpage" id="context_0">
                         <div class="box_l img_responsive center"><img src="img/avata-welcome.png" /></div>
                         <div class="box_r">
@@ -233,7 +248,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="subpage">
                         <h2>1. Textos especiales</h2>
                         <h3>Podcast</h3>
@@ -250,7 +265,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="subpage">
                         <h2>1. Textos especiales</h2>
                         <h3>Video</h3>
@@ -270,9 +285,9 @@
 
                     <div class="subpage">
                         <h3>Vínculos externos sobre recursos gráficos</h3>
-                        
+
                         <p>Para elementos que no son "a" y deben abrir un enlace, utilizar la clase CSS <strong>open_url</strong> y colocar el atributo <em>data-url</em> para especificar la dirección. Siempre abre en ventana nueva.</p>
-                        
+
                         <div class="box_examples">
                             <h5>Ejemplo</h5>
 <pre>&lt;button class="general open_url" data-url="http://google.com"&gt;
@@ -281,14 +296,14 @@
                             <p>
                             Lo anterior se vería así: <button class="general open_url" data-url="http://google.com">Clic para ir a Google</button>
                             </p>
-                        </div>                         
+                        </div>
                     </div>
 
                     <div class="subpage" id="textos_modal">
                         <h3>Abrir contenido en ventana modal</h3>
-                        
+
                         <p>Para abrir contenidos en ventanas modales dentro del mismo objeto. Se agrega la clase "w_content_controler" al elemento que debe abrir la ventana (origen), por defecto con el evento clic. No tiene que ser botón o enlace, puede ser cualquier elemento. Se debe establecer la propiedad "data-content" con la ruta CSS del elemento que se convertirá en ventana (destino). El elemento que se abre como ventana debe tener la clase "w_content". Se puede utilizar la propiedad "data-property-width", tanto en el origen como en el destino, para definir el ancho de la ventana modal y "data-property-height" para definir el alto. También se puede asignar una clase al destino mediante la propiedad "data-cssclass" en el elemento destino.</p>
-                        
+
                         <div class="box_examples">
                             <h5>Ejemplo</h5>
 <pre>&lt;button class="w_content_controler general" data-content="#textos_modal_window"&gt;
@@ -309,10 +324,10 @@
 
                     <div class="subpage" id="textos_infografia">
                         <h3>Infografía</h3>
-                        
+
                         <p>Algunos elementos gráficos que pueden ser útiles en el montaje y que ya están definidos.</p>
                         <p>Las listas (&lt;ul&gt;), cuando sean de datos, deben tener la clase "data_list".</p>
-                        
+
                         <ul class="data_list">
                             <li><strong>Flecha abajo: </strong><i class="ion-arrow-down-a"></i>, usar &lt;span class="ion-arrow-down-a"&gt;&lt;/span&gt;</li>
                             <li><strong>Flecha derecha: </strong><i class="ion-arrow-right-a"></i>, usar &lt;span class="ion-arrow-right-a"&gt;&lt;/span&gt;</li>
@@ -591,19 +606,19 @@
                         <p>Dado que los iconos se basan en fuentes se puede hacer algunas alteraciones de tamaño, color, efectos, entre otros.</p>
                         <h4>Ejemplos:</h4>
                         <ul class="data_list">
-                            <li class="little">Más pequeño: 
+                            <li class="little">Más pequeño:
                                  <i class="ion-arrow-down-a" ></i>
                                  <i class="ion-checkmark-circled" ></i>
                                  <i class="ion-happy-outline" ></i>
                                  <i class="ion-erlenmeyer-flask" ></i>
                              </li>
-                            <li class="large">Más grande: 
+                            <li class="large">Más grande:
                                  <i class="ion-arrow-down-a" ></i>
                                  <i class="ion-checkmark-circled" ></i>
                                  <i class="ion-happy-outline" ></i>
                                  <i class="ion-erlenmeyer-flask" ></i>
                             </li>
-                            <li class="color">Otros colores: 
+                            <li class="color">Otros colores:
                                  <i class="ion-arrow-down-a a" ></i>
                                  <i class="ion-checkmark-circled b" ></i>
                                  <i class="ion-happy-outline c" ></i>
@@ -615,7 +630,7 @@
                                  <a href="#"><i class="ion-happy-outline" ></i></a>
                                  <a href="#"><i class="ion-erlenmeyer-flask" ></i></a>
                             </li>
-                            <li class="effects">Sombra: 
+                            <li class="effects">Sombra:
                                  <i class="ion-arrow-down-a a" ></i>
                                  <i class="ion-checkmark-circled b" ></i>
                                  <i class="ion-happy-outline c" ></i>
@@ -624,7 +639,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <!-- Presentación del contenido -->
                 <div class="page">
 
@@ -687,7 +702,7 @@
                         <h3>Mouse "sobre" - Contenido siempre visible</h3>
                         <p>Para desplegar contenido pasando el mouse por un elemento, se utiliza la clase "act_mouse_over_one" en un contenedor con elementos que adicionan la propiedad "data-ref", la cual debe contener la ruta CSS del elemento que se muestra al pasar el mouse. Se mantiene visible el último elemento mostrado.</p>
                         <p>Importante: No se controla la visualización inicial por lo que se deben ocultar los elementos explícitamente y mantener visible solamente el inicial. Además, marcar el elemento de control del elemento visible con la clase "current".</p>
-                        
+
                         <table>
                             <tr>
                                 <th>
@@ -708,12 +723,12 @@
                             </tr>
                         </table>
                     </div>
-                
+
                     <div class="subpage" id="textos_mouse_over_2">
                         <h3>Mouse "sobre" - Contenido que se oculta </h3>
                         <p>Para desplegar contenido pasando el mouse por un elemento, se utiliza la clase "act_mouse_over" en un elemento que debe tener la propiedad "data-ref", la cual debe contener la ruta CSS del elemento que se muestra al pasar el mouse. Al quitar el mouse el elemento se vuelve a ocultar.</p>
                         <p>Importante: No se controla la visualización inicial por lo que se deben ocultar el elemento explícitamente al inicio.</p>
-                        
+
                         <table>
                             <tr>
                                 <th>
@@ -744,19 +759,19 @@
 
                 <!--Multimedia-->
                 <div class="page">
-                    
+
                     <div class="subpage">
                         <h2> 2. Multimedia</h2>
                         <h3>Audios</h3>
-                        
+
                         <p>Para audios utilizar el siguiente botón:
                         <button class="iconsound button ion-volume-high" data-sound="13/sonido1_slide_13"></button> El atributo data-sound contiene la ruta compuesta por el nombre del archivo y si está dentro de una carpeta, el nombre de la carpeta.
                         </p>
-                        
+
                         <div class="box_examples">
                             <h5>Ejemplo</h5>
                             <pre>
-&lt;button class="iconsound button" 
+&lt;button class="iconsound button"
     data-sound="13/sonido1_slide_13">
 &lt;/button&gt;
                             </pre>
@@ -768,19 +783,19 @@
 
                     <div class="subpage">
                         <h3>Animaciones</h3>
-                        
+
                         <p>Las imágenes que sean animadas deben ser .gif y llevan la clase CSS <em>animation</em>. Ejemplo:</p>
                         <img src="content/animacion1.gif" class="animation" />
-                        
+
                         <p>Las imágenes que sean animadas pero que deban iniciar al presionar un botón, deben ser .gif pero tener otra imagen o elemento (controlador) para definir el inicio. El controlador debe llevar la clase CSS <em>play-animation</em> y una propiedad <em>data-animation</em> con la ruta de la animación. Ejemplo:</p>
                         <img src="content/prev_animacion2.png" class="play-animation" data-animation="content/animacion2.gif" />
                     </div>
-                    
+
                     <div class="subpage" id="animation_1">
                         <h3>Programación de animaciones</h3>
-                        
+
                         <p>Para animar html, incluido, pero no limitado a, imágenes</p>
-                        
+
                         <div class="movi">
                             <div class="movi_1" data-movi-type="show">
                                 <div class="movi_2" data-movi-type="move" data-movi-base="example_move" style="position: absolute;">
@@ -807,12 +822,12 @@
                         <div class="instruction desktop">Haga clic sobre la imagen para reiniciar la animación</div>
                         <div class="instruction mobile">Toque la imagen para reiniciar la animación</div>
                     </div>
-                    
+
                     <div class="subpage" id="zoom_1">
                         <h3>Zoom en imágenes</h3>
-                        
+
                         <p>Para permitir hacer zoom en imágenes, por ejemplo, en mapas conceptuales. Agregar a la imagen la clase <em>pit-resources-zoom</em>. Se puede manipular el alcance del zoom con el atributo <em>data-magnification</em> (un entero) y el tamaño de la "lupa" con el atributo <em>data-magnifier-size</em>.</p>
-                        
+
                         <img src="content/pagina.jpg" class="pit-resources-zoom" style="width: 200px;" data-magnification="3" data-magnifier-size="200" />
                     </div>
 
@@ -864,7 +879,7 @@
         &lt;dt&gt;Consideraciones&lt;/dt&gt;
         &lt;dd&gt;
             &lt;h5&gt;Consideraciones&lt;/h5&gt;
-            &lt;p&gt;Se le debe dar manualmente el alto en caso de que 
+            &lt;p&gt;Se le debe dar manualmente el alto en caso de que
             sea inferior al de las pestañas&lt;/p&gt;
         &lt;/dd&gt;
     &lt;/dl&gt;
@@ -907,7 +922,7 @@
                                 </dt>
                                 <dd>
                                     <h5>Consideraciones</h5>
-                                    
+
                                     <p>Se le debe dar manualmente el alto utilizando CSS</p>
                                     <p>Se utiliza cuando hay una serie de opciones que se van a colocar en una misma página pero el usuario ve una por una acorde a un menú de texto al lado inferior del contenido.</p>
                                 </dd>
@@ -1215,19 +1230,19 @@
                         <div class="instruction desktop">Pase el mouse sobre cada imagen para más información</div>
                         <div class="instruction mobile">Toque sobre cada imagen para más información</div>
                         <div class="box_l">
-                            <div class="view-first" data-width="150" data-height="150"> 
+                            <div class="view-first" data-width="150" data-height="150">
                                  <img src="content/primavera.png" />
                                  <div class="view-content">
-                                     <h2>Primavera</h2>  
+                                     <h2>Primavera</h2>
                                      <p>
                                         <strong>Inicio: </strong>20-21 marzo<br />
                                         <strong>H. norte: </strong>Primavera<br />
                                         <strong>H. sur: </strong>Otoño<br />
                                         <strong>Inclinación: </strong>0°<br />
                                      </p>
-                                 </div>  
+                                 </div>
                             </div>
-                            <div class="view-first" data-width="150" data-height="150"> 
+                            <div class="view-first" data-width="150" data-height="150">
                                  <img src="content/verano.png" />
                                  <div class="view-content">
                                      <h2>Verano</h2>
@@ -1237,31 +1252,31 @@
                                         <strong>H. sur: </strong>Invierno<br />
                                         <strong>Inclinación: </strong>23,5º Norte<br />
                                      </p>
-                                 </div>  
+                                 </div>
                             </div>
-                            <div class="view-first" data-width="150" data-height="150"> 
+                            <div class="view-first" data-width="150" data-height="150">
                                  <img src="content/otono.png" />
                                  <div class="view-content">
-                                     <h2>Otoño</h2>  
+                                     <h2>Otoño</h2>
                                      <p>
                                         <strong>Inicio: </strong>23-24 Septiembre<br />
                                         <strong>H. norte: </strong>Otoño<br />
                                         <strong>H. sur: </strong>Primavera<br />
                                         <strong>Inclinación: </strong>0°<br />
                                      </p>
-                                 </div>  
+                                 </div>
                             </div>
                             <div class="view-first" data-width="150" data-height="150">
                                  <img src="content/invierno.png" />
                                  <div class="view-content">
-                                     <h2>Invierno</h2>  
+                                     <h2>Invierno</h2>
                                      <p>
                                         <strong>Inicio: </strong>21-22 Diciembre<br />
                                         <strong>H. norte: </strong>Invierno<br />
                                         <strong>H. sur: </strong>Verano<br />
                                         <strong>Inclinación: </strong>23,5º Sur<br />
                                      </p>
-                                 </div>  
+                                 </div>
                             </div>
                         </div>
                         <br class="clear" />
@@ -1297,7 +1312,7 @@
                         <div class="about"><strong>Imagen 1.</strong> Terminología utilizada en la actividad de poda de árboles.<br /><strong>Fuente:</strong> ing. Forestal M.Sc León Morales.</div>
                     </div>
                 </div>
-                
+
                 <!--Actividades-->
                 <div class="page">
                     <div class="subpage" id="cuestionario">
@@ -1332,11 +1347,11 @@
                                     <p>Sobre las diferencias entre los tipos de cuestionario.</p>
                                 </description>
                                 <p class="item">
-                                    Los cuestionario que son "Learning activity" tienen el atributo 
+                                    Los cuestionario que son "Learning activity" tienen el atributo
                                     <select class="answers">
                                         <option data-response="true">data-feedback-dialog='true'</option>
                                         <option>no_es</option>
-                                    </select> mientras que los demás llevan la clase CSS 
+                                    </select> mientras que los demás llevan la clase CSS
                                     <select class="answers">
                                         <option>no_es</option>
                                         <option data-response="true">simple_activity</option>
@@ -1514,7 +1529,7 @@
                     <div class="subpage" id="actividades_arrastrar3">
                         <h3>Arrastrar y soltar - modo completar</h3>
                         <p>Ver código para el ejemplo. Los estilos son muy importantes, en <em>custom.css</em> se encuentran en la sección "Actividad arrastrar y soltar - completar"</p>
-                        
+
                         <div class="pit-activities-droppable" data-act-title="Arrastrar y soltar - modo completar" data-act-id="drop-complete">
                             <div class="box_panel_activity">
                                 <p>Por favor arrastre el fragmento para completar la oración.</p>
@@ -1559,7 +1574,7 @@
                     <div class="subpage" id="actividades_arrastrar4">
                         <h3>Arrastrar y soltar - insertando contenido</h3>
                         <p>Los estilos son muy importantes, en <em>custom.css</em> se encuentran en la sección "Actividad arrastrar y soltar - insertar". A diferencia de los otros de arrastrar y soltar, este esquema agrega el contenido del <em>origen</em> en el <em>destino</em> por lo que no se puede quitar de allí una vez arrastrado. Para esto es necesario agregar el atributo <strong>data-droppable-content-inner</strong> establecido a <strong>true</strong>. También se puede establecer la propiedad <strong>data-droppable-content-helper</strong> con un valor para colocar en el <em>origen</em> una vez que se haya reiniciado la actividad, en el ejemplo es "...".</p>
-                        
+
                         <div class="pit-activities-droppable" data-droppable-content-inner="true" data-droppable-content-helper="..."  data-act-title="Arrastrar y soltar - insertando contenido" data-act-id="drop-insert">
                             <div class="box_panel_activity">
                                 Por favor arrastre el fragmento para completar la oración.
@@ -1668,7 +1683,7 @@
                     <div class="subpage" id="actividades_cloze">
                         <h3>Cloze</h3>
                         <p>Aplica para cualquier HTML y opera sobre las listas (tag select). Ver código para el ejemplo. Importante incluir el control con la clase CSS box_end.</p>
-                        
+
                         <div class="pit-activities-cloze" data-act-title="Cloze" data-act-id="cloze">
                             <table class="dialogue">
                                 <tr class="odd">
@@ -1801,7 +1816,7 @@
 
                     <div class="subpage" id="actividades_form">
                         <h3>Formulario</h3>
-                        
+
                         <div class="horizontal-menu">
                             <dl>
                                 <dt>
@@ -1838,7 +1853,7 @@
                             </dl>
                         </div>
                     </div>
-                
+
                     <div class="subpage" id="actividades_guessing">
                         <h2>4. Actividades</h2>
                         <h3>Coincidir</h3>
@@ -1940,7 +1955,7 @@
                         <div class="instruction sound desktop">Haga clic sobre la bocina para escuchar el sonido.<br />(Recomendación: usar audífonos)</div>
                         <div class="instruction sound mobile">Toque la bocina para escuchar el sonido.<br />(Recomendación: usar audífonos)</div>
                     </div>
-                    
+
                     <div class="subpage" id="actividades_memory">
                         <h2>4. Actividades</h2>
                         <h3>Concéntrese</h3>
@@ -2010,13 +2025,13 @@
                         <blockquote><em><strong>Diagrama #.</strong> Autor, (año). Descripción de la imagen (si la hay).</em></blockquote>
                         <blockquote><em><strong>Diagrama #.</strong> Autor, (año).</em></blockquote>
                         <p><strong>Importante: </strong>se deberá colocar al final Diseño adaptado en caso de que sea modificada un poco la imagen en cuanto a color y forma. En caso de no tener fecha, colocar (s.f)</p>
-                        
+
                         <div class="img_center">
                             <img src="content/img18.png" />
-                            <div class="about"><strong>Diagrama 1.</strong> Schiffman, L. & Kanuk, L. (2010). Modelo del proceso de motivación. Diseño adaptado.</div> 
+                            <div class="about"><strong>Diagrama 1.</strong> Schiffman, L. & Kanuk, L. (2010). Modelo del proceso de motivación. Diseño adaptado.</div>
                         </div>
                     </div>
-                    
+
                     <div class="subpage" id="pie_4">
                         <h3>5.4. Tabla</h3>
                         <p>Estos son los casos que se pueden presentar para citar tablas:
@@ -2050,7 +2065,7 @@
                                 </tr>
                                 <tr class="odd">
                                     <td>Trata de evitar que se presenten problemas</td>
-                                    <td>Se ocupa de resolver problemas que ya se han presentado</td>     
+                                    <td>Se ocupa de resolver problemas que ya se han presentado</td>
                                 </tr>
                                 <tr>
                                     <td>Exige una operación computarizada</td>
@@ -2060,11 +2075,11 @@
                                     <td>Incluye, además de la inv. de mercados, otros subsistemas</td>
                                     <td>Es una fuente de entrada de los sistemas de información</td>
                                 </tr>
-                                
+
                             </tbody>
                          </table>
                     </div>
-                    <div class="about"><strong>Tabla 1.</strong> Sistemas de información vs Investigación, (2016).</div> 
+                    <div class="about"><strong>Tabla 1.</strong> Sistemas de información vs Investigación, (2016).</div>
                 </div>
 
                 <!--Learning activity-->
@@ -2100,7 +2115,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <!--Créditos-->
                 <div class="page">
                     <div class="subpage" id="credits_page">
@@ -2165,9 +2180,8 @@
 
         <footer class="not_print">
             <div id="measuring_results">
-                Avance
                 <div id="measuring_results_level"><div></div></div>
-                <div id="measuring_results_value"><span>0</span><br />%</div>
+                <div id="measuring_results_value"><span>0</span>%</div>
             </div>
             <div id="nav" class="regular_content">
                 <div class="button btn_left">
