@@ -239,7 +239,7 @@ main_vertical_both pre {
 
 #actividades_arrastrar1 .ion-chevron-right { font-size: 16px; }
 /********************************************************************************/
-/* Actividad arrastrar y soltar - diálogo
+/* Actividad arrastrar y soltar - diï¿½logo
 /********************************************************************************/
 #actividades_arrastrar2 h3 { margin: -5px 0 0; }
 
@@ -277,19 +277,19 @@ main_vertical_both pre {
 }
 
 #actividades_arrastrar3 .pit-activities-droppable th {
-    background: #11276d;
-    border: 2px solid #11276d;
-    border-radius: 6px 0 0 6px;
-    color: #FFFFFF;
-    padding: 5px;
-    text-align: right;
-    border-radius: 13px 0 0 13px;
+  background: #009793;
+  border: 2px solid #009793;
+  border-radius: 6px 0 0 6px;
+  color: #FFFFFF;
+  padding: 5px;
+  text-align: right;
+  border-radius: 6px 0 0 6px;
 }
 
 #actividades_arrastrar3 .pit-activities-droppable td {
     padding: 6px;
-    border: 2px solid #11276d;
-    border-radius: 0 13px 13px 0;
+    border: 2px solid #009793;
+    border-radius: 0 6px 6px 0;
     text-align: left;
     width: 415px;
 }
@@ -299,17 +299,17 @@ main_vertical_both pre {
     position: absolute;
     width: 415px;
     text-align: left;
-    box-shadow: -2px 0 5px #888888;
-    border: 0;
+    /*box-shadow: -2px 0 5px #888888;*/
+    border: 1px solid #888888;
     padding: 5px;
 }
 
 #actividades_arrastrar3 .pit-activities-droppable .jpit_activities_jpitdroppable_dropped {
     margin: -2px;
     background: #FFFFFF;
-    border: 2px solid #11276d;
+    border: 2px solid #009793;
     box-shadow: 0 0 0;
-    border-radius: 0 13px 13px 0;
+    border-radius: 0 6px 6px 0;
     padding: 5px;
 }
 
@@ -340,8 +340,8 @@ main_vertical_both pre {
 }
 
 #actividades_arrastrar4 .pit-activities-droppable th {
-    background: #11276d;
-    border: 2px solid #11276d;
+    background: #009793;
+    border: 2px solid #009793;
     border-radius: 13px 0 0 13px;
     color: #FFFFFF;
     padding: 5px;
@@ -351,7 +351,7 @@ main_vertical_both pre {
 
 #actividades_arrastrar4 .pit-activities-droppable td {
     padding: 5px;
-    border: 1px dashed #11276d;
+    border: 1px dashed #009793;
     border-radius: 0 6px 6px 0;
     text-align: left;
     width: 200px;
@@ -365,8 +365,8 @@ main_vertical_both pre {
 }
 
 #actividades_arrastrar4 .pit-activities-droppable .wrong {
-    border-color: #D60C1B;
-    color: #D60C1B;
+    border-color: #FF6E69;
+    color: #FF6E69;
 }
 
 #actividades_arrastrar4 .pit-activities-droppable .item_1.draggable  { left: 40px; }
@@ -528,71 +528,71 @@ main_vertical_both pre {
 #actividades_guessing div[class*="subpart-2"] { width: 45px; height: 75px; top: 115px; }
 #actividades_guessing div[class*="chromatic"] .subpart-1 { width: 26px; height: 112px; top: 1px; }
 #actividades_guessing div[class*="natural"] .subpart-1 { width: 34px; height: 112px; top: 2px; }
- 
+
 #actividades_guessing .keypressed *, #actividades_guessing .keypressed { background-color: #aebfb9 !important; opacity: 0.6 !important; border: 1px solid #aebfb9; }
- 
+
 #actividades_guessing .do-natural .subpart-1 { left: 2px; }
 #actividades_guessing .do-natural .subpart-2 { left: 2px; }
- 
+
 #actividades_guessing .do-chromatic .subpart-1 { left: 37px; }
- 
+
 #actividades_guessing .re-natural .subpart-1 { width: 25px !important; left: 64px; }
 #actividades_guessing .re-natural .subpart-2 { left: 54px; }
- 
+
 #actividades_guessing .re-chromatic .subpart-1 { left: 90px; }
- 
+
 #actividades_guessing .mi-natural .subpart-1 { left: 117px; }
 #actividades_guessing .mi-natural .subpart-2 { left: 107px; }
- 
+
 #actividades_guessing .fa-natural .subpart-1 { left: 160px; }
 #actividades_guessing .fa-natural .subpart-2 { left: 160px; }
- 
+
 #actividades_guessing .fa-chromatic .subpart-1 { left: 195px; }
- 
+
 #actividades_guessing .sol-natural .subpart-1 { left: 222px; width: 25px !important; }
 #actividades_guessing .sol-natural .subpart-2 { left: 212px; }
- 
+
 #actividades_guessing .sol-chromatic .subpart-1 { left: 248px; }
- 
+
 #actividades_guessing .la-natural .subpart-1 { width: 25px !important; left: 275px; }
 #actividades_guessing .la-natural .subpart-2 { left: 265px; }
- 
+
 #actividades_guessing .la-chromatic .subpart-1 { left: 300px; }
- 
+
 #actividades_guessing .si-natural .subpart-1 { left: 327px; }
 #actividades_guessing .si-natural .subpart-2 { left: 317px; }
- 
+
 #actividades_guessing .do-up-natural .subpart-1 { right: 403px; }
 #actividades_guessing .do-up-natural .subpart-2 { right: 392px; }
- 
+
 #actividades_guessing .do-up-chromatic .subpart-1 { right: 376px; }
- 
+
 #actividades_guessing .re-up-natural .subpart-1 { right: 350px; width: 25px !important; }
 #actividades_guessing .re-up-natural .subpart-2 { right: 340px; }
- 
+
 #actividades_guessing .re-up-chromatic .subpart-1 { right: 323px; }
- 
+
 #actividades_guessing .mi-up-natural .subpart-1 { right: 288px; }
 #actividades_guessing .mi-up-natural .subpart-2 { right: 287px; }
- 
+
 #actividades_guessing .fa-up-natural .subpart-1 { right: 245px; }
 #actividades_guessing .fa-up-natural .subpart-2 { right: 236px; }
- 
+
 #actividades_guessing .fa-up-chromatic .subpart-1 { right: 218px; }
- 
+
 #actividades_guessing .sol-up-natural .subpart-1 { right: 192px; width: 25px !important; }
 #actividades_guessing .sol-up-natural .subpart-2 { right: 182px; }
- 
+
 #actividades_guessing .sol-up-chromatic .subpart-1 { right: 165px; }
- 
+
 #actividades_guessing .la-up-natural .subpart-1 { right: 139px; width: 25px !important; }
 #actividades_guessing .la-up-natural .subpart-2 { right: 130px; }
- 
+
 #actividades_guessing .la-up-chromatic .subpart-1 { right: 113px; }
- 
+
 #actividades_guessing .si-up-natural .subpart-1 { right: 79px; }
 #actividades_guessing .si-up-natural .subpart-2 { right: 79px; }
- 
+
 #actividades_guessing .do-up-natural-2 .subpart-1 { right: 37px; }
 #actividades_guessing .do-up-natural-2 .subpart-2 { right: 26px; }
 
@@ -648,7 +648,7 @@ main_vertical_both pre {
 }
 
 /********************************************************************************/
-/* Imágenes con texto
+/* Imï¿½genes con texto
 /********************************************************************************/
 
 #img_modal_window_1 .box_l { background: url(../content/img-text-modal-2.png) no-repeat center top; background-size: 316px; margin-left: 30px; width: 400px; height: 400px; margin-top: 0px;}
@@ -670,7 +670,7 @@ main_vertical_both pre {
 #image_content_modal .instruction { width: 350px; margin-top: -5px; }
 
 /********************************************************************************/
-/* Imágenes para ampliar
+/* Imï¿½genes para ampliar
 /********************************************************************************/
 
 #image_expand .box_img { width: 400px; }

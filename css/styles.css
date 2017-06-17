@@ -18,6 +18,18 @@
     font-weight: bold;
     font-style: normal;
 }
+@font-face {
+  font-family: 'Roboto';
+    src: url('Roboto/Roboto-Light.ttf');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+    src: url('Roboto/Roboto-Medium.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
 
 /*----------------------------
     General
@@ -133,17 +145,17 @@ a:hover, .open_page:hover {
 button.general {
     font-family: Calibri, Arial, sans-serif;
     background-color: #fff;
-    color: #0039A6;
+    color: #009793;
     font-size: 15px;
     border: 1px solid;
-    padding: 5px 7px;
+    padding: 8px 10px;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 16px;
+    border-radius: 6px;
 }
 
 button.general.active, button.general:hover {
-    background-color: #0039A6;
+    background-color: #009793;
     color: #fff;
 }
 
@@ -452,7 +464,8 @@ header #header_subtitle {
   margin-left: 0;
   margin-top: -35px;
   margin-right: 0;
-  background-color: #dedede;
+  /*background-color: #dedede;*/
+  background-color: #fefefe;
   box-shadow: 3px 3px 3px #848383;
   border: none;
   border-radius: 0px 0px 8px 8px;
@@ -751,9 +764,12 @@ h2 {
 }
 
 h3 {
-    font-size: 15px;
-    color: #3C3C3C;
-    margin-left: 19px;
+  font-size: 15px;
+  /*color: #505050;*/
+  color: #009793;
+  margin-left: 19px;
+  font-family: Roboto;
+  font-weight: 300;
 }
 
 h5 {
@@ -1131,7 +1147,7 @@ table.organization_chart .jump {
 }
 
 .box_end .wrong, #congratulations_unit .wrong {
-    color: #D60C1B;
+    color: #FF6E69;
 }
 
 .activity-desktop { display: none !importan; }
@@ -1166,14 +1182,13 @@ table.organization_chart .jump {
 /* SPECIFIC QUIZ
 /********************************************************************************/
 .pit-activities-quiz {
-    width: 420px;
-    height: 260px;
-    position: relative;
-    padding: 20px;
-    margin: 20px auto 90px;
-    border-radius: 16px;
-    border: 1px solid #11276d;
-    background-color: #efefef;
+  width: 420px;
+  height: 260px;
+  position: relative;
+  padding: 20px;
+  margin: 20px auto 90px;
+  background-color: #fefefe;
+  box-shadow: 0px 0px 12px #A5A5A5;
 }
 
 .pit-activities-quiz .box_presentation {
@@ -1250,30 +1265,32 @@ table.organization_chart .jump {
 }
 
 .jpit_activities_quiz_paginator_previous {
-    background: url(../img/sprite.png) no-repeat -207px -7px;
-    width: 15px;
-    height: 15px;
-    float: left;
-    cursor: pointer;
-    margin-top: 2px;
+  background: url(../img/sprite_iconos_actualizados.png) no-repeat -55px 0px;
+  background-size: cover;
+  width: 18px;
+  height: 15px;
+  float: left;
+  cursor: pointer;
+  margin-top: 2px;
 }
 
-.jpit_activities_quiz_paginator_previous:hover {
+/*.jpit_activities_quiz_paginator_previous:hover {
     background-position: -207px -41px;
-}
+}*/
 
 .jpit_activities_quiz_paginator_next {
-    background: url(../img/sprite.png) no-repeat -229px -7px;
-    width: 20px;
-    height: 23px;
-    float: left;
-    cursor: pointer;
-    margin-top: 2px;
+  background: url(../img/sprite_iconos_actualizados.png) no-repeat -77px 0px;
+  background-size: cover;
+  width: 18px;
+  height: 15px;
+  float: left;
+  cursor: pointer;
+  margin-top: 2px;
 }
 
-.jpit_activities_quiz_paginator_next:hover {
+/*.jpit_activities_quiz_paginator_next:hover {
     background-position: -229px -41px;
-}
+}*/
 
 .jpit_activities_quiz_paginator_container button {
     float: left;
@@ -1338,21 +1355,21 @@ table.organization_chart .jump {
 
 .pit-activities-droppable .droppable {
     background: #FFFFFF;
-    border: solid #11276d 1px;
-    border-radius: 16px;
+    border: solid #90908c 2px;
+    border-radius: 6px;
     padding: 5px;
     text-align: left;
 }
 
 .pit-activities-droppable .draggable {
-    border: solid #11276d 1px;
-    padding: 5px;
-    text-align: center;
-    cursor: move;
-    border-radius: 16px;
-    color: #0039A6;
-    font-weight: bold;
-    background: #fff;
+  border: solid #009793 2px;
+  padding: 5px;
+  text-align: center;
+  cursor: move;
+  border-radius: 6px;
+  color: #009793;
+  font-weight: bold;
+  background: #fff;
 }
 
 .pit-activities-droppable .draggable.disabled {
@@ -1361,8 +1378,8 @@ table.organization_chart .jump {
 
 .pit-activities-droppable .jpit_activities_jpitdroppable_dropped {
     background-color: #FFFFFF;
-    border-radius: 16px;
-    color: #11276d;
+    border-radius: 6px;
+    color: #009793;
     font-weight: bold;
 }
 
@@ -1371,26 +1388,27 @@ table.organization_chart .jump {
 }
 
 .pit-activities-droppable .draggable.wrong, .pit-activities-droppable .droppable.wrong {
-    border: 1px solid #D60C1B;
-    color: #D60C1B;
+    border: 1px solid #FF6E69;
+    color: #FF6E69;
 }
 
 .pit-activities-droppable .draggable.correct, .pit-activities-droppable .droppable.correct {
-    border: 1px solid #658A12;
-    color: #11276d;
+    border: 1px solid #009793;
+    color: #009793;
 }
 
 .pit-activities-droppable th {
-    background: #ebebeb;
+    /*background: #ebebeb;*/
     border-radius: 11px;
     color: #575756;
     padding: 5px;
     text-align: right;
-    border: solid #11276d 1px;
+    /*border: solid #11276d 1px;*/
     font-weight: normal;
 }
 
 .pit-activities-droppable i.ion-arrow-move {
+    display: none;
     position: absolute;
     left: 0px;
     color: #fff;
@@ -1405,7 +1423,7 @@ table.organization_chart .jump {
 }
 
 .pit-activities-droppable span.draggable-span {
-    margin-right: 15px;
+    /*margin-right: 15px;*/
 }
 
 /********************************************************************************/
@@ -1487,15 +1505,15 @@ table.organization_chart .jump {
 }
 
 .pit-activities-wordpuzzle .score_content {
-    padding: 10px 10px;
-    background-color: #FFFFFF;
-    border: solid #11276d 1px;
-    height: 10px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 16px;
-    color: #0039A6;
-    text-align: center;
+  padding: 10px 10px;
+  background-color: #FFFFFF;
+  border: solid #009793 1px;
+  height: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #009793;
+  text-align: center;
 }
 
 .pit-activities-wordpuzzle .score_content .result { color: #989898; }
@@ -1514,6 +1532,8 @@ table.organization_chart .jump {
 .pit-activities-wordpuzzle h5 {
     text-align: center;
     font-size: 14px;
+    color: #009793;
+    font-weight: 500;
     margin: 0;
     padding: 5px 0 10px;
 }
@@ -1643,7 +1663,7 @@ table.organization_chart .jump {
     font-size: 14px;
     margin: 0;
     padding: 0;
-    color: #0039A6;
+    color: #009793;
 }
 
 .pit-activities-crossword .verify_container {
@@ -1657,7 +1677,7 @@ table.organization_chart .jump {
 }
 
 .pit-activities-crossword input.empty_cell {
-    background-color: #11276d;
+    background-color: #009793;
 }
 
 .pit-activities-crossword .box_end {
@@ -1670,13 +1690,13 @@ table.organization_chart .jump {
 }
 
 .jpit_activity_crossword_label {
-    background: #0039A6;
-    color: #FFFFFF;
-    border-radius: 15px;
+  background: transparent;
+  color: #009793;
+  font-weight: bold;
 }
 
 .jpit_activity_crossword_cell input {
-    border: 1px solid #11276d !important;
+    border: 1px solid #009793 !important;
 }
 
 .pit-activities-crossword ol.box_words li {
@@ -2138,7 +2158,7 @@ button.iconsound, div.iconsound {
 
 .ion-chevron-right {
     font-size: 40px;
-    color: #0039A6;
+    color: transparent;
 }
 
 .ion-close {
@@ -2435,10 +2455,11 @@ table.dialogue .odd th {
 /* SPECIAL CONTENT: Accordion
 /********************************************************************************/
 .ui-accordion .ui-accordion-content {
-    font-weight: normal !important;
-    background: #f3f3f3 !important;
-    border-radius: 0px !important;
-    font-size: 14px;
+  font-weight: 200 !important;
+  background: #dedede !important;
+  border-radius: 0px !important;
+  font-size: 11pt;
+  color: #4A4A4A;
 }
 
 .ui-accordion-header.ui-state-default.ui-corner-all.ui-accordion-icons {
@@ -2447,26 +2468,41 @@ table.dialogue .odd th {
   font-size: 12pt !important;
   border-radius: 0 !important;
   border-bottom: 2px solid #fff;
+  padding-left: 40px !important;
 }
 
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-    background: url(../img/sprite.png) no-repeat -51px -5px !important;
-    height: 20px;
-    width: 20px;
+  margin-top: -11px;
+  background: url(../img/iconos_menu_png24.png) no-repeat -58px 1px !important;
+  background-size: cover !important;
+  background-position: 2px !important;
+  height: 26px;
+  width: 26px;
+}
+.accordion.ui-accordion.ui-widget.ui-helper-reset h3:nth-child(3) span {
+    background-position: -28px 1px !important;
+}
+.accordion.ui-accordion.ui-widget.ui-helper-reset h3:nth-child(5) span {
+    background-position: -57px 1px !important;
 }
 
-.ui-accordion .ui-accordion-header .ui-accordion-header-icon.ui-icon-triangle-1-e {
+/*.ui-accordion .ui-accordion-header .ui-accordion-header-icon.ui-icon-triangle-1-e {
     background-position: -51px -40px !important;
-}
+}*/
 
 .ui-accordion .ui-accordion-header {
-    margin: 0 !important;
-    padding: 15px 25px !important;
-    background: #f3f3f3 !important;
-    color: #11276d !important;
-    box-shadow: 0 4px 2px -4px gray;
-    font-family: Verdana;
-    font-size: 13px;
+  margin: 0 !important;
+  padding: 15px 25px !important;
+  padding-left: 38px !important;
+  background: #235b58 !important;
+  color: white !important;
+  /* box-shadow: 0 4px 2px -4px grey; */
+  font-family: Roboto;
+  font-size: 12pt;
+}
+.ui-corner-top{
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .accordion.ui-accordion.ui-widget.ui-helper-reset {
@@ -2799,4 +2835,8 @@ padding: 1px;}
     height: 288px;
     float: left;
     /* display: inline-block; */
+}
+
+.ui-widget-content{
+  border: none;
 }
