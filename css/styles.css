@@ -43,13 +43,13 @@ body {
 }
 
 #body {
-  margin: auto;
+  /* margin: auto; */
   clear: both;
   position: relative;
   /* padding: 20px 30px 80px; */
   padding-top: 20px;
-  max-width: 1231px;
-  width: 100%;
+  /* max-width: 1231px; */
+  width: calc(100% - 31px);
   height: 100%;
   /* background-color: #dedede; */
   background-color: #fefefe;
@@ -317,14 +317,14 @@ header #header_subtitle {
 #return.ion-share.rotate { transform: rotate(0deg); }
 
 #main_menu {
-    font-size: 14px;
-    z-index: 99;
-    position: absolute;
-    right: -31px;
-    top: 5px;
-    /*background-color: #0039A6;*/
-    -webkit-transform-origin: 100% 50%;
-    -webkit-transform: rotate(90deg) translate(100%, 50%);
+  font-size: 14px;
+  z-index: 99;
+  position: fixed;
+  /* top: 5px; */
+  right: 0;
+  /* background-color: #0039A6; */
+  -webkit-transform-origin: 100% 50%;
+  -webkit-transform: rotate(90deg) translate(100%, 50%);
 }
 
 #main_menu ul {
@@ -361,7 +361,7 @@ header #header_subtitle {
 
 #main_menu ul li.principal.current {
     background-color: #fefefe;
-    box-shadow: none;
+    box-shadow: 0px 2px 2px #b5b5b5;
 }
 #main_menu ul li.principal.active,#main_menu ul li.principal.active.current{
   box-shadow: none;
@@ -2769,15 +2769,16 @@ padding: 1px;}
   margin-left: auto;
   margin-top: 120px;
   z-index: 1000;
+  text-align: center;
 }
 .main-logo::after {
   content: "";
-    background: url(../img/logo-ingles-cabezote.png);
-    width: 420px;
-    height: 113px;
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
+  background: url(../img/logo-ingles-cabezote.png);
+  width: 330px;
+  height: 113px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .main-context-title{
   display: block;
