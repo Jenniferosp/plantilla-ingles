@@ -2679,7 +2679,7 @@ sup.tooltip {
   padding-top: 6px;
   line-height: 10px;
 }
-#measuring_results_level { position: absolute; left: 18px; bottom: 7px; width: 90%;height: 11px; background-color: #fff; border-radius: 3px; border: 1px solid #ddd; overflow: hidden; border: 1px solid #dedede;
+#measuring_results_level { position: absolute;  left: 2%; bottom: 7px; width: 90%;height: 11px; background-color: #fff; border-radius: 3px; border: 1px solid #ddd; overflow: hidden; border: 1px solid #dedede;
 padding: 1px;}
 #measuring_results_level div { background-color: #dedede; width: 0%; height: 11px; }
 
@@ -2864,4 +2864,35 @@ padding: 1px;}
 .jpit_activities_quiz_question_answers select {
     background-color: white;
     border-bottom: 1px solid gray;
+}
+.subpage_1 .col-2 img {
+    width: 50%;
+}
+.subpage_1 .col-2 {
+    display: inline-block;
+}
+.subpage_1 h2 {
+    font-size: 30pt;
+    color: #333333;
+    border-bottom: 3px solid #828282;
+}
+.subpage_1 h3 {
+    color: #333333;
+    font-size: 16pt;
+    margin-left: 0;
+}
+.subpage_1 #avatito {
+    position: relative;
+    top: 50px;
+    /* left: 0; */
+    right: -20%;
+}
+.subpage_1 .img_responsive.center {
+    position: relative;
+}
+.subpage_1 img#avatito-cositas {
+    position: absolute;
+    left: 42px;
+    width: 82%;
+    top: 0%;
 }
