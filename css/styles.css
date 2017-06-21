@@ -1194,7 +1194,9 @@ table.organization_chart .jump {
   width: 420px;
   height: 260px;
   position: relative;
-  padding: 20px;
+  padding: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin: 20px auto 90px;
   background-color: #fefefe;
   box-shadow: 0px 0px 12px #A5A5A5;
@@ -1261,8 +1263,8 @@ table.organization_chart .jump {
 
 .jpit_activities_quiz_paginator_container {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 5%;
+    right: 3%;
 }
 
 .jpit_activities_quiz_paginator_current {
@@ -2677,7 +2679,7 @@ sup.tooltip {
   padding-top: 6px;
   line-height: 10px;
 }
-#measuring_results_level { position: absolute; left: 18px; bottom: 7px; width: 100%;height: 11px; background-color: #fff; border-radius: 3px; border: 1px solid #ddd; overflow: hidden; border: 1px solid #dedede;
+#measuring_results_level { position: absolute; left: 18px; bottom: 7px; width: 90%;height: 11px; background-color: #fff; border-radius: 3px; border: 1px solid #ddd; overflow: hidden; border: 1px solid #dedede;
 padding: 1px;}
 #measuring_results_level div { background-color: #dedede; width: 0%; height: 11px; }
 
