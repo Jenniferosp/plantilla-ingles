@@ -3194,6 +3194,8 @@ function stopTrack(id){
   var audioPlayer = document.getElementById('audio-'+trackNumber);
 
   audioPlayer.pause();
+  playButton.removeClass('pause');
+  playButton.addClass('play');
   audioPlayer.currentTime = 0;
 
   //To delete styles from the paragraph that user was listening to.
