@@ -3159,3 +3159,44 @@ dhbgApp.sortObjectByProperty = function (o) {
     }
     return sorted;
 };
+
+function playTrack(id){
+  //The way to get number from string was founded here: https://stackoverflow.com/questions/7033334/how-to-extract-number-from-a-string-in-javascript
+  var trackNumber = parseInt(id.replace(/[^0-9\.]/g, ''), 10);
+
+  //Current audioplayer.This audio player is that one with audio html tag and is hidden.
+  var audioPlayer = document.getElementById('audio-'+trackNumber);
+
+  //Play & Pause Button
+  var playButton = $('#play-pause-'+trackNumber);
+
+  //According to current state of audio, classes for custom play button are added or removed
+  if (audioPlayer.paused) {
+		audioPlayer.play();
+    playButton.removeClass('play');
+    playButton.addClass('pause');
+	} else {
+		audioPlayer.pause();
+    playButton.removeClass('pause');
+    playButton.addClass('play');
+	}
+  //To stylish current paragraph that user is listening to.
+  var completeParagraph = $('#paragraph-'+trackNumber);
+
+  completeParagraph.addClass("current-playing");
+};
+
+function stopTrack(id){
+  //The way to get number from string was founded here: https://stackoverflow.com/questions/7033334/how-to-extract-number-from-a-string-in-javascript
+  var trackNumber = parseInt(id.replace(/[^0-9\.]/g, ''), 10);
+
+  //Current audioplayer.This audio player is that one with audio html tag and is hidden.
+  var audioPlayer = document.getElementById('audio-'+trackNumber);
+
+  audioPlayer.pause();
+  audioPlayer.currentTime = 0;
+
+  //To delete styles from the paragraph that user was listening to.
+  var completeParagraph = $('#paragraph-'+trackNumber);
+  completeParagraph.removeClass("current-playing");
+}

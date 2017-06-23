@@ -2896,3 +2896,64 @@ padding: 1px;}
     width: 82%;
     top: 0%;
 }
+p.track-paragraph {
+    padding: 10px;
+    box-shadow: none;
+    -webkit-transition: all 0.7s ease; /* Safari */
+    transition: all 0.7s ease;
+}
+p.track-paragraph.current-playing{
+  box-shadow: 0px 0px 5px #212323;
+}
+/* Styles for custom audio player*/
+.myPlayer > p i {
+  color: #009793;
+  font-size: 40px;
+}
+.myPlayer p.pButton,.myPlayer p.stopButton{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.myPlayer p.pButton:hover,.myPlayer p.stopButton:hover{
+  cursor: pointer;
+}
+.myPlayer p.custom-pause{
+  display: none;
+}
+audio{
+  display: none;
+}
+.pButton {
+    position: relative;
+}
+
+/*replace the content value with the
+corresponding value from the list below*/
+
+.pButton.play:before {
+  content: "\f144";
+  font-family: FontAwesome;
+  text-decoration: inherit;
+  color: #009793;
+  font-size: 40px;
+  position: absolute;
+}
+.pButton.pause:before {
+  content: "\f28b";
+  font-family: FontAwesome;
+  text-decoration: inherit;
+  color: #009793;
+  font-size: 40px;
+  position: absolute;
+}
+.stopButton:before {
+  content: "\f28d";
+  font-family: FontAwesome;
+  text-decoration: inherit;
+  color: #009793;
+  font-size: 40px;
+  position: absolute;
+}
