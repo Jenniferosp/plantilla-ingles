@@ -78,7 +78,6 @@
             <div id="div_overlay" ></div>
             <div id="header_left"></div>
             <div id="header_right"></div>
-
         </header>
 
 
@@ -101,7 +100,7 @@
                       <item title="Textos" data-label="true">
                           <item title="1.1. Textos especiales" data-page="textos"></item>
                           <item title="1.2. Presentación del contenido" data-page="presentation"></item>
-                          <item title="1.3. Ejemplo Audio" data-page="example-audio"></item>
+
                       </item>
                       <item title="Multimedia y Formatos" data-label="true">
                           <item title="2.1. Multimedia" data-page="media"></item>
@@ -151,9 +150,20 @@
                               <div class="col-2">
                                 <h2>Context</h2>
                                 <h3>Introduction</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <audio id="audio-1" src="audios/01_Introduction.mp3" controls></audio>
+                                <div class="myPlayer">
+                                  <p class="pButton play" onclick="playTrack(this.id)" id="play-pause-1"></p>
+                                  <p class="stopButton" onclick="stopTrack(this.id)" id="stop-1"></p>
+                                </div>
+                                <p id="paragraph-1" class="track-paragraph">Music is part of all stages of our lives. It appears in ads from television and radio, waiting rooms, travel, soundtracks for movies, etc. Music helps us learn, know and reflect on different genres and famous artists, musical instruments, and terms that we must manage to possess a better understanding of the texts and materials to which we are exposed every day. This lesson is divided into 3 aspects dealing with the cultural, historical, and biological relevance of music in our lives.</p>
+
                                 <h3>Objetives</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <audio id="audio-2" src="audios/02_objetive.mp3" controls></audio>
+                                <div class="myPlayer">
+                                  <p class="pButton play" onclick="playTrack(this.id)" id="play-pause-2"></p>
+                                  <p class="stopButton" onclick="stopTrack(this.id)" id="stop-2"></p>
+                                </div>
+                                <p id="paragraph-2" class="track-paragraph">To Learn and become familiar with the vocabulary and the terminology that is used in music, students will be learning to distinguish the main ideas, the meaning of the words in context, the author's tone, the details, and the Organization of the text.</p>
                                 <h3>Duration</h3>
                                 <p>30 minutos</p>
                               </div>
@@ -782,8 +792,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="page">
-                    <h2>Introduction</h2>
+
+                    <!-- <h2>Introduction</h2>
+                    <div class="page">
                     <audio id="audio-1" src="audios/01_Introduction.mp3" controls ></audio>
                     <div class="myPlayer">
                       <p class="pButton play" onclick="playTrack(this.id)" id="play-pause-1"></p>
@@ -797,8 +808,8 @@
                       <p class="pButton play" onclick="playTrack(this.id)" id="play-pause-2"></p>
                       <p class="stopButton" onclick="stopTrack(this.id)" id="stop-2"></p>
                     </div>
-                    <p id="paragraph-2" class="track-paragraph">To Learn and become familiar with the vocabulary and the terminology that is used in music, students will be learning to distinguish the main ideas, the meaning of the words in context, the author's tone, the details, and the Organization of the text.</p>
-                </div>
+                    <p id="paragraph-2" class="track-paragraph">To Learn and become familiar with the vocabulary and the terminology that is used in music, students will be learning to distinguish the main ideas, the meaning of the words in context, the author's tone, the details, and the Organization of the text.</p>  </div> -->
+
 
                 <!--Multimedia-->
                 <div class="page">
@@ -1353,6 +1364,16 @@
                         </div>
                         <div class="instruction desktop">Pase el mouse por cada uno de los números para obtener más información</div>
                         <div class="about"><strong>Imagen 1.</strong> Terminología utilizada en la actividad de poda de árboles.<br /><strong>Fuente:</strong> ing. Forestal M.Sc León Morales.</div>
+                    </div>
+                    <div class="subpage" id="pointers_text">
+                      <h3>Texto acompañado de Audio</h3>
+                      <div class="instruction mobile">Utilice los controles del reproductor</div>
+                      <audio id="audio-2000" src="audios/01_Introduction.mp3" controls></audio>
+                      <div class="myPlayer">
+                        <p class="pButton play" onclick="playTrack(this.id)" id="play-pause-2000"></p>
+                        <p class="stopButton" onclick="stopTrack(this.id)" id="stop-2000"></p>
+                      </div>
+                      <p id="paragraph-2000" class="track-paragraph">Music is part of all stages of our lives. It appears in ads from television and radio, waiting rooms, travel, soundtracks for movies, etc. Music helps us learn, know and reflect on different genres and famous artists, musical instruments, and terms that we must manage to possess a better understanding of the texts and materials to which we are exposed every day. This lesson is divided into 3 aspects dealing with the cultural, historical, and biological relevance of music in our lives.</p>
                     </div>
                 </div>
 

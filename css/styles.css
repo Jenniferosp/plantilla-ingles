@@ -460,23 +460,13 @@ header #header_subtitle {
     color: #858585;
     z-index: 3;
     overflow: hidden;
-    /* position: absolute; */
-    z-index: 3;
-    /* padding: 18px 13px 80px; */
-    /* padding-left: 12px; */
-    /* margin: 0px 12px 80px; */
-    /* margin-left: 0; */
-    /* margin-top: -22px; */
-    /* margin-right: 0; */
-    /* background-color: #dedede; */
-    /* padding-right: 30px; */
     box-sizing: border-box;
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 90px;
     background-color: #fefefe;
     box-shadow: 3px 3px 3px #848383;
-    border: none;
+    /*border: none;*/
     border-radius: 0px 0px 8px 8px;
 }
 
@@ -2898,6 +2888,7 @@ padding: 1px;}
 }
 p.track-paragraph {
     padding: 10px;
+    margin-top: 2px;
     /*box-shadow: none;*/
     background-color: white;
     -webkit-transition: all 0.7s ease; /* Safari */

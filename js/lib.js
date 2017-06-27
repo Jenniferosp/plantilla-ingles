@@ -127,6 +127,22 @@ dhbgApp.standard.start = function() {
             }
         });
 
+        //This event listener is added to wait for the end of the audio. As soon as the audio is ended, the paragraph turn off his highlight text and pause botton is set to play
+        $('.pButton').each(function(){
+          var id = $(this).attr('id');
+          var track = parseInt(id.replace(/[^0-9\.]/g, ''), 10);
+          var audioPlayer = document.getElementById('audio-'+track);
+          //Play & Pause Button
+          var playButton = $('#play-pause-'+track);
+          var completeParagraph = $('#paragraph-'+track);
+          audioPlayer.addEventListener("ended", function(){
+            audioPlayer.currentTime = 0;
+            completeParagraph.removeClass("current-playing");
+            playButton.removeClass('pause');
+            playButton.addClass('play');
+          });
+        });
+
         //buttons
         $('.button').on('mouseover', dhbgApp.defaultValues.buttonover);
 
@@ -3160,6 +3176,19 @@ dhbgApp.sortObjectByProperty = function (o) {
     return sorted;
 };
 
+function addEndedListenerToAllTracks(){
+  $('.pButton').each(function(){
+    var currentId = $(this).attr('id');
+    console.log(currentId);
+    // audioPlayer.addEventListener("ended", function(){
+    //   audioPlayer.currentTime = 0;
+    //   completeParagraph.removeClass("current-playing");
+    //   playButton.removeClass('pause');
+    //   playButton.addClass('play');
+    // });
+  });
+};
+addEndedListenerToAllTracks();
 function playTrack(id){
   //The way to get number from string was founded here: https://stackoverflow.com/questions/7033334/how-to-extract-number-from-a-string-in-javascript
   var trackNumber = parseInt(id.replace(/[^0-9\.]/g, ''), 10);
@@ -3172,6 +3201,7 @@ function playTrack(id){
 
   //According to current state of audio, classes for custom play button are added or removed
   if (audioPlayer.paused) {
+    stopAll(id);
 		audioPlayer.play();
     playButton.removeClass('play');
     playButton.addClass('pause');
@@ -3180,10 +3210,31 @@ function playTrack(id){
     playButton.removeClass('pause');
     playButton.addClass('play');
 	}
+
   //To stylish current paragraph that user is listening to.
   var completeParagraph = $('#paragraph-'+trackNumber);
-
   completeParagraph.addClass("current-playing");
+
+};
+
+function stopAll(id){
+  // console.log("The main id is:"+id);
+  $('.pButton').each(function(){
+    var currentId = $(this).attr('id');
+    // console.log("This is another id:"+currentId);
+    if (currentId != id) {
+      var trackToStop = parseInt(currentId.replace(/[^0-9\.]/g, ''), 10);
+      var audioToStop = document.getElementById('audio-'+trackToStop);
+      var playButtonToStop = $('#play-pause-'+trackToStop);
+      var paragraphtoStop = $('#paragraph-'+trackToStop);
+
+      audioToStop.pause();
+      audioToStop.currentTime = 0;
+      playButtonToStop.removeClass('pause');
+      playButtonToStop.addClass('play');
+      paragraphtoStop.removeClass("current-playing");
+    }
+  });
 };
 
 function stopTrack(id){
@@ -3192,6 +3243,8 @@ function stopTrack(id){
 
   //Current audioplayer.This audio player is that one with audio html tag and is hidden.
   var audioPlayer = document.getElementById('audio-'+trackNumber);
+  //Play & Pause Button
+  var playButton = $('#play-pause-'+trackNumber);
 
   audioPlayer.pause();
   playButton.removeClass('pause');
