@@ -57,12 +57,12 @@ body {
 }
 
 #close_all {
-    position: fixed;
-    top: -3px;
-    right: 10px;
-    z-index: 99;
-    font-size: 30px;
-    color: #11276d;
+  position: fixed;
+  top: 68px;
+  right: 1%;
+  z-index: 99;
+  font-size: 22px;
+  color: white;
 }
 #close_all:hover { color: #ddd; }
 
@@ -295,7 +295,7 @@ header #header_subtitle {
 #globals {
     height: 25px;
     position: absolute;
-    right: 5px;
+    right: 28px;
     top: 63px;
     font-size: 27px;
     color: #fff;
@@ -320,7 +320,7 @@ header #header_subtitle {
   font-size: 14px;
   z-index: 99;
   position: fixed;
-  /* top: 5px; */
+  top: 20%;
   right: 0;
   /* background-color: #0039A6; */
   -webkit-transform-origin: 100% 50%;
@@ -501,7 +501,7 @@ footer {
     color: #848383;
     position: absolute;
     bottom: 7px;
-    right: 10px;
+    right: 0%;
 }
 
 
@@ -670,7 +670,7 @@ footer {
   background: url(../img/sprite_iconos_actualizados.png) no-repeat -93px 0px;
   margin-right: 10px;
   background-size: cover;
-  left: 4%;
+  left: 2%;
 }
 #nav div.btn_right {
     background: url(../img/sprite_iconos_actualizados.png) no-repeat -125px 0px;
@@ -707,14 +707,14 @@ footer {
 
 #credits_page div h3 {
     position: relative;
-    color: #11276d;
+    color: #009793;
     margin-top: 20px;
-    border-bottom: 1px solid #B91817;
+    border-bottom: 1px solid #858585;
 }
 
 #credits_page div h3:before {
     content: "";
-    border-bottom: 3px solid #B91817;
+    border-bottom: 3px solid #858585;
     width: 25px;
     height: 10px;
     position: absolute;
@@ -772,7 +772,7 @@ h3 {
 }
 
 h5 {
-    color: #0039A6;
+    color: #009794;
     font-size: 14px;
 }
 
@@ -1938,6 +1938,7 @@ table.organization_chart .jump {
 }
 
 .horizontal-menu .chalkboard_items >.chalkboard_item {
+  content: "\f0a9";
   padding: 10px 30px;
   margin: 0px 0px;
   text-align: center;
@@ -1957,21 +1958,29 @@ table.organization_chart .jump {
 }
 
 .horizontal-menu .chalkboard_items >.chalkboard_item:before {
-    content: "";
-    background: url(../img/sprite.png) no-repeat -45px -40px;
+    content: "\f0a9";
+    /*background: url(../img/sprite.png) no-repeat -45px -40px;*/
     width: 24px;
     height: 20px;
-    position: absolute;
+    position: relative;
     left: 0;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
 }
 
 .horizontal-menu .chalkboard_items >.chalkboard_item.current:before, .horizontal-menu .chalkboard_items >.chalkboard_item.active:before {
-    content: "";
-    background: url(../img/sprite.png) no-repeat -45px -6px;
+    content: "\f01a";
+    /*background: url(../img/sprite.png) no-repeat -45px -6px;*/
     width: 24px;
     height: 20px;
-    position: absolute;
+    position: relative;
     left: 0;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
 }
 
 .horizontal-menu >.chalkboard_content {
@@ -2669,7 +2678,7 @@ sup.tooltip {
   padding-top: 6px;
   line-height: 10px;
 }
-#measuring_results_level { position: absolute;  left: 2%; bottom: 7px; width: 90%;height: 11px; background-color: #fff; border-radius: 3px; border: 1px solid #ddd; overflow: hidden; border: 1px solid #dedede;
+#measuring_results_level { position: absolute;  left: 0%; bottom: 7px; width: 85%;height: 11px; background-color: #fff; border-radius: 3px; border: 1px solid #ddd; overflow: hidden; border: 1px solid #dedede;
 padding: 1px;}
 #measuring_results_level div { background-color: #dedede; width: 0%; height: 11px; }
 
@@ -2688,6 +2697,13 @@ padding: 1px;}
   padding-left: 15px;
   width: 45%;
   display: table-cell;
+}
+@media (max-width: 800px) {
+  .col-2 {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 /********************************************************************************/
@@ -2784,6 +2800,12 @@ padding: 1px;}
   height: 35px;
   color: white;
 }
+@media (max-width: 980px) {
+  .main-context-title{
+    display: none;
+  }
+}
+
 .main-context-title p {
     line-height: 0.7;
 }
@@ -2802,7 +2824,11 @@ padding: 1px;}
   height: 35px;
   color: #6D8d61;
 }
-
+@media (max-width: 980px) {
+  .main-context-subtitle{
+    display: none;
+  }
+}
 .arrow-left {
   position: absolute;
   left: -18px;
@@ -2860,6 +2886,7 @@ padding: 1px;}
 }
 .subpage_1 .col-2 {
     display: inline-block;
+    vertical-align: top;
 }
 .subpage_1 h2 {
     font-size: 30pt;
